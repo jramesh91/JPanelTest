@@ -19,6 +19,7 @@ import com.jgoodies.forms.layout.RowSpec;
 import javax.swing.JTextPane;
 import java.awt.Font;
 
+//THis is for Getting Customer Details
 public class FirstForm extends JFrame{  
 	 private JLabel labelUsername = new JLabel("Something");
 	    private JLabel labelPassword = new JLabel("Nothing");
