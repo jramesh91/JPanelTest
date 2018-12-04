@@ -11,7 +11,7 @@ public class LoginValidation {
 	public static void connectDatabase(String user, String Pass)
 	{
 		
-		try {
+		try { 
 			
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
