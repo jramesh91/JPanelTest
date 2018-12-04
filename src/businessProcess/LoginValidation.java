@@ -12,7 +12,7 @@ public class LoginValidation {
 	{
 		
 		try { 
-			
+			//JDBC Driver Setup
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			Statement stm = con.createStatement();
