@@ -33,6 +33,9 @@ public class FirstForm extends JFrame{
 	    private JTextField textField_5;
 	    private JTextField textField_6;
 	     //This is the login page
+	    
+	    
+	    
 	    public FirstForm() {
 	        super("JPanel Demo Program");
 	        JPanel newPanel = new JPanel();

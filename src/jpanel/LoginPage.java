@@ -17,7 +17,12 @@ public class LoginPage extends JFrame{
 	    String textFieldUser;
 	    String textFieldPass;
 	    public static boolean entry = false;
-	     
+	     //THIS IS A CONSTRUCTOR AND NOT A METHOD
+	    
+	    
+	    
+	    
+	    
 	    public LoginPage() {
 	        super("JPanel Demo Program");
 	         
@@ -74,11 +79,13 @@ public class LoginPage extends JFrame{
 	            	if(entry)
 	            	{
 	            	
-	            	
+	            	//This is where the main class' LoginPage() is redirected to
 	                System.out.println("Success");
 	                dispose();
-	                new FirstForm().setVisible(true); // Main Form to show after the Login Form..
+	               // new FirstForm().setVisible(true); // Main Form to show after the Login Form..
+	               new LandingPage().setVisible(true); 
 	                System.out.println("Success");
+	                System.out.println();
 	            	}
 	            	else
 	            	{
