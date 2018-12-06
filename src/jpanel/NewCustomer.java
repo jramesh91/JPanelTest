@@ -16,11 +16,14 @@ import javax.swing.JTextField;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
+
+import businessProcess.NewCustomerEntry;
+
 import javax.swing.JTextPane;
 import java.awt.Font;
 
 //THis is for Getting Customer Details
-public class FirstForm extends JFrame{  
+public class NewCustomer extends JFrame{  
 	 private JLabel labelUsername = new JLabel("Something");
 	    private JLabel labelPassword = new JLabel("Nothing");
 	    private JTextField textUsername = new JTextField(20);
@@ -32,11 +35,12 @@ public class FirstForm extends JFrame{
 	    private JTextField textField_4;
 	    private JTextField textField_5;
 	    private JTextField textField_6;
+	    private static double customer_id = Math.random();
 	     //This is the login page
 	    
 	    
 	    
-	    public FirstForm() {
+	    public NewCustomer() {
 	        super("JPanel Demo Program");
 	        JPanel newPanel = new JPanel();
 	        GridBagLayout gbl_newPanel = new GridBagLayout();
@@ -78,6 +82,7 @@ public class FirstForm extends JFrame{
 	        gbc_textField_6.gridy = 1;
 	        newPanel.add(textField_6, gbc_textField_6);
 	        textField_6.setColumns(10);
+	        textField_6.setText(String.valueOf(customer_id));
 	        
 	        JTextPane txtpnFullName = new JTextPane();
 	        txtpnFullName.setText("Full Name");
@@ -188,6 +193,7 @@ public class FirstForm extends JFrame{
 	        newPanel.add(btnCancel, gbc_btnCancel);
 	        
 	        JButton btnAddMoreDetails = new JButton("Add more details...");
+	        NewCustomerEntry.saveCustomerDetails(4000, textField.getText(),textField_1.getText(), textField_2.getText(), textField_3.getText(),textField_4.getText(), textField_5.getText());
 	        GridBagConstraints gbc_btnAddMoreDetails = new GridBagConstraints();
 	        gbc_btnAddMoreDetails.gridx = 3;
 	        gbc_btnAddMoreDetails.gridy = 9;
