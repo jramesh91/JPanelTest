@@ -203,7 +203,6 @@ public class NewCustomer extends JFrame{
 	        //Update the table with the data
 		btnAddMoreDetails.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				NewCustomerEntry.saveCustomerDetails(4000, textField.getText(), textField_1.getText(),
 						textField_2.getText(), textField_3.getText(), textField_4.getText(), textField_5.getText());
 
