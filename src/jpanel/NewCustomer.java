@@ -193,11 +193,23 @@ public class NewCustomer extends JFrame{
 	        newPanel.add(btnCancel, gbc_btnCancel);
 	        
 	        JButton btnAddMoreDetails = new JButton("Add more details...");
-	        NewCustomerEntry.saveCustomerDetails(4000, textField.getText(),textField_1.getText(), textField_2.getText(), textField_3.getText(),textField_4.getText(), textField_5.getText());
-	        GridBagConstraints gbc_btnAddMoreDetails = new GridBagConstraints();
+	         GridBagConstraints gbc_btnAddMoreDetails = new GridBagConstraints();
 	        gbc_btnAddMoreDetails.gridx = 3;
 	        gbc_btnAddMoreDetails.gridy = 9;
 	        newPanel.add(btnAddMoreDetails, gbc_btnAddMoreDetails);
+	        
+	        
+	        
+	        //Update the table with the data
+		btnAddMoreDetails.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				NewCustomerEntry.saveCustomerDetails(4000, textField.getText(), textField_1.getText(),
+						textField_2.getText(), textField_3.getText(), textField_4.getText(), textField_5.getText());
+
+			}
+
+		});
 	         
 	        pack();
 	        setLocationRelativeTo(null);
