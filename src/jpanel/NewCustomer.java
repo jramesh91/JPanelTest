@@ -63,13 +63,13 @@ public class NewCustomer extends JFrame{
 	        gbc_txtpnNewCustomerEntry.gridy = 0;
 	        newPanel.add(txtpnNewCustomerEntry, gbc_txtpnNewCustomerEntry);
 	        
-	        JTextPane txtpnCustomerId = new JTextPane();
-	        txtpnCustomerId.setText("Customer ID");
-	        GridBagConstraints gbc_txtpnCustomerId = new GridBagConstraints();
-	        gbc_txtpnCustomerId.insets = new Insets(0, 0, 5, 5);
-	        gbc_txtpnCustomerId.gridx = 1;
-	        gbc_txtpnCustomerId.gridy = 1;
-	        newPanel.add(txtpnCustomerId, gbc_txtpnCustomerId);
+	        JLabel lblCustomerId = new JLabel("Customer ID");
+	        GridBagConstraints gbc_lblCustomerId = new GridBagConstraints();
+	        gbc_lblCustomerId.insets = new Insets(0, 0, 5, 5);
+	        gbc_lblCustomerId.anchor = GridBagConstraints.EAST;
+	        gbc_lblCustomerId.gridx = 1;
+	        gbc_lblCustomerId.gridy = 1;
+	        newPanel.add(lblCustomerId, gbc_lblCustomerId);
 	        
 	        textField_6 = new JTextField();
 	        GridBagConstraints gbc_textField_6 = new GridBagConstraints();
@@ -81,13 +81,14 @@ public class NewCustomer extends JFrame{
 	        textField_6.setColumns(10);
 	        textField_6.setText(String.valueOf(customer_id));
 	        
-	        JTextPane txtpnFullName = new JTextPane();
-	        txtpnFullName.setText("Full Name");
-	        GridBagConstraints gbc_txtpnFullName = new GridBagConstraints();
-	        gbc_txtpnFullName.insets = new Insets(0, 0, 5, 5);
-	        gbc_txtpnFullName.gridx = 1;
-	        gbc_txtpnFullName.gridy = 2;
-	        newPanel.add(txtpnFullName, gbc_txtpnFullName);
+	        JLabel lblFullName = new JLabel("Full Name");
+	        GridBagConstraints gbc_lblFullName = new GridBagConstraints();
+	        gbc_lblFullName.insets = new Insets(0, 0, 5, 5);
+	        gbc_lblFullName.anchor = GridBagConstraints.EAST;
+	        gbc_lblFullName.gridx = 1;
+	        gbc_lblFullName.gridy = 2;
+	        newPanel.add(lblFullName, gbc_lblFullName);
+
 	        
 	        textField = new JTextField();
 	        GridBagConstraints gbc_textField = new GridBagConstraints();
@@ -97,13 +98,14 @@ public class NewCustomer extends JFrame{
 	        newPanel.add(textField, gbc_textField);
 	        textField.setColumns(10);
 	        
-	        JTextPane txtpnDoorNumber = new JTextPane();
-	        txtpnDoorNumber.setText("Door Number");
-	        GridBagConstraints gbc_txtpnDoorNumber = new GridBagConstraints();
-	        gbc_txtpnDoorNumber.insets = new Insets(0, 0, 5, 5);
-	        gbc_txtpnDoorNumber.gridx = 1;
-	        gbc_txtpnDoorNumber.gridy = 3;
-	        newPanel.add(txtpnDoorNumber, gbc_txtpnDoorNumber);
+	        JLabel lblDoor = new JLabel("Door Number");
+	        GridBagConstraints gbc_lblDoor = new GridBagConstraints();
+	        gbc_lblDoor.insets = new Insets(0, 0, 5, 5);
+	        gbc_lblDoor.anchor = GridBagConstraints.EAST;
+	        gbc_lblDoor.gridx = 1;
+	        gbc_lblDoor.gridy = 3;
+	        newPanel.add(lblDoor, gbc_lblDoor);
+
 	        
 	        textField_1 = new JTextField();
 	        GridBagConstraints gbc_textField_1 = new GridBagConstraints();
@@ -114,13 +116,13 @@ public class NewCustomer extends JFrame{
 	        newPanel.add(textField_1, gbc_textField_1);
 	        textField_1.setColumns(10);
 	        
-	        JTextPane txtpnStreetName = new JTextPane();
-	        txtpnStreetName.setText("Street Name");
-	        GridBagConstraints gbc_txtpnStreetName = new GridBagConstraints();
-	        gbc_txtpnStreetName.insets = new Insets(0, 0, 5, 5);
-	        gbc_txtpnStreetName.gridx = 1;
-	        gbc_txtpnStreetName.gridy = 4;
-	        newPanel.add(txtpnStreetName, gbc_txtpnStreetName);
+	        JLabel lblStreetNumber = new JLabel("Street Name");
+	        GridBagConstraints gbc_lblStreetNumber = new GridBagConstraints();
+	        gbc_lblStreetNumber.insets = new Insets(0, 0, 5, 5);
+	        gbc_lblStreetNumber.anchor = GridBagConstraints.EAST;
+	        gbc_lblStreetNumber.gridx = 1;
+	        gbc_lblStreetNumber.gridy = 4;
+	        newPanel.add(lblStreetNumber, gbc_lblStreetNumber);
 	        
 	        textField_2 = new JTextField();
 	        GridBagConstraints gbc_textField_2 = new GridBagConstraints();
@@ -131,13 +133,13 @@ public class NewCustomer extends JFrame{
 	        newPanel.add(textField_2, gbc_textField_2);
 	        textField_2.setColumns(10);
 	        
-	        JTextPane txtpnCity = new JTextPane();
-	        txtpnCity.setText("City");
-	        GridBagConstraints gbc_txtpnCity = new GridBagConstraints();
-	        gbc_txtpnCity.insets = new Insets(0, 0, 5, 5);
-	        gbc_txtpnCity.gridx = 1;
-	        gbc_txtpnCity.gridy = 5;
-	        newPanel.add(txtpnCity, gbc_txtpnCity);
+	        JLabel lblCity = new JLabel("City");
+	        GridBagConstraints gbc_lblCity = new GridBagConstraints();
+	        gbc_lblCity.insets = new Insets(0, 0, 5, 5);
+	        gbc_lblCity.anchor = GridBagConstraints.EAST;
+	        gbc_lblCity.gridx = 1;
+	        gbc_lblCity.gridy = 5;
+	        newPanel.add(lblCity, gbc_lblCity);
 	        
 	        textField_3 = new JTextField();
 	        GridBagConstraints gbc_textField_3 = new GridBagConstraints();
@@ -148,13 +150,13 @@ public class NewCustomer extends JFrame{
 	        newPanel.add(textField_3, gbc_textField_3);
 	        textField_3.setColumns(10);
 	        
-	        JTextPane txtpnState = new JTextPane();
-	        txtpnState.setText("State");
-	        GridBagConstraints gbc_txtpnState = new GridBagConstraints();
-	        gbc_txtpnState.insets = new Insets(0, 0, 5, 5);
-	        gbc_txtpnState.gridx = 1;
-	        gbc_txtpnState.gridy = 6;
-	        newPanel.add(txtpnState, gbc_txtpnState);
+	        JLabel lblState = new JLabel("State");
+	        GridBagConstraints gbc_lblState = new GridBagConstraints();
+	        gbc_lblState.insets = new Insets(0, 0, 5, 5);
+	        gbc_lblState.anchor = GridBagConstraints.EAST;
+	        gbc_lblState.gridx = 1;
+	        gbc_lblState.gridy = 6;
+	        newPanel.add(lblState, gbc_lblState);;
 	        
 	        textField_4 = new JTextField();
 	        GridBagConstraints gbc_textField_4 = new GridBagConstraints();
@@ -165,13 +167,13 @@ public class NewCustomer extends JFrame{
 	        newPanel.add(textField_4, gbc_textField_4);
 	        textField_4.setColumns(10);
 	        
-	        JTextPane txtpnPinCode = new JTextPane();
-	        txtpnPinCode.setText("Pin Code");
-	        GridBagConstraints gbc_txtpnPinCode = new GridBagConstraints();
-	        gbc_txtpnPinCode.insets = new Insets(0, 0, 5, 5);
-	        gbc_txtpnPinCode.gridx = 1;
-	        gbc_txtpnPinCode.gridy = 7;
-	        newPanel.add(txtpnPinCode, gbc_txtpnPinCode);
+	        JLabel lblPincode = new JLabel("Pincode");
+	        GridBagConstraints gbc_lblPincode = new GridBagConstraints();
+	        gbc_lblPincode.insets = new Insets(0, 0, 5, 5);
+	        gbc_lblPincode.anchor = GridBagConstraints.EAST;
+	        gbc_lblPincode.gridx = 1;
+	        gbc_lblPincode.gridy = 7;
+	        newPanel.add(lblPincode, gbc_lblPincode);
 	        
 	        textField_5 = new JTextField();
 	        GridBagConstraints gbc_textField_5 = new GridBagConstraints();
