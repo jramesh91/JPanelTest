@@ -206,6 +206,23 @@ public class NewCustomer extends JFrame{
 			}
 
 		});
+		
+		
+		//Button to go into New Sub entry page
+		btnAddMoreDetails.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						if(e.getSource()==btnAddMoreDetails)
+						{System.out.println("This is redirected to Subscription Page");
+						dispose();
+						new SubscriptionPage().setVisible(true);
+						}
+					
+					}
+				});
+				
 	         
 	        pack();
 	        setLocationRelativeTo(null);

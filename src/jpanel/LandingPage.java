@@ -95,21 +95,7 @@ public class LandingPage extends JFrame{
 		
 		
 		//This is for the first form
-  btnNewButton.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				if(e.getSource()==btnNewButton)
-				{
-					System.out.println("This is redirected to the First Form");
-					dispose();
-					new NewCustomer().setVisible(true);
-				}
-			
-			
-			}
-		});
+ 
 		
 		JButton btnNewButton_1 = new JButton("Search Customer");
 		btnNewButton_1.setBackground(Color.CYAN);
@@ -122,29 +108,7 @@ public class LandingPage extends JFrame{
 		panel.add(btnNewButton_1, gbc_btnNewButton_1);
 		
 		
-		btnNewButton_1.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				if(e.getSource()==btnNewButton_1)
-				{System.out.println("This is redirected to Search Customer");
-				dispose();
-				new SearchCustomer().setVisible(true);
-				}
-				
-				
-				
-				if(e.getSource()==btnNewButton)
-				{
-					System.out.println("This is redirected to the First Form");
-					dispose();
-					new NewCustomer().setVisible(true);
-				}
-			
-			
-			}
-		});
+		
 		
 		JButton btnNewButton_2 = new JButton("Generate Report");
 		btnNewButton_2.setBackground(Color.ORANGE);
@@ -157,7 +121,7 @@ public class LandingPage extends JFrame{
 		panel.add(btnNewButton_2, gbc_btnNewButton_2);
 		
 		
-		JButton btnNewButton_3 = new JButton("TBD!");
+		JButton btnNewButton_3 = new JButton("Add new subscription");
 		btnNewButton_3.setBackground(Color.GREEN);
 		GridBagConstraints gbc_btnNewButton_3 = new GridBagConstraints();
 		gbc_btnNewButton_3.insets = new Insets(0, 0, 5, 5);
@@ -165,6 +129,55 @@ public class LandingPage extends JFrame{
 		gbc_btnNewButton_3.gridx = 4;
 		gbc_btnNewButton_3.gridy = 5;
 		panel.add(btnNewButton_3, gbc_btnNewButton_3);
+		
+		
+		//BUtto to get into New Customer page
+		 btnNewButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					if(e.getSource()==btnNewButton)
+					{
+						System.out.println("This is redirected to the First Form");
+						dispose();
+						new NewCustomer().setVisible(true);
+					}
+				
+				
+				}
+			});
+		
+		//Button to go to Search customer Page
+		btnNewButton_1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if(e.getSource()==btnNewButton_1)
+				{System.out.println("This is redirected to Search Customer");
+				dispose();
+				new SearchCustomer().setVisible(true);
+				}
+			
+			}
+		});
+		
+		
+		//Button to go into New Sub entry page
+		btnNewButton_3.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if(e.getSource()==btnNewButton_3)
+				{System.out.println("This is redirected to Subscription Page");
+				dispose();
+				new SubscriptionPage().setVisible(true);
+				}
+			
+			}
+		});
 		
 		pack();
 		setLocationRelativeTo(null);
