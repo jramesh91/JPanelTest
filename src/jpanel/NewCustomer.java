@@ -211,7 +211,7 @@ public class NewCustomer extends JFrame{
 		//Button to go into New Sub entry page
 		btnAddMoreDetails.addActionListener(new ActionListener() {
 					
-					@Override
+					@Override 
 					public void actionPerformed(ActionEvent e) {
 						// TODO Auto-generated method stub
 						if(e.getSource()==btnAddMoreDetails)

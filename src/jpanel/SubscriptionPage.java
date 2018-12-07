@@ -188,7 +188,7 @@ public class SubscriptionPage extends JFrame{
 	        gbc_btnAddMoreDetails.gridy = 9;
 	        newPanel.add(btnAddMoreDetails, gbc_btnAddMoreDetails);
 	        
-	        
+	          //
 	        
 	        //Update the table with the data
 		btnAddMoreDetails.addActionListener(new ActionListener() {
