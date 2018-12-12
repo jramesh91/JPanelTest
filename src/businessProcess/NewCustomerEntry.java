@@ -17,8 +17,8 @@ public class NewCustomerEntry {
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
@@ -28,25 +28,6 @@ public class NewCustomerEntry {
 			String sq = "insert into CUSTOMER(Customer_id,Last_Name,Door_Number,Street_Name,City,State,PinCode) values("+customer_id+",'"+Full_Name+"',"+door_number+",'"+street+"','"+city+"','"+state+"',"+pincode+")";
 			stm.execute(sq);
 			
-			//Try multiple rows to get the password
-			/*while(rs.next()){
-
-			String password = rs.getString("pass");
-			
-			//If the entered password and the password in the databse is the same
-			if(password.equals(Pass))
-			{
-			LoginPage.entry = true;	
-			System.out.println("The output is "+password);
-			
-			}
-			
-			else
-			{
-				//do nothing
-			
-			}
-		}*/
 			//Close the database Connection
 			con.close();
 			

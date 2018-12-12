@@ -14,12 +14,14 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
+import com.toedter.calendar.JCalendar;
+
 import businessProcess.NewCustomerEntry;
+import com.toedter.calendar.JDateChooser;
 
 public class SubscriptionPage extends JFrame{
 
 	 private JTextField textField;
-	    private JTextField textField_1;
 	    private JTextField textField_2;
 	    private JTextField textField_3;
 	    private JTextField textField_4;
@@ -34,9 +36,9 @@ public class SubscriptionPage extends JFrame{
 	        super("JPanel Demo Program");
 	        JPanel newPanel = new JPanel();
 	        GridBagLayout gbl_newPanel = new GridBagLayout();
-	        gbl_newPanel.columnWidths = new int[]{111, 139, 123, 211, 0};
+	        gbl_newPanel.columnWidths = new int[]{111, 139, 123, 0, 211, 0};
 	        gbl_newPanel.rowHeights = new int[]{47, 38, 37, 37, 39, 37, 34, 36, 0, 0, 0};
-	        gbl_newPanel.columnWeights = new double[]{0.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
+	        gbl_newPanel.columnWeights = new double[]{0.0, 1.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
 	        gbl_newPanel.rowWeights = new double[]{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 	        newPanel.setLayout(gbl_newPanel);
 	         
@@ -98,14 +100,13 @@ public class SubscriptionPage extends JFrame{
 	        gbc_txtpnDoorNumber.gridy = 3;
 	        newPanel.add(txtpnDoorNumber, gbc_txtpnDoorNumber);
 	        
-	        textField_1 = new JTextField();
-	        GridBagConstraints gbc_textField_1 = new GridBagConstraints();
-	        gbc_textField_1.insets = new Insets(0, 0, 5, 5);
-	        gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
-	        gbc_textField_1.gridx = 2;
-	        gbc_textField_1.gridy = 3;
-	        newPanel.add(textField_1, gbc_textField_1);
-	        textField_1.setColumns(10);
+	        JDateChooser dateChooser = new JDateChooser();
+	        GridBagConstraints gbc_dateChooser = new GridBagConstraints();
+	        gbc_dateChooser.insets = new Insets(0, 0, 5, 5);
+	        gbc_dateChooser.fill = GridBagConstraints.BOTH;
+	        gbc_dateChooser.gridx = 2;
+	        gbc_dateChooser.gridy = 3;
+	        newPanel.add(dateChooser, gbc_dateChooser);
 	        
 	        JTextPane txtpnStreetName = new JTextPane();
 	        txtpnStreetName.setText("No. of subscritions");
@@ -184,22 +185,25 @@ public class SubscriptionPage extends JFrame{
 	        
 	        JButton btnAddMoreDetails = new JButton("Save and Exit");
 	         GridBagConstraints gbc_btnAddMoreDetails = new GridBagConstraints();
-	        gbc_btnAddMoreDetails.gridx = 3;
+	        gbc_btnAddMoreDetails.gridx = 4;
 	        gbc_btnAddMoreDetails.gridy = 9;
 	        newPanel.add(btnAddMoreDetails, gbc_btnAddMoreDetails);
 	        
 	          //
 	        
-	        //Update the table with the data
+	       //Update the table with the data
 		btnAddMoreDetails.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				NewCustomerEntry.saveCustomerDetails(4000, textField.getText(), textField_1.getText(),
-						textField_2.getText(), textField_3.getText(), textField_4.getText(), textField_5.getText());
+			System.out.println("The date is "+dateChooser.getDate());
+				//NewCustomerEntry.saveCustomerDetails(4000, textField.getText(), dateChooser.getDateFormatString(),
+						//textField_2.getText(), textField_3.getText(), textField_4.getText(), textField_5.getText());
 
 			}
 
 		});
 	         
+	        
+	        
 	        pack();
 	        setLocationRelativeTo(null);
 	    }
