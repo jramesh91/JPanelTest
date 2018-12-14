@@ -17,6 +17,8 @@ import javax.swing.JTextPane;
 import com.toedter.calendar.JCalendar;
 
 import businessProcess.NewCustomerEntry;
+import businessProcess.NewSubscriptionEntry;
+
 import com.toedter.calendar.JDateChooser;
 
 public class SubscriptionPage extends JFrame{
@@ -194,9 +196,9 @@ public class SubscriptionPage extends JFrame{
 	       //Update the table with the data
 		btnAddMoreDetails.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			System.out.println("The date is "+dateChooser.getDate());
-				//NewCustomerEntry.saveCustomerDetails(4000, textField.getText(), dateChooser.getDateFormatString(),
-						//textField_2.getText(), textField_3.getText(), textField_4.getText(), textField_5.getText());
+			//System.out.println("The date is "+dateChooser.getDate());
+				NewSubscriptionEntry.saveSubscriptionDetails(textField.getText(),4000, dateChooser.getDate().toString(),
+						textField_3.getText());
 
 			}
 
