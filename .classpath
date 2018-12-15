@@ -2,11 +2,11 @@
 <classpath>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="/Users/jramesh/Documents/Scooby Related/JPanelTest/jgoodies-forms-1.8.0-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/jramesh/Documents/Scooby Related/JPanelTest/jgoodies-forms-1.8.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/jramesh/Documents/Scooby Related/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47-bin.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/jramesh/Documents/Scooby Related/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47.jar"/>
-	<classpathentry kind="lib" path="/Users/jramesh/Documents/Scooby Related/jcalendar-1.4.zip"/>
 	<classpathentry kind="lib" path="jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Kashyab/Desktop/New folder/Java/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Kashyab/Desktop/New folder/Java/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Kashyab/Desktop/New folder/Java/JPanelTest/jgoodies-forms-1.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Kashyab/Desktop/New folder/Java/JPanelTest/jgoodies-forms-1.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="Y:/Java/jcalendar-1.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -8,8 +8,10 @@ import java.util.Date;
 public class NewSubscriptionEntry {
 	private static String sub_Start;
 	private static String Sub_End;
-	public static void saveSubscriptionDetails(String sub_id, int customer_id, String date, String amount)
-	{
+	public static void saveSubscriptionDetails(String sub_id, int customer_id, String date, String amount,String msg) //Added "Boolean Message" as a parameter
+	{ 
+		//This variable is only for testing whether the string gets entered in DB-Remarks'Column @15.12.2018
+		String Remarks_Section="This is the Remarks Section";
 		
 		try { 
 			//JDBC Driver Setup
@@ -27,8 +29,8 @@ public class NewSubscriptionEntry {
 			
 			
 			Calculate_subscription(date);
-			
-			String sq = "insert into NEW_SUBSCRIPTION(Subscription_ID,Customer_id,Payment_Date,Number_of_Subscriptions,Amount_Paid,Sub_Start,Sub_End) values('"+sub_id+"',"+customer_id+",'"+date+"','"+amount+"','"+sub_Start+"','"+Sub_End+"')";
+			//@15.12.2018 A few columns have been added and few removed.Do execute the queries in MySql:Check the GDrive for Queries 
+			String sq = "insert into NEW_SUBSCRIPTION(Subscription_ID,Customer_id,Payment_Date,Amount_Paid,Sub_Start,Sub_End,Remarks,isShipped) values('"+sub_id+"',"+customer_id+",'"+date+"','"+amount+"','"+sub_Start+"','"+Sub_End+"','"+Remarks_Section+"','"+msg+"')";
 			stm.execute(sq);
 			
 			//Close the database Connection

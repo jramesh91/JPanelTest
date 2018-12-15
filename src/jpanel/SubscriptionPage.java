@@ -20,6 +20,8 @@ import businessProcess.NewCustomerEntry;
 import businessProcess.NewSubscriptionEntry;
 
 import com.toedter.calendar.JDateChooser;
+import javax.swing.JLabel;
+import javax.swing.JCheckBox;
 
 public class SubscriptionPage extends JFrame{
 
@@ -27,9 +29,9 @@ public class SubscriptionPage extends JFrame{
 	    private JTextField textField_2;
 	    private JTextField textField_3;
 	    private JTextField textField_4;
-	    private JTextField textField_5;
 	    private JTextField textField_6;
 	    private static double customer_id = Math.random();
+	    private JTextField textField_1;
 	     //This is the login page
 	    
 	    
@@ -60,13 +62,13 @@ public class SubscriptionPage extends JFrame{
 	        gbc_txtpnNewCustomerEntry.gridy = 0;
 	        newPanel.add(txtpnNewCustomerEntry, gbc_txtpnNewCustomerEntry);
 	        
-	        JTextPane txtpnCustomerId = new JTextPane();
-	        txtpnCustomerId.setText("Customer ID");
-	        GridBagConstraints gbc_txtpnCustomerId = new GridBagConstraints();
-	        gbc_txtpnCustomerId.insets = new Insets(0, 0, 5, 5);
-	        gbc_txtpnCustomerId.gridx = 1;
-	        gbc_txtpnCustomerId.gridy = 1;
-	        newPanel.add(txtpnCustomerId, gbc_txtpnCustomerId);
+	        JLabel lblCustomerId = new JLabel("Customer ID");
+	        GridBagConstraints gbc_lblCustomerId = new GridBagConstraints();
+	        gbc_lblCustomerId.insets = new Insets(0, 0, 5, 5);
+	        gbc_lblCustomerId.anchor = GridBagConstraints.EAST;
+	        gbc_lblCustomerId.gridx = 1;
+	        gbc_lblCustomerId.gridy = 1;
+	        newPanel.add(lblCustomerId, gbc_lblCustomerId);
 	        
 	        textField_6 = new JTextField();
 	        GridBagConstraints gbc_textField_6 = new GridBagConstraints();
@@ -78,13 +80,13 @@ public class SubscriptionPage extends JFrame{
 	        textField_6.setColumns(10);
 	        textField_6.setText(String.valueOf(customer_id));
 	        
-	        JTextPane txtpnFullName = new JTextPane();
-	        txtpnFullName.setText("Subscription ID");
-	        GridBagConstraints gbc_txtpnFullName = new GridBagConstraints();
-	        gbc_txtpnFullName.insets = new Insets(0, 0, 5, 5);
-	        gbc_txtpnFullName.gridx = 1;
-	        gbc_txtpnFullName.gridy = 2;
-	        newPanel.add(txtpnFullName, gbc_txtpnFullName);
+	        JLabel lblSubscriptionId = new JLabel("Subscription ID");
+	        GridBagConstraints gbc_lblSubscriptionId = new GridBagConstraints();
+	        gbc_lblSubscriptionId.insets = new Insets(0, 0, 5, 5);
+	        gbc_lblSubscriptionId.anchor = GridBagConstraints.EAST;
+	        gbc_lblSubscriptionId.gridx = 1;
+	        gbc_lblSubscriptionId.gridy = 2;
+	        newPanel.add(lblSubscriptionId, gbc_lblSubscriptionId);
 	        
 	        textField = new JTextField();
 	        GridBagConstraints gbc_textField = new GridBagConstraints();
@@ -94,13 +96,12 @@ public class SubscriptionPage extends JFrame{
 	        newPanel.add(textField, gbc_textField);
 	        textField.setColumns(10);
 	        
-	        JTextPane txtpnDoorNumber = new JTextPane();
-	        txtpnDoorNumber.setText("Date of Payment");
-	        GridBagConstraints gbc_txtpnDoorNumber = new GridBagConstraints();
-	        gbc_txtpnDoorNumber.insets = new Insets(0, 0, 5, 5);
-	        gbc_txtpnDoorNumber.gridx = 1;
-	        gbc_txtpnDoorNumber.gridy = 3;
-	        newPanel.add(txtpnDoorNumber, gbc_txtpnDoorNumber);
+	        JLabel lblDateOfPayment = new JLabel("Date of Payment");
+	        GridBagConstraints gbc_lblDateOfPayment = new GridBagConstraints();
+	        gbc_lblDateOfPayment.insets = new Insets(0, 0, 5, 5);
+	        gbc_lblDateOfPayment.gridx = 1;
+	        gbc_lblDateOfPayment.gridy = 3;
+	        newPanel.add(lblDateOfPayment, gbc_lblDateOfPayment);
 	        
 	        JDateChooser dateChooser = new JDateChooser();
 	        GridBagConstraints gbc_dateChooser = new GridBagConstraints();
@@ -110,13 +111,13 @@ public class SubscriptionPage extends JFrame{
 	        gbc_dateChooser.gridy = 3;
 	        newPanel.add(dateChooser, gbc_dateChooser);
 	        
-	        JTextPane txtpnStreetName = new JTextPane();
-	        txtpnStreetName.setText("No. of subscritions");
-	        GridBagConstraints gbc_txtpnStreetName = new GridBagConstraints();
-	        gbc_txtpnStreetName.insets = new Insets(0, 0, 5, 5);
-	        gbc_txtpnStreetName.gridx = 1;
-	        gbc_txtpnStreetName.gridy = 4;
-	        newPanel.add(txtpnStreetName, gbc_txtpnStreetName);
+	        JLabel lblAmountPaid = new JLabel("Amount Paid");
+	        GridBagConstraints gbc_lblAmountPaid = new GridBagConstraints();
+	        gbc_lblAmountPaid.insets = new Insets(0, 0, 5, 5);
+	        gbc_lblAmountPaid.anchor = GridBagConstraints.EAST;
+	        gbc_lblAmountPaid.gridx = 1;
+	        gbc_lblAmountPaid.gridy = 4;
+	        newPanel.add(lblAmountPaid, gbc_lblAmountPaid);
 	        
 	        textField_2 = new JTextField();
 	        GridBagConstraints gbc_textField_2 = new GridBagConstraints();
@@ -127,13 +128,13 @@ public class SubscriptionPage extends JFrame{
 	        newPanel.add(textField_2, gbc_textField_2);
 	        textField_2.setColumns(10);
 	        
-	        JTextPane txtpnCity = new JTextPane();
-	        txtpnCity.setText("Amount Paid");
-	        GridBagConstraints gbc_txtpnCity = new GridBagConstraints();
-	        gbc_txtpnCity.insets = new Insets(0, 0, 5, 5);
-	        gbc_txtpnCity.gridx = 1;
-	        gbc_txtpnCity.gridy = 5;
-	        newPanel.add(txtpnCity, gbc_txtpnCity);
+	        JLabel lblStartDate = new JLabel("Start Date");
+	        GridBagConstraints gbc_lblStartDate = new GridBagConstraints();
+	        gbc_lblStartDate.insets = new Insets(0, 0, 5, 5);
+	        gbc_lblStartDate.anchor = GridBagConstraints.EAST;
+	        gbc_lblStartDate.gridx = 1;
+	        gbc_lblStartDate.gridy = 5;
+	        newPanel.add(lblStartDate, gbc_lblStartDate);
 	        
 	        textField_3 = new JTextField();
 	        GridBagConstraints gbc_textField_3 = new GridBagConstraints();
@@ -144,13 +145,13 @@ public class SubscriptionPage extends JFrame{
 	        newPanel.add(textField_3, gbc_textField_3);
 	        textField_3.setColumns(10);
 	        
-	        JTextPane txtpnState = new JTextPane();
-	        txtpnState.setText("Remaining Balance");
-	        GridBagConstraints gbc_txtpnState = new GridBagConstraints();
-	        gbc_txtpnState.insets = new Insets(0, 0, 5, 5);
-	        gbc_txtpnState.gridx = 1;
-	        gbc_txtpnState.gridy = 6;
-	        newPanel.add(txtpnState, gbc_txtpnState);
+	        JLabel lblEndDate = new JLabel("End Date");
+	        GridBagConstraints gbc_lblEndDate = new GridBagConstraints();
+	        gbc_lblEndDate.insets = new Insets(0, 0, 5, 5);
+	        gbc_lblEndDate.anchor = GridBagConstraints.EAST;
+	        gbc_lblEndDate.gridx = 1;
+	        gbc_lblEndDate.gridy = 6;
+	        newPanel.add(lblEndDate, gbc_lblEndDate);
 	        
 	        textField_4 = new JTextField();
 	        GridBagConstraints gbc_textField_4 = new GridBagConstraints();
@@ -161,22 +162,29 @@ public class SubscriptionPage extends JFrame{
 	        newPanel.add(textField_4, gbc_textField_4);
 	        textField_4.setColumns(10);
 	        
-	        JTextPane txtpnPinCode = new JTextPane();
-	        txtpnPinCode.setText("Remarks*");
-	        GridBagConstraints gbc_txtpnPinCode = new GridBagConstraints();
-	        gbc_txtpnPinCode.insets = new Insets(0, 0, 5, 5);
-	        gbc_txtpnPinCode.gridx = 1;
-	        gbc_txtpnPinCode.gridy = 7;
-	        newPanel.add(txtpnPinCode, gbc_txtpnPinCode);
+	        JLabel lblRemarks = new JLabel("Remarks*");
+	        GridBagConstraints gbc_lblRemarks = new GridBagConstraints();
+	        gbc_lblRemarks.anchor = GridBagConstraints.EAST;
+	        gbc_lblRemarks.insets = new Insets(0, 0, 5, 5);
+	        gbc_lblRemarks.gridx = 1;
+	        gbc_lblRemarks.gridy = 7;
+	        newPanel.add(lblRemarks, gbc_lblRemarks);
 	        
-	        textField_5 = new JTextField();
-	        GridBagConstraints gbc_textField_5 = new GridBagConstraints();
-	        gbc_textField_5.insets = new Insets(0, 0, 5, 5);
-	        gbc_textField_5.fill = GridBagConstraints.HORIZONTAL;
-	        gbc_textField_5.gridx = 2;
-	        gbc_textField_5.gridy = 7;
-	        newPanel.add(textField_5, gbc_textField_5);
-	        textField_5.setColumns(10);
+	        textField_1 = new JTextField();
+	        GridBagConstraints gbc_textField_1 = new GridBagConstraints();
+	        gbc_textField_1.insets = new Insets(0, 0, 5, 5);
+	        gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
+	        gbc_textField_1.gridx = 2;
+	        gbc_textField_1.gridy = 7;
+	        newPanel.add(textField_1, gbc_textField_1);
+	        textField_1.setColumns(10);
+	        
+	        JCheckBox chckbxNewCheckBox = new JCheckBox("Shipped 1st Issue");
+	        GridBagConstraints gbc_chckbxNewCheckBox = new GridBagConstraints();
+	        gbc_chckbxNewCheckBox.insets = new Insets(0, 0, 5, 5);
+	        gbc_chckbxNewCheckBox.gridx = 2;
+	        gbc_chckbxNewCheckBox.gridy = 8;
+	        newPanel.add(chckbxNewCheckBox, gbc_chckbxNewCheckBox);
 	        
 	        JButton btnCancel = new JButton("Cancel");
 	        GridBagConstraints gbc_btnCancel = new GridBagConstraints();
@@ -197,8 +205,19 @@ public class SubscriptionPage extends JFrame{
 		btnAddMoreDetails.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			//System.out.println("The date is "+dateChooser.getDate());
+				String msg="";
+				if(chckbxNewCheckBox.isSelected())
+				{
+					msg="Yes";
+				}
+				else
+				{
+					msg="No";
+				}
+				
+				
 				NewSubscriptionEntry.saveSubscriptionDetails(textField.getText(),4000, dateChooser.getDate().toString(),
-						textField_3.getText());
+								textField_3.getText(),msg);
 
 			}
 
