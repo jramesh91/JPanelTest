@@ -40,6 +40,7 @@ public class LoginPage extends JFrame{
 	 
 	        constraints.gridx = 1;
 	        newPanel.add(textUsername, constraints);
+	        
 	         
 	        constraints.gridx = 0;
 	        constraints.gridy = 1;     

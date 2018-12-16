@@ -10,15 +10,20 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
+
+import javafx.scene.image.Image;
+
 import javax.swing.JTextPane;
 import java.awt.Font;
 import java.awt.Frame;
+import javax.imageio.ImageIO;
 
 import javax.swing.JSplitPane;
 import java.awt.BorderLayout;
@@ -32,6 +37,8 @@ import java.awt.FlowLayout;
 import javax.swing.Box;
 import javax.swing.JComboBox;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
+
 import java.awt.Color;
 import java.awt.SystemColor;
 
@@ -43,9 +50,10 @@ public class LandingPage extends JFrame{
 		JFrame frame= new JFrame();
 		frame.setState(Frame.NORMAL);
 		JPanel panel = new JPanel();
-		getContentPane().add(panel, BorderLayout.CENTER);
+		getContentPane().add(panel, BorderLayout.NORTH);
+		//setContentPane(new JLabel(new ImageIcon("bg.jpg")));
 		GridBagLayout gbl_panel = new GridBagLayout();
-		gbl_panel.columnWidths = new int[]{0, 117, 46, 95, 117, 0, 0, 0};
+		gbl_panel.columnWidths = new int[]{162, 117, 46, 95, 117, 0, 0, 0};
 		gbl_panel.rowHeights = new int[]{20, 0, 55, 29, 46, 46, 0, 0, 0, 0};
 		gbl_panel.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
@@ -58,10 +66,12 @@ public class LandingPage extends JFrame{
 		gbc_lblLibministrator.fill = GridBagConstraints.VERTICAL;
 		gbc_lblLibministrator.insets = new Insets(0, 0, 5, 5);
 		gbc_lblLibministrator.gridheight = 4;
-		gbc_lblLibministrator.gridwidth = 3;
-		gbc_lblLibministrator.gridx = 1;
+		gbc_lblLibministrator.gridwidth = 2;
+		gbc_lblLibministrator.gridx = 2;
 		gbc_lblLibministrator.gridy = 0;
 		panel.add(lblLibministrator, gbc_lblLibministrator);
+		
+		
 		
 		JLabel label = new JLabel("");
 		GridBagConstraints gbc_label = new GridBagConstraints();
@@ -131,6 +141,8 @@ public class LandingPage extends JFrame{
 		panel.add(btnNewButton_3, gbc_btnNewButton_3);
 		
 		
+		
+		
 		//BUtto to get into New Customer page
 		 btnNewButton.addActionListener(new ActionListener() {
 				
@@ -171,12 +183,27 @@ public class LandingPage extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				if(e.getSource()==btnNewButton_3)
-				{System.out.println("This is redirected to Subscription Page");
-				dispose();
-				new SubscriptionPage().setVisible(true);
+				{
+					System.out.println("This is redirected to Subscription Page");
+					dispose();
+					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
+					String a = null;
+					new SubscriptionPage(a).setVisible(true);
 				}
 			
 			}
+		});
+		
+		frame.addWindowListener(new java.awt.event.WindowAdapter() {
+		    @Override
+		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+		        if (JOptionPane.showConfirmDialog(frame, 
+		            "Are you sure you want to close this window?", "Close Window?", 
+		            JOptionPane.YES_NO_OPTION,
+		            JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
+		            System.exit(0);
+		        }
+		    }
 		});
 		
 		pack();

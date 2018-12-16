@@ -32,7 +32,7 @@ public class NewCustomer extends JFrame{
 	    private JTextField textField_4;
 	    private JTextField textField_5;
 	    private JTextField textField_6;
-	    private static double customer_id = Math.random();
+	    private static int customer_id = Math.round(999 + (int)(Math.random() * 9999));
 	     //This is the login page
 	    
 	    
@@ -202,7 +202,7 @@ public class NewCustomer extends JFrame{
 	        //Update the table with the data
 		btnAddMoreDetails.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				NewCustomerEntry.saveCustomerDetails(4000, textField.getText(), textField_1.getText(),
+				NewCustomerEntry.saveCustomerDetails(textField_6.getText(), textField.getText(), textField_1.getText(),
 						textField_2.getText(), textField_3.getText(), textField_4.getText(), textField_5.getText());
 
 			}
@@ -217,9 +217,10 @@ public class NewCustomer extends JFrame{
 					public void actionPerformed(ActionEvent e) {
 						// TODO Auto-generated method stub
 						if(e.getSource()==btnAddMoreDetails)
-						{System.out.println("This is redirected to Subscription Page");
+						{
+							System.out.println("This is redirected to Subscription Page");
 						dispose();
-						new SubscriptionPage().setVisible(true);
+						new SubscriptionPage(textField_6.getText()).setVisible(true);
 						}
 					
 					}

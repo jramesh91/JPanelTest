@@ -27,16 +27,14 @@ public class SubscriptionPage extends JFrame{
 
 	 private JTextField textField;
 	    private JTextField textField_2;
-	    private JTextField textField_3;
-	    private JTextField textField_4;
 	    private JTextField textField_6;
-	    private static double customer_id = Math.random();
+	    private static int subs_id = Math.round(999 + (int)(Math.random() * 9999));
 	    private JTextField textField_1;
 	     //This is the login page
 	    
 	    
 	    
-	    public SubscriptionPage() {
+	    public SubscriptionPage(String cust_id) {
 	        super("JPanel Demo Program");
 	        JPanel newPanel = new JPanel();
 	        GridBagLayout gbl_newPanel = new GridBagLayout();
@@ -73,12 +71,19 @@ public class SubscriptionPage extends JFrame{
 	        textField_6 = new JTextField();
 	        GridBagConstraints gbc_textField_6 = new GridBagConstraints();
 	        gbc_textField_6.insets = new Insets(0, 0, 5, 5);
-	        gbc_textField_6.fill = GridBagConstraints.HORIZONTAL;
 	        gbc_textField_6.gridx = 2;
 	        gbc_textField_6.gridy = 1;
 	        newPanel.add(textField_6, gbc_textField_6);
 	        textField_6.setColumns(10);
-	        textField_6.setText(String.valueOf(customer_id));
+	        
+	        
+	        if(cust_id == null)
+	        textField_6.setText("Enter Customer ID");
+	        else
+	        {
+	        textField_6.setText(cust_id);
+	        textField_6.setEditable(false);
+	        }
 	        
 	        JLabel lblSubscriptionId = new JLabel("Subscription ID");
 	        GridBagConstraints gbc_lblSubscriptionId = new GridBagConstraints();
@@ -95,6 +100,7 @@ public class SubscriptionPage extends JFrame{
 	        gbc_textField.gridy = 2;
 	        newPanel.add(textField, gbc_textField);
 	        textField.setColumns(10);
+	        textField.setText(String.valueOf(subs_id));
 	        
 	        JLabel lblDateOfPayment = new JLabel("Date of Payment");
 	        GridBagConstraints gbc_lblDateOfPayment = new GridBagConstraints();
@@ -106,7 +112,6 @@ public class SubscriptionPage extends JFrame{
 	        JDateChooser dateChooser = new JDateChooser();
 	        GridBagConstraints gbc_dateChooser = new GridBagConstraints();
 	        gbc_dateChooser.insets = new Insets(0, 0, 5, 5);
-	        gbc_dateChooser.fill = GridBagConstraints.BOTH;
 	        gbc_dateChooser.gridx = 2;
 	        gbc_dateChooser.gridy = 3;
 	        newPanel.add(dateChooser, gbc_dateChooser);
@@ -122,7 +127,6 @@ public class SubscriptionPage extends JFrame{
 	        textField_2 = new JTextField();
 	        GridBagConstraints gbc_textField_2 = new GridBagConstraints();
 	        gbc_textField_2.insets = new Insets(0, 0, 5, 5);
-	        gbc_textField_2.fill = GridBagConstraints.HORIZONTAL;
 	        gbc_textField_2.gridx = 2;
 	        gbc_textField_2.gridy = 4;
 	        newPanel.add(textField_2, gbc_textField_2);
@@ -136,14 +140,13 @@ public class SubscriptionPage extends JFrame{
 	        gbc_lblStartDate.gridy = 5;
 	        newPanel.add(lblStartDate, gbc_lblStartDate);
 	        
-	        textField_3 = new JTextField();
-	        GridBagConstraints gbc_textField_3 = new GridBagConstraints();
-	        gbc_textField_3.insets = new Insets(0, 0, 5, 5);
-	        gbc_textField_3.fill = GridBagConstraints.HORIZONTAL;
-	        gbc_textField_3.gridx = 2;
-	        gbc_textField_3.gridy = 5;
-	        newPanel.add(textField_3, gbc_textField_3);
-	        textField_3.setColumns(10);
+	        JDateChooser dateChooser_1 = new JDateChooser();
+	        GridBagConstraints gbc_dateChooser_1 = new GridBagConstraints();
+	        gbc_dateChooser_1.insets = new Insets(0, 0, 5, 5);
+	        gbc_dateChooser_1.fill = GridBagConstraints.VERTICAL;
+	        gbc_dateChooser_1.gridx = 2;
+	        gbc_dateChooser_1.gridy = 5;
+	        newPanel.add(dateChooser_1, gbc_dateChooser_1);
 	        
 	        JLabel lblEndDate = new JLabel("End Date");
 	        GridBagConstraints gbc_lblEndDate = new GridBagConstraints();
@@ -153,14 +156,13 @@ public class SubscriptionPage extends JFrame{
 	        gbc_lblEndDate.gridy = 6;
 	        newPanel.add(lblEndDate, gbc_lblEndDate);
 	        
-	        textField_4 = new JTextField();
-	        GridBagConstraints gbc_textField_4 = new GridBagConstraints();
-	        gbc_textField_4.insets = new Insets(0, 0, 5, 5);
-	        gbc_textField_4.fill = GridBagConstraints.HORIZONTAL;
-	        gbc_textField_4.gridx = 2;
-	        gbc_textField_4.gridy = 6;
-	        newPanel.add(textField_4, gbc_textField_4);
-	        textField_4.setColumns(10);
+	        JDateChooser dateChooser_2 = new JDateChooser();
+	        GridBagConstraints gbc_dateChooser_2 = new GridBagConstraints();
+	        gbc_dateChooser_2.insets = new Insets(0, 0, 5, 5);
+	        gbc_dateChooser_2.fill = GridBagConstraints.VERTICAL;
+	        gbc_dateChooser_2.gridx = 2;
+	        gbc_dateChooser_2.gridy = 6;
+	        newPanel.add(dateChooser_2, gbc_dateChooser_2);
 	        
 	        JLabel lblRemarks = new JLabel("Remarks*");
 	        GridBagConstraints gbc_lblRemarks = new GridBagConstraints();
@@ -173,7 +175,6 @@ public class SubscriptionPage extends JFrame{
 	        textField_1 = new JTextField();
 	        GridBagConstraints gbc_textField_1 = new GridBagConstraints();
 	        gbc_textField_1.insets = new Insets(0, 0, 5, 5);
-	        gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
 	        gbc_textField_1.gridx = 2;
 	        gbc_textField_1.gridy = 7;
 	        newPanel.add(textField_1, gbc_textField_1);
@@ -216,9 +217,9 @@ public class SubscriptionPage extends JFrame{
 				}
 				
 				
-				NewSubscriptionEntry.saveSubscriptionDetails(textField.getText(),4000, dateChooser.getDate().toString(),
-								textField_3.getText(),msg);
-
+				/*NewSubscriptionEntry.saveSubscriptionDetails(textField.getText(),4000, dateChooser.getDate().toString(),
+								);
+*/
 			}
 
 		});

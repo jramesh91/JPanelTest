@@ -9,7 +9,7 @@ import jpanel.LoginPage;
 
 public class NewCustomerEntry {
 	
-	public static void saveCustomerDetails(int customer_id, String Full_Name, String door_number, String street, String city, String state, String pincode )
+	public static void saveCustomerDetails(String customer_id, String Full_Name, String door_number, String street, String city, String state, String pincode )
 	{
 		
 		try { 
