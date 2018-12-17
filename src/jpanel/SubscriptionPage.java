@@ -241,7 +241,7 @@ public class SubscriptionPage extends JFrame{
 						msg="No";
 					}
 					
-					NewSubscriptionEntry.saveSubscriptionDetails(textField.getText(),4000, dateChooser.getDate().toString(),
+					NewSubscriptionEntry.saveSubscriptionDetails(cust_id, dateChooser.getDate().toString(),
 									textField_2.getText(),dateChooser_1.getDate().toString(),dateChooser_2.getDate().toString(), textField_1.getText(),msg);
 
 				}

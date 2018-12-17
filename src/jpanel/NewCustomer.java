@@ -20,6 +20,7 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;*/
 
 import businessProcess.NewCustomerEntry;
+import businessProcess.NewSubscriptionEntry;
 
 import javax.swing.JTextPane;
 import java.awt.Font;
@@ -35,6 +36,7 @@ public class NewCustomer extends JFrame{
 	    private JTextField textField_5;
 	    private JTextField textField_6;
 	    private static int customer_id = Math.round(999 + (int)(Math.random() * 9999));
+	    private static int Sub_id = Math.round(999 + (int)(Math.random() * 9999));
 	     //This is the login page
 	    
 	    
@@ -234,6 +236,9 @@ public class NewCustomer extends JFrame{
 						// TODO Auto-generated method stub
 						if(e.getSource()==btnAddMoreDetails)
 						{
+							
+							//NewSubscriptionEntry.validateSubId(Sub_id);
+							NewSubscriptionEntry.validateSubId(2094);
 							System.out.println("This is redirected to Subscription Page");
 						
 						NewCustomerEntry.saveCustomerDetails(textField_6.getText(), textField.getText(), textField_1.getText(),
