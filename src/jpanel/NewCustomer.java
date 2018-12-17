@@ -8,8 +8,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -62,6 +64,13 @@ public class NewCustomer extends JFrame{
 	        gbc_txtpnNewCustomerEntry.gridx = 0;
 	        gbc_txtpnNewCustomerEntry.gridy = 0;
 	        newPanel.add(txtpnNewCustomerEntry, gbc_txtpnNewCustomerEntry);
+	        
+	        JButton btnLogout = new JButton("Logout");
+	        GridBagConstraints gbc_btnLogout = new GridBagConstraints();
+	        gbc_btnLogout.insets = new Insets(0, 0, 5, 0);
+	        gbc_btnLogout.gridx = 3;
+	        gbc_btnLogout.gridy = 0;
+	        newPanel.add(btnLogout, gbc_btnLogout);
 	        
 	        JLabel lblCustomerId = new JLabel("Customer ID");
 	        GridBagConstraints gbc_lblCustomerId = new GridBagConstraints();
@@ -184,6 +193,13 @@ public class NewCustomer extends JFrame{
 	        newPanel.add(textField_5, gbc_textField_5);
 	        textField_5.setColumns(10);
 	        
+	        JButton btnBack = new JButton("Back");
+	        GridBagConstraints gbc_btnBack = new GridBagConstraints();
+	        gbc_btnBack.insets = new Insets(0, 0, 0, 5);
+	        gbc_btnBack.gridx = 1;
+	        gbc_btnBack.gridy = 9;
+	        newPanel.add(btnBack, gbc_btnBack);
+	        
 	        JButton btnCancel = new JButton("Cancel");
 	        GridBagConstraints gbc_btnCancel = new GridBagConstraints();
 	        gbc_btnCancel.insets = new Insets(0, 0, 0, 5);
@@ -198,12 +214,12 @@ public class NewCustomer extends JFrame{
 	        newPanel.add(btnAddMoreDetails, gbc_btnAddMoreDetails);
 	        
 	        
-	        
+	       
 	        //Update the table with the data
 		btnAddMoreDetails.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				NewCustomerEntry.saveCustomerDetails(textField_6.getText(), textField.getText(), textField_1.getText(),
-						textField_2.getText(), textField_3.getText(), textField_4.getText(), textField_5.getText());
+				
+				
 
 			}
 
@@ -219,12 +235,55 @@ public class NewCustomer extends JFrame{
 						if(e.getSource()==btnAddMoreDetails)
 						{
 							System.out.println("This is redirected to Subscription Page");
-						dispose();
+						
+						NewCustomerEntry.saveCustomerDetails(textField_6.getText(), textField.getText(), textField_1.getText(),
+								textField_2.getText(), textField_3.getText(), textField_4.getText(), textField_5.getText());
 						new SubscriptionPage(textField_6.getText()).setVisible(true);
+						dispose();
 						}
 					
 					}
 				});
+		
+		//Action Listener for the Logout :)  U'ted @17.12.2018
+		btnLogout.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if(e.getSource()==btnLogout)
+				{System.out.println("Confirming....");
+				JDialog.setDefaultLookAndFeelDecorated(true);
+			    int response = JOptionPane.showConfirmDialog(null, "You Sure?You want to Logout?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			    if (response == JOptionPane.NO_OPTION)
+			    {
+			      System.out.println("Confirmation Declined");
+			    } else if (response == JOptionPane.YES_OPTION)
+			    {
+			      System.out.println("Confirmation Accepted");
+			      dispose();
+			      LoginPage.entry=false;
+			      new LoginPage().setVisible(true);
+			    } }
+			
+			}
+		});
+		
+		//Back Button's Action Listener
+		btnBack.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if(e.getSource()==btnBack)
+				{
+					System.out.println("Again to the LANDING PAGE!");
+					dispose();
+					new LandingPage().setVisible(true);
+				}
+			
+			}
+		});
 				
 	         
 	        pack();

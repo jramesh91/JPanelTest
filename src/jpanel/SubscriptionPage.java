@@ -21,7 +21,9 @@ import businessProcess.NewSubscriptionEntry;
 
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JCheckBox;
+import javax.swing.JDialog;
 
 public class SubscriptionPage extends JFrame{
 
@@ -30,7 +32,7 @@ public class SubscriptionPage extends JFrame{
 	    private JTextField textField_6;
 	    private static int subs_id = Math.round(999 + (int)(Math.random() * 9999));
 	    private JTextField textField_1;
-	     //This is the login page
+	 
 	    
 	    
 	    
@@ -59,6 +61,13 @@ public class SubscriptionPage extends JFrame{
 	        gbc_txtpnNewCustomerEntry.gridx = 0;
 	        gbc_txtpnNewCustomerEntry.gridy = 0;
 	        newPanel.add(txtpnNewCustomerEntry, gbc_txtpnNewCustomerEntry);
+	        
+	        JButton btnLogout = new JButton("Logout");
+	        GridBagConstraints gbc_btnLogout = new GridBagConstraints();
+	        gbc_btnLogout.insets = new Insets(0, 0, 5, 0);
+	        gbc_btnLogout.gridx = 4;
+	        gbc_btnLogout.gridy = 0;
+	        newPanel.add(btnLogout, gbc_btnLogout);
 	        
 	        JLabel lblCustomerId = new JLabel("Customer ID");
 	        GridBagConstraints gbc_lblCustomerId = new GridBagConstraints();
@@ -187,6 +196,22 @@ public class SubscriptionPage extends JFrame{
 	        gbc_chckbxNewCheckBox.gridy = 8;
 	        newPanel.add(chckbxNewCheckBox, gbc_chckbxNewCheckBox);
 	        
+	        JButton btnBackToCustomer = new JButton("Back to Customer Entry");
+	        GridBagConstraints gbc_btnBackToCustomer = new GridBagConstraints();
+	        gbc_btnBackToCustomer.insets = new Insets(0, 0, 0, 5);
+	        gbc_btnBackToCustomer.gridx = 0;
+	        gbc_btnBackToCustomer.gridy = 9;
+	        newPanel.add(btnBackToCustomer, gbc_btnBackToCustomer);
+	        
+	        JButton btnBack = new JButton("Back");
+	        GridBagConstraints gbc_btnBack = new GridBagConstraints();
+	        gbc_btnBack.insets = new Insets(0, 0, 0, 5);
+	        gbc_btnBack.gridx = 1;
+	        gbc_btnBack.gridy = 9;
+	        newPanel.add(btnBack, gbc_btnBack);
+	        
+		
+	        
 	        JButton btnCancel = new JButton("Cancel");
 	        GridBagConstraints gbc_btnCancel = new GridBagConstraints();
 	        gbc_btnCancel.insets = new Insets(0, 0, 0, 5);
@@ -200,32 +225,91 @@ public class SubscriptionPage extends JFrame{
 	        gbc_btnAddMoreDetails.gridy = 9;
 	        newPanel.add(btnAddMoreDetails, gbc_btnAddMoreDetails);
 	        
-	          //
+	      
 	        
-	       //Update the table with the data
-		btnAddMoreDetails.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			//System.out.println("The date is "+dateChooser.getDate());
-				String msg="";
-				if(chckbxNewCheckBox.isSelected())
-				{
-					msg="Yes";
-				}
-				else
-				{
-					msg="No";
-				}
-				
-				
-				/*NewSubscriptionEntry.saveSubscriptionDetails(textField.getText(),4000, dateChooser.getDate().toString(),
-								);
-*/
-			}
+	        //Update the table with the data
+			btnAddMoreDetails.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				//System.out.println("The date is "+dateChooser.getDate());
+					String msg="";
+					if(chckbxNewCheckBox.isSelected())
+					{
+						msg="Yes";
+					}
+					else
+					{
+						msg="No";
+					}
+					
+					NewSubscriptionEntry.saveSubscriptionDetails(textField.getText(),4000, dateChooser.getDate().toString(),
+									textField_2.getText(),dateChooser_1.getDate().toString(),dateChooser_2.getDate().toString(), textField_1.getText(),msg);
 
-		});
-	         
+				}
+
+			});
+				
+				
+				//Action Listener for the Logout :)  U'ted @17.12.2018
+				btnLogout.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						if(e.getSource()==btnLogout)
+						{System.out.println("Confirming....");
+						JDialog.setDefaultLookAndFeelDecorated(true);
+					    int response = JOptionPane.showConfirmDialog(null, "You Sure?You want to Logout?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+					    if (response == JOptionPane.NO_OPTION)
+					    {
+					      System.out.println("Confirmation Declined");
+					    } else if (response == JOptionPane.YES_OPTION)
+					    {
+					      System.out.println("Confirmation Accepted");
+					      dispose();
+					      LoginPage.entry=false;
+					      new LoginPage().setVisible(true);
+					    } }
+					
+					}
+				});
+				
+				
+				
+				//Back Button's Action Listener
+				btnBack.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						if(e.getSource()==btnBack)
+						{
+							System.out.println("Again to the LANDING PAGE!");
+							dispose();
+							new LandingPage().setVisible(true);
+						}
+					
+					}
+				});
 	        
+				//Back to Customer Button's Action Listener
+				btnBackToCustomer.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						if(e.getSource()==btnBackToCustomer)
+						{
+							System.out.println("Again to the LANDING PAGE!");
+							dispose();
+							new NewCustomer().setVisible(true);
+						}
+					
+					}
+				});
+			
 	        
+			
+				
 	        pack();
 	        setLocationRelativeTo(null);
 	    }

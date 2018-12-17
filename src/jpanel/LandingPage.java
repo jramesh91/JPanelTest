@@ -36,6 +36,7 @@ import java.awt.FlowLayout;
 
 import javax.swing.Box;
 import javax.swing.JComboBox;
+import javax.swing.JDialog;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 
@@ -205,12 +206,33 @@ public class LandingPage extends JFrame{
 		        }
 		    }
 		});
-		
+		//Action Listener for the Logout :)  U'ted @17.12.2018
+		btnLogout.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if(e.getSource()==btnLogout)
+				{System.out.println("Confirming....");
+				JDialog.setDefaultLookAndFeelDecorated(true);
+			    int response = JOptionPane.showConfirmDialog(null, "You Sure?You want to Logout?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			    if (response == JOptionPane.NO_OPTION)
+			    {
+			      System.out.println("Confirmation Declined");
+			    } else if (response == JOptionPane.YES_OPTION)
+			    {
+			      System.out.println("Confirmation Accepted");
+			      dispose();
+			      LoginPage.entry=false;
+			      new LoginPage().setVisible(true);
+			    } }
+			
+			}
+		});
 		pack();
 		setLocationRelativeTo(null);
 		
-		
-		
+	
 	}
-	}
+	}   
 
