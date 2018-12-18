@@ -59,7 +59,7 @@ public class LandingPage extends JFrame{
 		panel.setBackground(new Color(255, 255, 102));
 		getContentPane().add(panel, BorderLayout.NORTH);
 		panel.*//*getContentPane().*/getContentPane().setLayout(null);
-		setSize(500, 500);
+		setSize(800, 800);
 		
 	   /* JLabel lblWelcomeToJournal = new JLabel("Welcome to Journal Management System");
 	    lblWelcomeToJournal.setHorizontalAlignment(SwingConstants.CENTER);
@@ -104,9 +104,9 @@ public class LandingPage extends JFrame{
 	    txtpnWelcomeToJournal.setBounds(48, 76, 421, 29);
 	    getContentPane().add(txtpnWelcomeToJournal);
 
-		ImageIcon ii = new ImageIcon("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg");
-	    JLabel lable = new JLabel("",new ImageIcon("/Users/jramesh/Documents/Scooby Related/JPanelTest/35650676-journal-pages-background.jpg"),JLabel.CENTER);
-	    lable.setBounds(0, 0, 500, 500);
+		//ImageIcon ii = new ImageIcon("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg");
+	    JLabel lable = new JLabel("",new ImageIcon("back.jpg"),JLabel.CENTER);
+	    lable.setBounds(0, 0, 800, 800);
 	    getContentPane().add(lable);
 	    
 	    

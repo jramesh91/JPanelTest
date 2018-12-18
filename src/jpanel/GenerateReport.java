@@ -47,7 +47,7 @@ public class GenerateReport extends JFrame{
 	       //JLabel lable = new JLabel(ii);
 	       //JScrollPane jsp = new JScrollPane(lable);
 	       //frame.getContentPane().add(jsp);
-	       frame. setSize(500, 500);
+	       frame.setSize(500, 500);
 	       JButton button = new JButton();
 	       button.setSize(new Dimension(50, 50));
 	       button.setLocation(500, 350);
