@@ -19,6 +19,7 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
 
 import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
 
 import javax.swing.JTextPane;
 import java.awt.Font;
@@ -28,6 +29,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JSplitPane;
 import java.awt.BorderLayout;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 import javax.swing.JToggleButton;
 import java.awt.GridLayout;
 import java.awt.Component;
@@ -42,170 +44,167 @@ import javax.swing.ImageIcon;
 
 import java.awt.Color;
 import java.awt.SystemColor;
+import java.awt.Toolkit;
+import javax.swing.SwingConstants;
 
 public class LandingPage extends JFrame{
 	
 	public LandingPage() {
 		
 		super();
-		JFrame frame= new JFrame();
-		frame.setState(Frame.NORMAL);
-		JPanel panel = new JPanel();
+		//setIconImage(Toolkit.getDefaultToolkit().getImage("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg"));
+		/*JFrame frame= new JFrame();
+		frame.setState(Frame.NORMAL);*/
+		/*JPanel panel = new JPanel();
+		panel.setBackground(new Color(255, 255, 102));
 		getContentPane().add(panel, BorderLayout.NORTH);
-		//setContentPane(new JLabel(new ImageIcon("bg.jpg")));
-		GridBagLayout gbl_panel = new GridBagLayout();
-		gbl_panel.columnWidths = new int[]{162, 117, 46, 95, 117, 0, 0, 0};
-		gbl_panel.rowHeights = new int[]{20, 0, 55, 29, 46, 46, 0, 0, 0, 0};
-		gbl_panel.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		panel.setLayout(gbl_panel);
+		panel.*//*getContentPane().*/getContentPane().setLayout(null);
+		setSize(500, 500);
 		
-		JLabel lblLibministrator = new JLabel("LibMinistrator");
+	   /* JLabel lblWelcomeToJournal = new JLabel("Welcome to Journal Management System");
+	    lblWelcomeToJournal.setHorizontalAlignment(SwingConstants.CENTER);
+	    lblWelcomeToJournal.setForeground(new Color(0, 0, 0));
+	    lblWelcomeToJournal.setFont(new Font("Lucida Grande", Font.BOLD, 20));
+	    lblWelcomeToJournal.setBackground(new Color(51, 255, 102));
+	    lblWelcomeToJournal.setBounds(0, 78, 500, 30);
+	    getContentPane().add(lblWelcomeToJournal);*/
+	    
+		JButton btnLogout = new JButton("Logout");
+	    btnLogout.setBounds(362, 23, 117, 29);
+	    getContentPane().add(btnLogout);
+	    
+	    JButton btnNewCustomer = new JButton("New Customer");
+	    btnNewCustomer.setBackground(new Color(204, 255, 255));
+	    btnNewCustomer.setBounds(34, 131, 146, 53);
+	    getContentPane().add(btnNewCustomer);
+	    
+	    JButton btnSearchCustomer = new JButton("Search Customer");
+	    btnSearchCustomer.setBackground(new Color(204, 255, 255));
+	    btnSearchCustomer.setBounds(306, 131, 146, 53);
+	    getContentPane().add(btnSearchCustomer);
+	    
+	    JButton btnNewSubscription = new JButton("New Subscription");
+	    btnNewSubscription.setBackground(new Color(204, 255, 255));
+	    btnNewSubscription.setBounds(34, 260, 146, 53);
+	    getContentPane().add(btnNewSubscription);
+	    
+	    JButton btnGenerateReport = new JButton("Generate Report");
+	    btnGenerateReport.setBackground(new Color(204, 255, 255));
+	    btnGenerateReport.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    	}
+	    });
+	    btnGenerateReport.setBounds(306, 260, 146, 53);
+	    getContentPane().add(btnGenerateReport);
+	    
+	    JTextPane txtpnWelcomeToJournal = new JTextPane();
+	    //txtpnWelcomeToJournal.setBackground(0,0,0,0);
+	    txtpnWelcomeToJournal.setText("Welcome to Journal Management System");
+	    txtpnWelcomeToJournal.setFont(new Font("Lucida Grande", Font.BOLD, 20));
+	    txtpnWelcomeToJournal.setBounds(48, 76, 421, 29);
+	    getContentPane().add(txtpnWelcomeToJournal);
+
+		ImageIcon ii = new ImageIcon("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg");
+	    JLabel lable = new JLabel("",new ImageIcon("/Users/jramesh/Documents/Scooby Related/JPanelTest/35650676-journal-pages-background.jpg"),JLabel.CENTER);
+	    lable.setBounds(0, 0, 500, 500);
+	    getContentPane().add(lable);
+	    
+	    
+	    
+	
+		/*panel.add(lable);*/
+	    setVisible(true);
+	    
+	  //Button to go into New Customer entry page
+	    btnNewCustomer.addActionListener(new ActionListener() {
+	  			
+	  			@Override
+	  			public void actionPerformed(ActionEvent e) {
+	  				// TODO Auto-generated method stub
+	  				if(e.getSource()==btnNewCustomer)
+	  				{
+	  					System.out.println("This is redirected to Subscription Page");
+	  					dispose();
+	  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
+	  					String a = null;
+	  					new NewCustomer().setVisible(true);
+	  				}
+	  			
+	  			}
+	  		});
+	    
+	  //Button to go into New Sub entry page
+	    btnNewSubscription.addActionListener(new ActionListener() {
+	  			
+	  			@Override
+	  			public void actionPerformed(ActionEvent e) {
+	  				// TODO Auto-generated method stub
+	  				if(e.getSource()==btnNewSubscription)
+	  				{
+	  					System.out.println("This is redirected to Subscription Page");
+	  					dispose();
+	  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
+	  					String a = null;
+	  					new SubscriptionPage(a).setVisible(true);
+	  				}
+	  			
+	  			}
+	  		});
+	    
+	  //Button to go into Generate Report entry page
+	    btnGenerateReport.addActionListener(new ActionListener() {
+	  			
+	  			@Override
+	  			public void actionPerformed(ActionEvent e) {
+	  				// TODO Auto-generated method stub
+	  				if(e.getSource()==btnGenerateReport)
+	  				{
+	  					System.out.println("This is redirected to Subscription Page");
+	  					dispose();
+	  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
+	  					String a = null;
+	  					new GenerateReport().setVisible(true);
+	  				}
+	  			
+	  			}
+	  		});
+	    
+	  //Button to go into Search Customer entry page
+	    btnSearchCustomer.addActionListener(new ActionListener() {
+	  			
+	  			@Override
+	  			public void actionPerformed(ActionEvent e) {
+	  				// TODO Auto-generated method stub
+	  				if(e.getSource()==btnSearchCustomer)
+	  				{
+	  					System.out.println("This is redirected to Subscription Page");
+	  					dispose();
+	  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
+	  					String a = null;
+	  					new SearchCustomer().setVisible(true);
+	  				}
+	  			
+	  			}
+	  		});
+		
+		
+		/*JLabel label_1 = new JLabel("");
+		panel.add(label_1);
+		
+		JLabel label_2 = new JLabel("");
+		panel.add(label_2);*/
+		
+		/*JLabel lblLibministrator = new JLabel("LibMinistrator");
 		lblLibministrator.setFont(new Font("Serif", Font.PLAIN, 32));
-		GridBagConstraints gbc_lblLibministrator = new GridBagConstraints();
-		gbc_lblLibministrator.anchor = GridBagConstraints.EAST;
-		gbc_lblLibministrator.fill = GridBagConstraints.VERTICAL;
-		gbc_lblLibministrator.insets = new Insets(0, 0, 5, 5);
-		gbc_lblLibministrator.gridheight = 4;
-		gbc_lblLibministrator.gridwidth = 2;
-		gbc_lblLibministrator.gridx = 2;
-		gbc_lblLibministrator.gridy = 0;
-		panel.add(lblLibministrator, gbc_lblLibministrator);
+		panel.add(lblLibministrator);
 		
 		
 		
 		JLabel label = new JLabel("");
-		GridBagConstraints gbc_label = new GridBagConstraints();
-		gbc_label.fill = GridBagConstraints.BOTH;
-		gbc_label.insets = new Insets(0, 0, 5, 5);
-		gbc_label.gridx = 3;
-		gbc_label.gridy = 0;
-		panel.add(label, gbc_label);
+		panel.add(label);
 		
 		JButton btnLogout = new JButton("Logout");
-		GridBagConstraints gbc_btnLogout = new GridBagConstraints();
-		gbc_btnLogout.insets = new Insets(0, 0, 5, 5);
-		gbc_btnLogout.gridx = 5;
-		gbc_btnLogout.gridy = 1;
-		panel.add(btnLogout, gbc_btnLogout);
-		
-		
-
-		
-		
-		
-		JButton btnNewButton = new JButton("FirstForm");
-		btnNewButton.setBackground(Color.CYAN);
-		btnNewButton.setPreferredSize(new Dimension(80, 40));
-		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.fill = GridBagConstraints.BOTH;
-		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton.gridx = 1;
-		gbc_btnNewButton.gridy = 3;
-		panel.add(btnNewButton, gbc_btnNewButton);
-		
-		
-		//This is for the first form
- 
-		
-		JButton btnNewButton_1 = new JButton("Search Customer");
-		btnNewButton_1.setBackground(Color.CYAN);
-		btnNewButton_1.setPreferredSize(new Dimension(80, 40));
-		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
-		gbc_btnNewButton_1.fill = GridBagConstraints.BOTH;
-		gbc_btnNewButton_1.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton_1.gridx = 4;
-		gbc_btnNewButton_1.gridy = 3;
-		panel.add(btnNewButton_1, gbc_btnNewButton_1);
-		
-		
-		
-		
-		JButton btnNewButton_2 = new JButton("Generate Report");
-		btnNewButton_2.setBackground(Color.ORANGE);
-		btnNewButton_2.setForeground(SystemColor.activeCaptionText);
-		GridBagConstraints gbc_btnNewButton_2 = new GridBagConstraints();
-		gbc_btnNewButton_2.fill = GridBagConstraints.BOTH;
-		gbc_btnNewButton_2.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton_2.gridx = 1;
-		gbc_btnNewButton_2.gridy = 5;
-		panel.add(btnNewButton_2, gbc_btnNewButton_2);
-		
-		
-		JButton btnNewButton_3 = new JButton("Add new subscription");
-		btnNewButton_3.setBackground(Color.GREEN);
-		GridBagConstraints gbc_btnNewButton_3 = new GridBagConstraints();
-		gbc_btnNewButton_3.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton_3.fill = GridBagConstraints.BOTH;
-		gbc_btnNewButton_3.gridx = 4;
-		gbc_btnNewButton_3.gridy = 5;
-		panel.add(btnNewButton_3, gbc_btnNewButton_3);
-		
-		
-		
-		
-		//BUtto to get into New Customer page
-		 btnNewButton.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					// TODO Auto-generated method stub
-					if(e.getSource()==btnNewButton)
-					{
-						System.out.println("This is redirected to the First Form");
-						dispose();
-						new NewCustomer().setVisible(true);
-					}
-				
-				
-				}
-			});
-		
-		//Button to go to Search customer Page
-		btnNewButton_1.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				if(e.getSource()==btnNewButton_1)
-				{System.out.println("This is redirected to Search Customer");
-				dispose();
-				new SearchCustomer().setVisible(true);
-				}
-			
-			}
-		});
-		
-		
-		//Button to go into New Sub entry page
-		btnNewButton_3.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				if(e.getSource()==btnNewButton_3)
-				{
-					System.out.println("This is redirected to Subscription Page");
-					dispose();
-					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
-					String a = null;
-					new SubscriptionPage(a).setVisible(true);
-				}
-			
-			}
-		});
-		
-		frame.addWindowListener(new java.awt.event.WindowAdapter() {
-		    @Override
-		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-		        if (JOptionPane.showConfirmDialog(frame, 
-		            "Are you sure you want to close this window?", "Close Window?", 
-		            JOptionPane.YES_NO_OPTION,
-		            JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
-		            System.exit(0);
-		        }
-		    }
-		});
+		panel.add(btnLogout);
 		//Action Listener for the Logout :)  U'ted @17.12.2018
 		btnLogout.addActionListener(new ActionListener() {
 			
@@ -229,10 +228,180 @@ public class LandingPage extends JFrame{
 			
 			}
 		});
-		pack();
-		setLocationRelativeTo(null);
 		
-	
+		JLabel label_3 = new JLabel("");
+		panel.add(label_3);
+		
+		JLabel label_4 = new JLabel("");
+		panel.add(label_4);
+		
+		JLabel label_5 = new JLabel("");
+		panel.add(label_5);
+		
+		JLabel label_6 = new JLabel("");
+		panel.add(label_6);
+		
+		JLabel label_7 = new JLabel("");
+		panel.add(label_7);
+		
+		JLabel label_8 = new JLabel("");
+		panel.add(label_8);
+		
+		JLabel label_9 = new JLabel("");
+		panel.add(label_9);
+		
+		JLabel label_10 = new JLabel("");
+		panel.add(label_10);
+		
+		JLabel label_11 = new JLabel("");
+		panel.add(label_11);
+		
+		JLabel label_12 = new JLabel("");
+		panel.add(label_12);
+		
+		JLabel label_13 = new JLabel("");
+		panel.add(label_13);
+		
+		JLabel label_14 = new JLabel("");
+		panel.add(label_14);
+		
+		JLabel label_15 = new JLabel("");
+		panel.add(label_15);
+		
+		
+
+		
+		
+		
+		JButton btnNewButton = new JButton("FirstForm");
+		btnNewButton.setBackground(Color.CYAN);
+		btnNewButton.setPreferredSize(new Dimension(80, 40));
+		panel.add(btnNewButton);
+		
+		
+		
+		
+		//BUtto to get into New Customer page
+		 btnNewButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					if(e.getSource()==btnNewButton)
+					{
+						System.out.println("This is redirected to the First Form");
+						dispose();
+						new NewCustomer().setVisible(true);
+					}
+				
+				
+				}
+			});
+		
+		JLabel label_16 = new JLabel("");
+		panel.add(label_16);
+		
+		JLabel label_17 = new JLabel("");
+		panel.add(label_17);
+		
+		
+		//This is for the first form
+ 
+		
+		JButton btnNewButton_1 = new JButton("Search Customer");
+		btnNewButton_1.setBackground(Color.CYAN);
+		btnNewButton_1.setPreferredSize(new Dimension(80, 40));
+		panel.add(btnNewButton_1);
+		
+		//Button to go to Search customer Page
+		btnNewButton_1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if(e.getSource()==btnNewButton_1)
+				{System.out.println("This is redirected to Search Customer");
+				dispose();
+				new SearchCustomer().setVisible(true);
+				}
+			
+			}
+		});
+		*/
+	/*	JLabel label_18 = new JLabel("");
+		panel.add(label_18);
+		
+		JLabel label_19 = new JLabel("");
+		panel.add(label_19);
+		
+		JLabel label_20 = new JLabel("");
+		panel.add(label_20);
+		
+		JLabel label_21 = new JLabel("");
+		panel.add(label_21);
+		
+		JLabel label_22 = new JLabel("");
+		panel.add(label_22);
+		
+		JLabel label_23 = new JLabel("");
+		panel.add(label_23);
+		
+		JLabel label_24 = new JLabel("");
+		panel.add(label_24);
+		
+		JLabel label_25 = new JLabel("");
+		panel.add(label_25);
+		
+		
+		*/
+	/*	
+		JButton btnNewButton_2 = new JButton("Generate Report");
+		btnNewButton_2.setBackground(Color.ORANGE);
+		btnNewButton_2.setForeground(SystemColor.activeCaptionText);
+		panel.add(btnNewButton_2);
+		
+		//Button to go into New Sub entry page
+				btnNewButton_2.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						if(e.getSource()==btnNewButton_2)
+						{
+							System.out.println("This is redirected to Subscription Page");
+							dispose();
+							//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
+							new GenerateReport().setVisible(true);
+						}
+					
+					}
+				});
+		
+		JLabel label_26 = new JLabel("");
+		panel.add(label_26);
+		
+		JLabel label_27 = new JLabel("");
+		panel.add(label_27);*/
+		
+		
+		/*JButton btnNewButton_3 = new JButton("Add new subscription");
+		btnNewButton_3.setBackground(Color.GREEN);
+		panel.add(btnNewButton_3);
+		
+		
+		
+		
+		JLabel label_28 = new JLabel("");
+		panel.add(label_28);
+		
+		JLabel label_29 = new JLabel("");
+		panel.add(label_29);
+		
+		*/
+	/*	pack();
+		setLocationRelativeTo(null);*/
+		
+	    
 	}
 	}   
 

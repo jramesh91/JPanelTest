@@ -1,5 +1,6 @@
 package jpanel;
 
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -8,9 +9,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
@@ -24,6 +27,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JCheckBox;
 import javax.swing.JDialog;
+import java.awt.GridLayout;
+import java.awt.Toolkit;
 
 public class GenerateReport extends JFrame{
 	    private static int subs_id = Math.round(999 + (int)(Math.random() * 9999));
@@ -32,14 +37,30 @@ public class GenerateReport extends JFrame{
 	    
 	    
 	    public GenerateReport() {
+	    	
 	        super("JPanel Demo Program");
+	        System.out.println("Entered Generate Panel");
+	        JFrame frame = new JFrame("main");
+	        //frame.setIconImage(Toolkit.getDefaultToolkit().getImage("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg"));
+	        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	      // ImageIcon ii = new ImageIcon("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg");
+	       //JLabel lable = new JLabel(ii);
+	       //JScrollPane jsp = new JScrollPane(lable);
+	       //frame.getContentPane().add(jsp);
+	       frame. setSize(500, 500);
+	       JButton button = new JButton();
+	       button.setSize(new Dimension(50, 50));
+	       button.setLocation(500, 350);
+	      frame.getContentPane().add(button);
+	      
+	 frame.setVisible(true);
+
+	        /*JFrame frame = new JFrame("main");
+	        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	        JPanel newPanel = new JPanel();
-	        GridBagLayout gbl_newPanel = new GridBagLayout();
-	        gbl_newPanel.columnWidths = new int[]{111, 139, 123, 0, 211, 0};
-	        gbl_newPanel.rowHeights = new int[]{47, 38, 37, 37, 39, 37, 34, 36, 0, 0, 0};
-	        gbl_newPanel.columnWeights = new double[]{0.0, 1.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
-	        gbl_newPanel.rowWeights = new double[]{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-	        newPanel.setLayout(gbl_newPanel);
+	        setContentPane(new JLabel(new ImageIcon("bg.jpg")));
+	        frame. setSize(1000, 700);
+	        
 	         
 	        // set border for the panel
 	        newPanel.setBorder(BorderFactory.createTitledBorder(
@@ -47,44 +68,23 @@ public class GenerateReport extends JFrame{
 	         
 	        // add the panel to this frame
 	        getContentPane().add(newPanel);
+	        newPanel.setLayout(new GridLayout(1, 0, 0, 0));
 	        
 	        JTextPane txtpnNewCustomerEntry = new JTextPane();
 	        txtpnNewCustomerEntry.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
 	        txtpnNewCustomerEntry.setText("Generate the report for the Annual Year");
-	        GridBagConstraints gbc_txtpnNewCustomerEntry = new GridBagConstraints();
-	        gbc_txtpnNewCustomerEntry.insets = new Insets(0, 0, 5, 5);
-	        gbc_txtpnNewCustomerEntry.gridx = 0;
-	        gbc_txtpnNewCustomerEntry.gridy = 0;
-	        newPanel.add(txtpnNewCustomerEntry, gbc_txtpnNewCustomerEntry);
+	        
 	        
 	        JButton btnLogout = new JButton("Logout");
-	        GridBagConstraints gbc_btnLogout = new GridBagConstraints();
-	        gbc_btnLogout.insets = new Insets(0, 0, 5, 0);
-	        gbc_btnLogout.gridx = 4;
-	        gbc_btnLogout.gridy = 0;
-	        newPanel.add(btnLogout, gbc_btnLogout);
-	        
+	      
 	  
 	        JButton btnBack = new JButton("Back");
-	        GridBagConstraints gbc_btnBack = new GridBagConstraints();
-	        gbc_btnBack.insets = new Insets(0, 0, 0, 5);
-	        gbc_btnBack.gridx = 1;
-	        gbc_btnBack.gridy = 9;
-	        newPanel.add(btnBack, gbc_btnBack);
 	        
 	        JButton btnCancel = new JButton("Cancel");
-	        GridBagConstraints gbc_btnCancel = new GridBagConstraints();
-	        gbc_btnCancel.insets = new Insets(0, 0, 0, 5);
-	        gbc_btnCancel.gridx = 2;
-	        gbc_btnCancel.gridy = 9;
-	        newPanel.add(btnCancel, gbc_btnCancel);
+	        
 	        
 	        JButton btnAddMoreDetails = new JButton("Generate");
-	         GridBagConstraints gbc_btnAddMoreDetails = new GridBagConstraints();
-	        gbc_btnAddMoreDetails.gridx = 4;
-	        gbc_btnAddMoreDetails.gridy = 9;
-	        newPanel.add(btnAddMoreDetails, gbc_btnAddMoreDetails);
-	        
+	      
 	          //
 	        
 	    //Back Button's Action Listener
@@ -127,9 +127,9 @@ public class GenerateReport extends JFrame{
 					
 					}
 				});
+	        */
 	        
-	        
-	        pack();
-	        setLocationRelativeTo(null);
+	        /*pack();
+	        setLocationRelativeTo(null);*/
 	    }
 }
