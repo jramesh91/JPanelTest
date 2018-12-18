@@ -25,6 +25,7 @@ import businessProcess.NewSubscriptionEntry;
 
 import javax.swing.JTextPane;
 import java.awt.Font;
+import java.awt.Color;
 
 //THis is for Getting Customer Details
 public class NewCustomer extends JFrame{  
@@ -49,6 +50,7 @@ public class NewCustomer extends JFrame{
 			// add the panel to this frame
 	        getContentPane().setLayout(null);
 	        setSize(800, 800);
+	        setLocation(450,150);
 	        
 	        JTextPane txtpnNewCustomerEntry = new JTextPane();
 	        txtpnNewCustomerEntry.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 32));
@@ -61,6 +63,7 @@ public class NewCustomer extends JFrame{
 	        getContentPane().add(btnLogout);
 	        
 	        JLabel lblCustomerId = new JLabel("Customer ID");
+	        lblCustomerId.setForeground(new Color(255, 204, 0));
 	        lblCustomerId.setFont(new Font("Courier", Font.BOLD, 16));
 	        lblCustomerId.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
 	        lblCustomerId.setBounds(282, 105, 130, 26);
@@ -74,6 +77,7 @@ public class NewCustomer extends JFrame{
 	        textField_6.setText(String.valueOf(customer_id));
 	        
 	        JLabel lblFullName = new JLabel("Full Name");
+	        lblFullName.setForeground(new Color(255, 204, 0));
 	        lblFullName.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
 	        lblFullName.setBounds(282, 158, 130, 26);
 	        getContentPane().add(lblFullName);
@@ -85,6 +89,7 @@ public class NewCustomer extends JFrame{
 	        textField.setColumns(10);
 	        
 	        JLabel lblDoor = new JLabel("Door Number");
+	        lblDoor.setForeground(new Color(255, 204, 0));
 	        lblDoor.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
 	        lblDoor.setBounds(282, 204, 130, 26);
 	        getContentPane().add(lblDoor);
@@ -96,6 +101,7 @@ public class NewCustomer extends JFrame{
 	        textField_1.setColumns(10);
 	        
 	        JLabel lblStreetNumber = new JLabel("Street Name");
+	        lblStreetNumber.setForeground(new Color(255, 204, 0));
 	        lblStreetNumber.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
 	        lblStreetNumber.setBounds(282, 256, 130, 26);
 	        getContentPane().add(lblStreetNumber);
@@ -107,6 +113,7 @@ public class NewCustomer extends JFrame{
 	        textField_2.setColumns(10);
 	        
 	        JLabel lblCity = new JLabel("City");
+	        lblCity.setForeground(new Color(255, 204, 0));
 	        lblCity.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
 	        lblCity.setBounds(282, 302, 130, 26);
 	        getContentPane().add(lblCity);
@@ -118,6 +125,7 @@ public class NewCustomer extends JFrame{
 	        textField_3.setColumns(10);
 	        
 	        JLabel lblState = new JLabel("State");
+	        lblState.setForeground(new Color(255, 204, 0));
 	        lblState.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
 	        lblState.setBounds(282, 343, 130, 26);
 	        getContentPane().add(lblState);
@@ -129,6 +137,7 @@ public class NewCustomer extends JFrame{
 	        textField_4.setColumns(10);
 	        
 	        JLabel lblPincode = new JLabel("Pincode");
+	        lblPincode.setForeground(new Color(255, 204, 0));
 	        lblPincode.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
 	        lblPincode.setBounds(282, 387, 130, 26);
 	        getContentPane().add(lblPincode);

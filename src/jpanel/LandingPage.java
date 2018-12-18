@@ -60,6 +60,7 @@ public class LandingPage extends JFrame{
 		getContentPane().add(panel, BorderLayout.NORTH);
 		panel.*//*getContentPane().*/getContentPane().setLayout(null);
 		setSize(800, 800);
+		setLocation(450,150);
 		
 	   /* JLabel lblWelcomeToJournal = new JLabel("Welcome to Journal Management System");
 	    lblWelcomeToJournal.setHorizontalAlignment(SwingConstants.CENTER);
@@ -70,22 +71,22 @@ public class LandingPage extends JFrame{
 	    getContentPane().add(lblWelcomeToJournal);*/
 	    
 		JButton btnLogout = new JButton("Logout");
-	    btnLogout.setBounds(362, 23, 117, 29);
+	    btnLogout.setBounds(662, 20, 117, 29);
 	    getContentPane().add(btnLogout);
 	    
 	    JButton btnNewCustomer = new JButton("New Customer");
 	    btnNewCustomer.setBackground(new Color(204, 255, 255));
-	    btnNewCustomer.setBounds(34, 131, 146, 53);
+	    btnNewCustomer.setBounds(115, 151, 146, 53);
 	    getContentPane().add(btnNewCustomer);
 	    
 	    JButton btnSearchCustomer = new JButton("Search Customer");
 	    btnSearchCustomer.setBackground(new Color(204, 255, 255));
-	    btnSearchCustomer.setBounds(306, 131, 146, 53);
+	    btnSearchCustomer.setBounds(565, 151, 146, 53);
 	    getContentPane().add(btnSearchCustomer);
 	    
 	    JButton btnNewSubscription = new JButton("New Subscription");
 	    btnNewSubscription.setBackground(new Color(204, 255, 255));
-	    btnNewSubscription.setBounds(34, 260, 146, 53);
+	    btnNewSubscription.setBounds(115, 336, 146, 53);
 	    getContentPane().add(btnNewSubscription);
 	    
 	    JButton btnGenerateReport = new JButton("Generate Report");
@@ -94,14 +95,16 @@ public class LandingPage extends JFrame{
 	    	public void actionPerformed(ActionEvent e) {
 	    	}
 	    });
-	    btnGenerateReport.setBounds(306, 260, 146, 53);
+	    btnGenerateReport.setBounds(576, 336, 146, 53);
 	    getContentPane().add(btnGenerateReport);
 	    
 	    JTextPane txtpnWelcomeToJournal = new JTextPane();
+	    txtpnWelcomeToJournal.setForeground(new Color(255, 0, 51));
+	    txtpnWelcomeToJournal.setBackground(new Color(0, 0, 102));
 	    //txtpnWelcomeToJournal.setBackground(0,0,0,0);
 	    txtpnWelcomeToJournal.setText("Welcome to Journal Management System");
 	    txtpnWelcomeToJournal.setFont(new Font("Lucida Grande", Font.BOLD, 20));
-	    txtpnWelcomeToJournal.setBounds(48, 76, 421, 29);
+	    txtpnWelcomeToJournal.setBounds(197, 72, 421, 29);
 	    getContentPane().add(txtpnWelcomeToJournal);
 
 		//ImageIcon ii = new ImageIcon("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg");
