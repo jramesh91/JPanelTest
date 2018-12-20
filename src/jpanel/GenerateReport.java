@@ -1,5 +1,6 @@
 package jpanel;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -33,13 +34,87 @@ import java.awt.Toolkit;
 public class GenerateReport extends JFrame{
 	    private static int subs_id = Math.round(999 + (int)(Math.random() * 9999));
 	     //This is the login page
-	    
+	    private JTextField textField_6;
+	    private JTextField textField_1;
 	    
 	    
 	    public GenerateReport() {
 	    	
-	        super("JPanel Demo Program");
-	        System.out.println("Entered Generate Panel");
+	        super();
+	        
+	        
+	        getContentPane().setLayout(null);
+			setSize(800, 800);
+			setLocation(450,150);
+			
+			 JTextPane txtpnNewCustomerEntry = new JTextPane();
+		        txtpnNewCustomerEntry.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 32));
+		        txtpnNewCustomerEntry.setBounds(145, 29, 516, 45);
+		        txtpnNewCustomerEntry.setText("Search for Subscription Report");
+		        getContentPane().add(txtpnNewCustomerEntry);
+		        
+			
+			 JLabel lblMonth = new JLabel("Enter Subscription Month");
+			 lblMonth.setForeground(new Color(255, 204, 0));
+			 lblMonth.setFont(new Font("Courier", Font.BOLD, 16));
+			 lblMonth.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
+			 lblMonth.setBounds(98, 125, 301, 26);
+		        getContentPane().add(lblMonth);
+		        
+		        
+		        
+		        //Customer_ID
+		        textField_6 = new JTextField();
+		        getContentPane().add(textField_6);
+		        textField_6.setBounds(440, 123, 130, 36);
+		        textField_6.setColumns(10);
+		        textField_6.setText("MMM");
+		        
+		        
+		        
+		        JLabel lblYear = new JLabel("Enter Subscription Year");
+		        lblYear.setForeground(new Color(255, 204, 0));
+		        lblYear.setFont(new Font("Courier", Font.BOLD, 16));
+		        lblYear.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
+		        lblYear.setBounds(98, 181, 301, 26);
+			        getContentPane().add(lblYear);
+			        
+			        //Customer_ID
+			        textField_1 = new JTextField();
+			        getContentPane().add(textField_1);
+			        textField_1.setBounds(440, 171, 130, 36);
+			        textField_1.setColumns(10);
+			        
+			        JButton btnGatherReport = new JButton("Generate Report");
+			        btnGatherReport.setBackground(new Color(204, 255, 255));
+			        btnGatherReport.setBounds(443, 245, 124, 36);
+				    getContentPane().add(btnGatherReport);
+			        
+				  //Button to go into New Sub entry page
+				    btnGatherReport.addActionListener(new ActionListener() {
+				  			
+				  			@Override
+				  			public void actionPerformed(ActionEvent e) {
+				  				// TODO Auto-generated method stub
+				  				if(e.getSource()==btnGatherReport)
+				  				{
+				  					System.out.println("Searching for report");
+				  					dispose();
+				  					
+				  					
+				  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
+				  					
+				  					//new ReportResults().setVisible(true);
+				  				}
+				  			
+				  			}
+				  		});
+	       
+	    }
+}
+
+
+/*System.out.println("Entered Generate Panel");
 	        JFrame frame = new JFrame("main");
 	        //frame.setIconImage(Toolkit.getDefaultToolkit().getImage("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg"));
 	        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -55,7 +130,7 @@ public class GenerateReport extends JFrame{
 	      
 	 frame.setVisible(true);
 
-	        /*JFrame frame = new JFrame("main");
+	        JFrame frame = new JFrame("main");
 	        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	        JPanel newPanel = new JPanel();
 	        setContentPane(new JLabel(new ImageIcon("bg.jpg")));
@@ -127,9 +202,7 @@ public class GenerateReport extends JFrame{
 					
 					}
 				});
-	        */
 	        
-	        /*pack();
+	        
+	        pack();
 	        setLocationRelativeTo(null);*/
-	    }
-}

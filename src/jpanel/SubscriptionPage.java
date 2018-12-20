@@ -6,6 +6,8 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -241,8 +243,11 @@ public class SubscriptionPage extends JFrame{
 						msg="No";
 					}
 					
+					DateFormat month = new SimpleDateFormat("MM");
+			        DateFormat year = new SimpleDateFormat("YY");
+			        
 					NewSubscriptionEntry.saveSubscriptionDetails(cust_id, dateChooser.getDate().toString(),
-									textField_2.getText(),dateChooser_1.getDate().toString(),dateChooser_2.getDate().toString(), textField_1.getText(),msg);
+									textField_2.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()), textField_1.getText(),msg);
 
 				}
 

@@ -52,23 +52,11 @@ public class LandingPage extends JFrame{
 	public LandingPage() {
 		
 		super();
-		//setIconImage(Toolkit.getDefaultToolkit().getImage("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg"));
-		/*JFrame frame= new JFrame();
-		frame.setState(Frame.NORMAL);*/
-		/*JPanel panel = new JPanel();
-		panel.setBackground(new Color(255, 255, 102));
-		getContentPane().add(panel, BorderLayout.NORTH);
-		panel.*//*getContentPane().*/getContentPane().setLayout(null);
+		getContentPane().setLayout(null);
 		setSize(800, 800);
 		setLocation(450,150);
 		
-	   /* JLabel lblWelcomeToJournal = new JLabel("Welcome to Journal Management System");
-	    lblWelcomeToJournal.setHorizontalAlignment(SwingConstants.CENTER);
-	    lblWelcomeToJournal.setForeground(new Color(0, 0, 0));
-	    lblWelcomeToJournal.setFont(new Font("Lucida Grande", Font.BOLD, 20));
-	    lblWelcomeToJournal.setBackground(new Color(51, 255, 102));
-	    lblWelcomeToJournal.setBounds(0, 78, 500, 30);
-	    getContentPane().add(lblWelcomeToJournal);*/
+	   
 	    
 		JButton btnLogout = new JButton("Logout");
 	    btnLogout.setBounds(662, 20, 117, 29);

@@ -7,11 +7,14 @@ import java.sql.Statement;
 import java.util.Date;
 
 public class NewSubscriptionEntry {
-	private static String sub_Start;
-	private static String Sub_End;
+	private static String sub_Start_month;
+	private static String sub_Start_year;
+	private static String sub_End_month;
+	private static String sub_End_year;
+
 	
 	private static String sub_id;
-	public static void saveSubscriptionDetails(String customer_id, String date, String amount,String StartD,String EndD,String Rem,String msg) //Added "Boolean Message" as a parameter
+	public static void saveSubscriptionDetails(String customer_id, String date, String amount,String StartMonth, String StartYear,String EndMonth, String EndYear,String Rem,String msg) //Added "Boolean Message" as a parameter
 	{ 
 		
 		
@@ -30,9 +33,11 @@ public class NewSubscriptionEntry {
 			//statement to fetch the user ID's entire Row
 			
 			
-			Calculate_subscription(date);
+			//Calculate_subscription(StartD,EndD);
+			
+			
 			//@15.12.2018 A few columns have been added and few removed.Do execute the queries in MySql:Check the GDrive for Queries 
-			String sq = "insert into NEW_SUBSCRIPTION(Subscription_ID,Customer_id,Payment_Date,Amount_Paid,Sub_Start,Sub_End,Remarks,isShipped) values('"+sub_id+"',"+customer_id+",'"+date+"','"+amount+"','"+StartD+"','"+EndD+"','"+Rem+"','"+msg+"')";
+			String sq = "insert into NEW_SUBSCRIPTION(Subscription_ID,Customer_id,Payment_Date,Amount_Paid,Sub_Start_Month,Sub_Start_Year,Sub_End_Month,Sub_End_Year,Remarks,isShipped) values('"+sub_id+"',"+customer_id+",'"+date+"','"+amount+"','"+StartMonth+"','"+StartYear+"','"+EndMonth+"','"+EndYear+"','"+Rem+"','"+msg+"')";
 			stm.execute(sq);
 			
 			//Close the database Connection
@@ -49,10 +54,22 @@ public class NewSubscriptionEntry {
 		
 		
 	}
-	private static void Calculate_subscription(String date)
+	
+	
+	
+	private static void Calculate_subscription(String Start, String End)
 	{
+		
+		
 		//take the year, then the month, if it is between JUne and December, add December and June if not, June and December of the same year. 
+		
+		
 	}
+	
+	
+	
+	
+	
 	public static void validateSubId(int subs_id) {
 		// TODO Auto-generated method stub
 		try { 
