@@ -22,6 +22,7 @@ import com.toedter.calendar.JCalendar;
 
 import businessProcess.NewCustomerEntry;
 import businessProcess.NewSubscriptionEntry;
+import businessProcess.Reporting_BP;
 
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JLabel;
@@ -68,7 +69,7 @@ public class GenerateReport extends JFrame{
 		        getContentPane().add(textField_6);
 		        textField_6.setBounds(440, 123, 130, 36);
 		        textField_6.setColumns(10);
-		        textField_6.setText("MMM");
+		        textField_6.setText("MM");
 		        
 		        
 		        
@@ -84,6 +85,7 @@ public class GenerateReport extends JFrame{
 			        getContentPane().add(textField_1);
 			        textField_1.setBounds(440, 171, 130, 36);
 			        textField_1.setColumns(10);
+			        textField_1.setText("YY");
 			        
 			        JButton btnGatherReport = new JButton("Generate Report");
 			        btnGatherReport.setBackground(new Color(204, 255, 255));
@@ -99,7 +101,7 @@ public class GenerateReport extends JFrame{
 				  				if(e.getSource()==btnGatherReport)
 				  				{
 				  					System.out.println("Searching for report");
-				  					dispose();
+				  					Reporting_BP.searchReportDetails(textField_6.getText(), textField_1.getText());
 				  					
 				  					
 				  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription

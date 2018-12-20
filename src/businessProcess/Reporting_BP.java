@@ -2,11 +2,16 @@ package businessProcess;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+
+
 
 public class Reporting_BP {
-	public static void saveCustomerDetails(String month, String year)
+	public static void searchReportDetails(String month, String year)
 	{
+		ArrayList<String> Customer_id = new ArrayList<String>();
 		
 		try { 
 			//JDBC Driver Setup
@@ -20,22 +25,32 @@ public class Reporting_BP {
 			
 			Statement stm = con.createStatement();
 			
-			//statement to fetch the user ID's entire Row
-			//String sq = "Search customer_id from NEW_SUBSCRIPTION New(Customer_id,Last_Name,Door_Number,Street_Name,City,State,PinCode) values("+customer_id+",'"+Full_Name+"',"+door_number+",'"+street+"','"+city+"','"+state+"',"+pincode+")";
-			//stm.execute(sq);
+			//Select * from NEW_SUBSCRIPTION WHERE (Sub_Start_year = '20' OR sub_end_year ='18')  AND (sub_start_month = '08' OR Sub_end_month ='08');
+			String sq = "Select * from NEW_SUBSCRIPTION WHERE (Sub_Start_year = '"+year+"' OR sub_end_year ='"+year+"')  AND (sub_start_month = '"+month+"' OR Sub_end_month ='"+month+"')";
+			 ResultSet rs = stm.executeQuery(sq);
+			 
+			 
 			
-			//Close the database Connection
-			con.close();
+			//Try multiple rows to get the password
+			while(rs.next()){
+
+			
+					
+					Customer_id.add(rs.getString("customer_id"));
+			
 			
 			
 		}
-		
+			con.close();
+		}
 		catch(Exception e) {
 			
 			System.out.println(e);
 			
 		}
-		
-	}
-
+		for(int i=0;i<Customer_id.size();i++)
+		{
+			System.out.println("/n The customer IDs are "+Customer_id.get(i));
+		}
+}
 }
