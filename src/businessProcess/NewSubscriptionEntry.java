@@ -16,15 +16,14 @@ public class NewSubscriptionEntry {
 	private static String sub_id;
 	public static void saveSubscriptionDetails(String customer_id, String date, String amount,String StartMonth, String StartYear,String EndMonth, String EndYear,String Rem,String msg) //Added "Boolean Message" as a parameter
 	{ 
-		
-		
+			
 		try { 
 			//JDBC Driver Setup
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
@@ -39,6 +38,7 @@ public class NewSubscriptionEntry {
 			//@15.12.2018 A few columns have been added and few removed.Do execute the queries in MySql:Check the GDrive for Queries 
 			String sq = "insert into NEW_SUBSCRIPTION(Subscription_ID,Customer_id,Payment_Date,Amount_Paid,Sub_Start_Month,Sub_Start_Year,Sub_End_Month,Sub_End_Year,Remarks,isShipped) values('"+sub_id+"',"+customer_id+",'"+date+"','"+amount+"','"+StartMonth+"','"+StartYear+"','"+EndMonth+"','"+EndYear+"','"+Rem+"','"+msg+"')";
 			stm.execute(sq);
+			
 			
 			//Close the database Connection
 			con.close();
@@ -77,10 +77,11 @@ public class NewSubscriptionEntry {
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
-			
+			System.out.println("Static var is "+subs_id);	
+
 			
 			Statement stm = con.createStatement();
 			

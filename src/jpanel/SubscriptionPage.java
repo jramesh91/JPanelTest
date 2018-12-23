@@ -26,6 +26,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JCheckBox;
 import javax.swing.JDialog;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class SubscriptionPage extends JFrame{
 
@@ -192,6 +194,29 @@ public class SubscriptionPage extends JFrame{
 	        textField_1.setColumns(10);
 	        
 	        JCheckBox chckbxNewCheckBox = new JCheckBox("Shipped 1st Issue");
+	        chckbxNewCheckBox.addKeyListener(new KeyAdapter() {
+	        	@Override
+	        	public void keyPressed(KeyEvent e) {
+	        		if(e.getKeyCode()==KeyEvent.VK_ENTER)
+	        		{System.out.println("Enter Key is pressed!");
+	        		String msg="";
+					if(chckbxNewCheckBox.isSelected())
+					{
+						msg="Yes";
+					}
+					else
+					{
+						msg="No";
+					}
+					
+					DateFormat month = new SimpleDateFormat("MM");
+			        DateFormat year = new SimpleDateFormat("YY");
+			        
+					NewSubscriptionEntry.saveSubscriptionDetails(cust_id, dateChooser.getDate().toString(),
+									textField_2.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()), textField_1.getText(),msg);
+	        		}
+	        		}
+	        });
 	        GridBagConstraints gbc_chckbxNewCheckBox = new GridBagConstraints();
 	        gbc_chckbxNewCheckBox.insets = new Insets(0, 0, 5, 5);
 	        gbc_chckbxNewCheckBox.gridx = 2;
@@ -242,11 +267,15 @@ public class SubscriptionPage extends JFrame{
 					{
 						msg="No";
 					}
-					
+					NewSubscriptionEntry.validateSubId(subs_id);
 					DateFormat month = new SimpleDateFormat("MM");
 			        DateFormat year = new SimpleDateFormat("YY");
 			        
-					NewSubscriptionEntry.saveSubscriptionDetails(cust_id, dateChooser.getDate().toString(),
+			      // textField_6.getText();
+			        	
+			       
+			        
+					NewSubscriptionEntry.saveSubscriptionDetails(textField_6.getText(), dateChooser.getDate().toString(),
 									textField_2.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()), textField_1.getText(),msg);
 
 				}

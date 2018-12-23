@@ -171,7 +171,7 @@ public class LandingPage extends JFrame{
 	  					System.out.println("This is redirected to Subscription Page");
 	  					dispose();
 	  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
-	  					String a = null;
+	  					
 	  					new SearchCustomer().setVisible(true);
 	  				}
 	  			

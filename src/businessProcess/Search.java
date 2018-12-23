@@ -9,6 +9,23 @@ import jpanel.LoginPage;
 import jpanel.SearchCustomer;
 
 public class Search{
+	public static  String Door="";
+	public static  String City ="";
+	public static String State="" ;
+	public static String Pin="" ;
+	public static  String Cust_ID="" ;
+	public static  String AmtPaid ;
+	public static String DOP ;
+	public static  String Start_Mth ;
+	public static  String Start_Year ;
+	public static  String End_Mth ;
+	public static  String End_Year ;
+	public static  String Remarks ;
+	public static  String Street;
+	public static String customer_id1;
+	public static String first_name="";
+	public static String isShipped;
+	
 	public Search()
 	{
 		super();
@@ -16,14 +33,14 @@ public class Search{
 	
 	public static String searchCustomerDetails(String customer_id)
 	{
-		String customer_id1 = null;
+		
 		try { 
 			//JDBC Driver Setup
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
@@ -34,11 +51,25 @@ public class Search{
 			ResultSet rss=stm.executeQuery(sq);
 			while(rss.next())
 			{
-				 customer_id1=rss.getString(1);
-				 String customer_id12 = rss.getString(4);
-				 String customer_id3 = rss.getString(8);
-				 String customer_id4 = rss.getString(7);
-				 System.out.println(customer_id1+customer_id12);
+				 customer_id1=rss.getString("Customer_id");
+				 //System.out.println("Static Value wo initializing "+first_name);
+				 first_name = rss.getString("Last_Name");
+				 Street=rss.getString("Street_Name");
+				 Door=rss.getString("Door_Number");
+				 City=rss.getString("City");
+				 State=rss.getString("State");
+				 Pin=rss.getString("PinCode");
+				 Cust_ID=rss.getString("Customer_id");
+				 AmtPaid=rss.getString("Amount_Paid");
+				 DOP=rss.getString("Payment_Date");
+				 Start_Mth=rss.getString("Sub_Start_month");
+				 Start_Year=rss.getString("Sub_Start_year");
+				 End_Mth=rss.getString("Sub_End_Month");
+				 End_Year=rss.getString("Sub_End_year");
+				 Remarks=rss.getString("Remarks");
+				 isShipped=rss.getString("isShipped");
+			
+				
 				
 			}
 			

@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -26,6 +27,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JCheckBox;
 import javax.swing.JDialog;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class SearchCustomer extends JFrame{
 	    private static int subs_id = Math.round(999 + (int)(Math.random() * 9999));
@@ -37,6 +40,16 @@ public class SearchCustomer extends JFrame{
 	   private JTextField textField_3;
 	   private JTextField textField_4;
 	   private JTextField textField_5;
+	   private static String cust_id="";
+	   private JTextField textField_7;
+	   private JTextField textField_8;
+	   private JTextField textField_9;
+	   private JTextField textField_10;
+	   private JTextField textField_11;
+	   private JTextField textField_12;
+	   private JTextField textField_13;
+	   private JTextField textField_14;
+	   private JTextField textField_15;
 	    
 	    
 	    public SearchCustomer() {
@@ -65,81 +78,231 @@ public class SearchCustomer extends JFrame{
 	        
 	        //Getting Customer_ID inorder to search
 	        JTextField textField_6 = new JTextField();
+	        
 	        getContentPane().add(textField_6);
 	        textField_6.setBounds(327, 103, 130, 36);
 	        textField_6.setColumns(10);
+	        textField_6.setText(cust_id);
 	        
 	        JButton btnSearch = new JButton("Search");
 	        btnSearch.setBounds(528, 107, 115, 29);
 	        getContentPane().add(btnSearch);
 	        
 	        JLabel lblFullName = new JLabel("Full Name");
-	        lblFullName.setBounds(15, 139, 89, 20);
+	        lblFullName.setForeground(new Color(0,255,0));
+	        lblFullName.setBounds(15, 226, 89, 20);
 	        getContentPane().add(lblFullName);
 	        
 	        textField = new JTextField();
-	        textField.setBounds(134, 136, 146, 26);
+	        textField.setBounds(134, 218, 146, 36);
 	        getContentPane().add(textField);
 	        textField.setColumns(10);
+	        //textField.setText(Search.first_name);
 	        
 	        JLabel lblStreetName = new JLabel("Street Name");
-	        lblStreetName.setBounds(15, 175, 89, 20);
+	        lblStreetName.setForeground(new Color(0,255,0));
+	        lblStreetName.setBounds(15, 278, 89, 20);
 	        getContentPane().add(lblStreetName);
 	        
 	        textField_1 = new JTextField();
-	        textField_1.setBounds(134, 172, 146, 26);
+	        textField_1.setBounds(134, 270, 146, 36);
 	        getContentPane().add(textField_1);
 	        textField_1.setColumns(10);
 	        
 	        JLabel lblDoorNumber = new JLabel("Door Number");
-	        lblDoorNumber.setBounds(15, 232, 104, 20);
+	        lblDoorNumber.setForeground(new Color(0,255,0));
+	        lblDoorNumber.setBounds(15, 330, 104, 20);
 	        getContentPane().add(lblDoorNumber);
 	        
 	        textField_2 = new JTextField();
-	        textField_2.setBounds(134, 229, 146, 26);
+	        textField_2.setBounds(134, 322, 146, 36);
 	        getContentPane().add(textField_2);
 	        textField_2.setColumns(10);
 	        
 	        JLabel lblCity = new JLabel("City");
-	        lblCity.setBounds(15, 268, 69, 20);
+	        lblCity.setForeground(new Color(0,255,0));
+	        lblCity.setBounds(15, 382, 69, 20);
 	        getContentPane().add(lblCity);
 	        
 	        JLabel lblState = new JLabel("State");
-	        lblState.setBounds(15, 304, 69, 20);
+	        lblState.setForeground(new Color(0,255,0));
+	        lblState.setBounds(15, 434, 69, 20);
 	        getContentPane().add(lblState);
 	        
 	        JLabel lblPincode = new JLabel("Pincode");
-	        lblPincode.setBounds(15, 340, 69, 20);
+	        lblPincode.setForeground(new Color(0,255,0));
+	        lblPincode.setBounds(15, 486, 69, 20);
 	        getContentPane().add(lblPincode);
 	        
 	        textField_3 = new JTextField();
-	        textField_3.setBounds(134, 262, 146, 26);
+	        textField_3.setBounds(134, 426, 146, 36);
 	        getContentPane().add(textField_3);
 	        textField_3.setColumns(10);
 	        
 	        textField_4 = new JTextField();
-	        textField_4.setBounds(134, 301, 146, 26);
+	        textField_4.setBounds(134, 478, 146, 36);
 	        getContentPane().add(textField_4);
 	        textField_4.setColumns(10);
 	        
 	        textField_5 = new JTextField();
-	        textField_5.setBounds(134, 337, 146, 26);
+	        textField_5.setBounds(134, 374, 146, 36);
 	        getContentPane().add(textField_5);
 	        textField_5.setColumns(10);
+		    
+		    JLabel label = new JLabel("");
+		    label.setBounds(410, 152, 69, 20);
+		    getContentPane().add(label);
+		    
+		    JLabel lblSubscriptionId = new JLabel("Subscription ID");
+		    lblSubscriptionId.setBounds(347, 226, 120, 20);
+		    getContentPane().add(lblSubscriptionId);
+		    
+		    JLabel lblAmountPaid = new JLabel("Amount Paid");
+		    lblAmountPaid.setBounds(347, 330, 110, 20);
+		    getContentPane().add(lblAmountPaid);
+		    
+		    JLabel lblDateOfPayment = new JLabel("Date of Payment");
+		    lblDateOfPayment.setBounds(347, 278, 132, 20);
+		    getContentPane().add(lblDateOfPayment);
+		    
+		    JLabel lblRemarks = new JLabel("Remarks");
+		    lblRemarks.setBounds(178, 560, 69, 20);
+		    getContentPane().add(lblRemarks);
+		    
+		    JLabel lblShippedstIssue = new JLabel("Shipped 1st Issue?");
+		    lblShippedstIssue.setBounds(178, 639, 146, 20);
+		    getContentPane().add(lblShippedstIssue);
+		    
+		    JLabel lblSubscriptionStart = new JLabel("Subscription Start");
+		    lblSubscriptionStart.setBounds(347, 382, 132, 20);
+		    getContentPane().add(lblSubscriptionStart);
+		    
+		    textField_7 = new JTextField();
+		    textField_7.setBounds(482, 218, 161, 36);
+		    getContentPane().add(textField_7);
+		    textField_7.setColumns(10);
+		    
+		    textField_8 = new JTextField();
+		    textField_8.setBounds(482, 273, 161, 33);
+		    getContentPane().add(textField_8);
+		    textField_8.setColumns(10);
+		    
+		    textField_9 = new JTextField();
+		    textField_9.setBounds(482, 324, 161, 34);
+		    getContentPane().add(textField_9);
+		    textField_9.setColumns(10);
+		    
+		    textField_10 = new JTextField();
+		    textField_10.setBounds(482, 379, 49, 26);
+		    getContentPane().add(textField_10);
+		    textField_10.setColumns(10);
+		    
+		    textField_11 = new JTextField();
+		    textField_11.setBounds(561, 379, 82, 26);
+		    getContentPane().add(textField_11);
+		    textField_11.setColumns(10);
+		    
+		    JLabel label_1 = new JLabel("/");
+		    label_1.setBounds(546, 358, 69, 60);
+		    getContentPane().add(label_1);
+		    
+		    textField_12 = new JTextField();
+		    textField_12.setColumns(10);
+		    textField_12.setBounds(482, 431, 49, 26);
+		    getContentPane().add(textField_12);
+		    
+		    JLabel label_2 = new JLabel("/");
+		    label_2.setBounds(546, 406, 24, 60);
+		    getContentPane().add(label_2);
+		    
+		    textField_13 = new JTextField();
+		    textField_13.setColumns(10);
+		    textField_13.setBounds(561, 431, 82, 26);
+		    getContentPane().add(textField_13);
+		    
+		    JLabel label_3 = new JLabel("Subscription Start");
+		    label_3.setBounds(347, 434, 132, 20);
+		    getContentPane().add(label_3);
+		    
+		    textField_14 = new JTextField();
+		    textField_14.setBounds(327, 557, 301, 45);
+		    getContentPane().add(textField_14);
+		    textField_14.setColumns(10);
+		    
+		    textField_15 = new JTextField();
+		    textField_15.setBounds(327, 636, 76, 36);
+		    getContentPane().add(textField_15);
+		    textField_15.setColumns(10);
+		  
+		    
+		    //ImageIcon ii = new ImageIcon("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg");
+		    JLabel lable = new JLabel("",new ImageIcon("back.jpg"),JLabel.CENTER);
+		    lable.setBounds(0, 0, 800, 800);
+		    getContentPane().add(lable);
+	        
 	        
 	        btnSearch.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					
 					if(e.getSource()==btnSearch)
-					{	
-						String c=Search.searchCustomerDetails(textField_6.getText());
+					{	 cust_id=textField_6.getText();
+						Search.searchCustomerDetails(cust_id);
+						textField.setText(Search.first_name);
+						textField_1.setText(Search.Street);
+						textField_2.setText(Search.Door);
+						textField_5.setText(Search.City);
+						textField_3.setText(Search.State);
+						textField_4.setText(Search.Pin);
+						textField_7.setText(Search.Cust_ID);
+						textField_8.setText(Search.DOP);
+						textField_9.setText(Search.AmtPaid);
+						textField_10.setText(Search.Start_Mth);
+						textField_11.setText(Search.Start_Year);
+						textField_12.setText(Search.End_Mth);
+						textField_13.setText(Search.End_Year);
+						textField_14.setText(Search.Remarks);
+						textField_15.setText(Search.isShipped); 
+						//dispose();
+	  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
+	  					
+	  					//new SearchCustomer().setVisible(true);
 						
-						textField_6.setText(c);
+						
 					}
 						
 					
 				}
 
 			});
+	        
+	        //Enter Key
+	        textField_6.addKeyListener(new KeyAdapter() {
+	        	@Override
+	        	public void keyPressed(KeyEvent e) {
+	        	if(e.getKeyCode()==KeyEvent.VK_ENTER) {
+	        		System.out.println("Enter Key is pressed!I hope");
+	        		cust_id=textField_6.getText();
+					Search.searchCustomerDetails(cust_id);
+					textField.setText(Search.first_name);
+					textField_1.setText(Search.Street);
+					textField_2.setText(Search.Door);
+					textField_5.setText(Search.City);
+					textField_3.setText(Search.State);
+					textField_4.setText(Search.Pin);
+					textField_7.setText(Search.Cust_ID);
+					textField_8.setText(Search.DOP);
+					textField_9.setText(Search.AmtPaid);
+					textField_10.setText(Search.Start_Mth);
+					textField_11.setText(Search.Start_Year);
+					textField_12.setText(Search.End_Mth);
+					textField_13.setText(Search.End_Year);
+					textField_14.setText(Search.Remarks);
+					textField_15.setText(Search.isShipped); 
+	        	}
+	        	
+	        	}
+	        	
+	        });
+	        
 	    }
 }

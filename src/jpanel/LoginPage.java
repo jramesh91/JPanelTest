@@ -4,10 +4,15 @@ package jpanel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+//Updated on 23/12
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import javax.swing.*;
 
-import businessProcess.LoginValidation;  
+import businessProcess.LoginValidation;
+import businessProcess.Search;  
 public class LoginPage extends JFrame{  
 	 private JLabel labelUsername = new JLabel("Enter username: ");
 	    private JLabel labelPassword = new JLabel("Enter password: ");
@@ -96,6 +101,8 @@ public class LoginPage extends JFrame{
 	            	}
 	            }
 	        });
+	    
+	    
 	    }
 	     
 	    public static void main(String[] args) {
