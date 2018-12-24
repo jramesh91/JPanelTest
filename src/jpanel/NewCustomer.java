@@ -192,12 +192,14 @@ public class NewCustomer extends JFrame{
 						if(e.getSource()==btnAddMoreDetails)
 						{
 							
+							
 							//NewSubscriptionEntry.validateSubId(Sub_id);
 							NewSubscriptionEntry.validateSubId(Sub_id);
 							System.out.println("This is redirected to Subscription Page");
 						
 						NewCustomerEntry.saveCustomerDetails(textField_6.getText(), textField.getText(), textField_1.getText(),
 								textField_2.getText(), textField_3.getText(), textField_4.getText(), textField_5.getText());
+						SubscriptionPage.firstAfterLanding = false;
 						new SubscriptionPage(textField_6.getText()).setVisible(true);
 						dispose();
 						}

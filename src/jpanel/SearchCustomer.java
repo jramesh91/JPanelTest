@@ -20,7 +20,7 @@ import com.toedter.calendar.JCalendar;
 
 import businessProcess.NewCustomerEntry;
 import businessProcess.NewSubscriptionEntry;
-import businessProcess.Search;
+import businessProcess.Search_Customer;
 
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JLabel;
@@ -29,11 +29,14 @@ import javax.swing.JCheckBox;
 import javax.swing.JDialog;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class SearchCustomer extends JFrame{
 	    private static int subs_id = Math.round(999 + (int)(Math.random() * 9999));
 	     //This is the login page
-	   Search s=new Search();
+	   Search_Customer s=new Search_Customer();
 	   private JTextField textField;
 	   private JTextField textField_1;
 	   private JTextField textField_2;
@@ -246,22 +249,22 @@ public class SearchCustomer extends JFrame{
 					
 					if(e.getSource()==btnSearch)
 					{	 cust_id=textField_6.getText();
-						Search.searchCustomerDetails(cust_id);
-						textField.setText(Search.first_name);
-						textField_1.setText(Search.Street);
-						textField_2.setText(Search.Door);
-						textField_5.setText(Search.City);
-						textField_3.setText(Search.State);
-						textField_4.setText(Search.Pin);
-						textField_7.setText(Search.Cust_ID);
-						textField_8.setText(Search.DOP);
-						textField_9.setText(Search.AmtPaid);
-						textField_10.setText(Search.Start_Mth);
-						textField_11.setText(Search.Start_Year);
-						textField_12.setText(Search.End_Mth);
-						textField_13.setText(Search.End_Year);
-						textField_14.setText(Search.Remarks);
-						textField_15.setText(Search.isShipped); 
+						Search_Customer.searchCustomerDetails(cust_id);
+						textField.setText(Search_Customer.first_name);
+						textField_1.setText(Search_Customer.Street);
+						textField_2.setText(Search_Customer.Door);
+						textField_5.setText(Search_Customer.City);
+						textField_3.setText(Search_Customer.State);
+						textField_4.setText(Search_Customer.Pin);
+						textField_7.setText(Search_Customer.Cust_ID);
+						textField_8.setText(Search_Customer.DOP);
+						textField_9.setText(Search_Customer.AmtPaid);
+						textField_10.setText(Search_Customer.Start_Mth);
+						textField_11.setText(Search_Customer.Start_Year);
+						textField_12.setText(Search_Customer.End_Mth);
+						textField_13.setText(Search_Customer.End_Year);
+						textField_14.setText(Search_Customer.Remarks);
+						textField_15.setText(Search_Customer.isShipped); 
 						//dispose();
 	  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
 	  					
@@ -282,22 +285,23 @@ public class SearchCustomer extends JFrame{
 	        	if(e.getKeyCode()==KeyEvent.VK_ENTER) {
 	        		System.out.println("Enter Key is pressed!I hope");
 	        		cust_id=textField_6.getText();
-					Search.searchCustomerDetails(cust_id);
-					textField.setText(Search.first_name);
-					textField_1.setText(Search.Street);
-					textField_2.setText(Search.Door);
-					textField_5.setText(Search.City);
-					textField_3.setText(Search.State);
-					textField_4.setText(Search.Pin);
-					textField_7.setText(Search.Cust_ID);
-					textField_8.setText(Search.DOP);
-					textField_9.setText(Search.AmtPaid);
-					textField_10.setText(Search.Start_Mth);
-					textField_11.setText(Search.Start_Year);
-					textField_12.setText(Search.End_Mth);
-					textField_13.setText(Search.End_Year);
-					textField_14.setText(Search.Remarks);
-					textField_15.setText(Search.isShipped); 
+	        		
+					Search_Customer.searchCustomerDetails(cust_id);
+					textField.setText(Search_Customer.first_name);
+					textField_1.setText(Search_Customer.Street);
+					textField_2.setText(Search_Customer.Door);
+					textField_5.setText(Search_Customer.City);
+					textField_3.setText(Search_Customer.State);
+					textField_4.setText(Search_Customer.Pin);
+					textField_7.setText(Search_Customer.Cust_ID);
+					textField_8.setText(Search_Customer.DOP);
+					textField_9.setText(Search_Customer.AmtPaid);
+					textField_10.setText(Search_Customer.Start_Mth);
+					textField_11.setText(Search_Customer.Start_Year);
+					textField_12.setText(Search_Customer.End_Mth);
+					textField_13.setText(Search_Customer.End_Year);
+					textField_14.setText(Search_Customer.Remarks);
+					textField_15.setText(Search_Customer.isShipped); 
 	        	}
 	        	
 	        	}

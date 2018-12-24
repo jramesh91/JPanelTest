@@ -12,7 +12,7 @@ import java.awt.event.KeyEvent;
 import javax.swing.*;
 
 import businessProcess.LoginValidation;
-import businessProcess.Search;  
+import businessProcess.Search_Customer;  
 public class LoginPage extends JFrame{  
 	 private JLabel labelUsername = new JLabel("Enter username: ");
 	    private JLabel labelPassword = new JLabel("Enter password: ");
@@ -29,7 +29,7 @@ public class LoginPage extends JFrame{
 	    
 	    
 	    public LoginPage() {
-	        super("JPanel Demo Program");
+	        super("Library Journal Management");
 	         
 	        // create a new panel with GridBagLayout manager
 	        JPanel newPanel = new JPanel(new GridBagLayout());

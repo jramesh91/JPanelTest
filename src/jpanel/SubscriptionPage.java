@@ -36,6 +36,7 @@ public class SubscriptionPage extends JFrame{
 	    private JTextField textField_6;
 	    private static int subs_id = Math.round(999 + (int)(Math.random() * 9999));
 	    private JTextField textField_1;
+	    public static boolean firstAfterLanding= true;
 	 
 	    
 	    
@@ -211,8 +212,9 @@ public class SubscriptionPage extends JFrame{
 					
 					DateFormat month = new SimpleDateFormat("MM");
 			        DateFormat year = new SimpleDateFormat("YY");
+			        DateFormat month_year = new SimpleDateFormat("dd/MM/YYYY");
 			        
-					NewSubscriptionEntry.saveSubscriptionDetails(cust_id, dateChooser.getDate().toString(),
+					NewSubscriptionEntry.saveSubscriptionDetails(cust_id, month_year.format(dateChooser.getDate()),
 									textField_2.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()), textField_1.getText(),msg);
 	        		}
 	        		}
@@ -223,12 +225,16 @@ public class SubscriptionPage extends JFrame{
 	        gbc_chckbxNewCheckBox.gridy = 8;
 	        newPanel.add(chckbxNewCheckBox, gbc_chckbxNewCheckBox);
 	        
+	        
 	        JButton btnBackToCustomer = new JButton("Back to Customer Entry");
 	        GridBagConstraints gbc_btnBackToCustomer = new GridBagConstraints();
 	        gbc_btnBackToCustomer.insets = new Insets(0, 0, 0, 5);
 	        gbc_btnBackToCustomer.gridx = 0;
 	        gbc_btnBackToCustomer.gridy = 9;
+	        if(!firstAfterLanding)
+	        {
 	        newPanel.add(btnBackToCustomer, gbc_btnBackToCustomer);
+	        }
 	        
 	        JButton btnBack = new JButton("Back");
 	        GridBagConstraints gbc_btnBack = new GridBagConstraints();

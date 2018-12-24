@@ -8,7 +8,7 @@ import java.sql.Statement;
 import jpanel.LoginPage;
 import jpanel.SearchCustomer;
 
-public class Search{
+public class Search_Customer{
 	public static  String Door="";
 	public static  String City ="";
 	public static String State="" ;
@@ -26,7 +26,7 @@ public class Search{
 	public static String first_name="";
 	public static String isShipped;
 	
-	public Search()
+	public Search_Customer()
 	{
 		super();
 	}
@@ -39,8 +39,8 @@ public class Search{
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+		//	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
