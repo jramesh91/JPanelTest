@@ -31,12 +31,17 @@ import javax.swing.JCheckBox;
 import javax.swing.JDialog;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
+import javax.swing.JTable;
 
 public class GenerateReport extends JFrame{
 	    private static int subs_id = Math.round(999 + (int)(Math.random() * 9999));
 	     //This is the login page
 	    private JTextField textField_6;
 	    private JTextField textField_1;
+	    private JTable table;
+	    private JScrollPane jScroll;
+	    String [] column_header= {"Customer ID", "Full Name","Door Number","Street Name","City","State","Pin Code"};
+	    String [][] column_value = {{"6897", "fs", "21", "sf", "sf", "sdf", "234"},{"6897", "fs", "21", "sf", "sf", "sdf", "234"}};
 	    
 	    
 	    public GenerateReport() {
@@ -91,6 +96,20 @@ public class GenerateReport extends JFrame{
 			        btnGatherReport.setBackground(new Color(204, 255, 255));
 			        btnGatherReport.setBounds(443, 245, 124, 36);
 				    getContentPane().add(btnGatherReport);
+				    
+				    
+				    
+				    
+				    JPanel panel = new JPanel();
+				    panel.setBounds(6, 357, 788, 374);
+				    
+				    getContentPane().add(panel);
+				    
+				    table = new JTable(column_value, column_header);
+				    table.setBounds(6, 357, 788, 374);
+				    jScroll = new JScrollPane(table);
+				    panel.add(jScroll);
+				    
 			        
 				  //Button to go into New Sub entry page
 				    btnGatherReport.addActionListener(new ActionListener() {

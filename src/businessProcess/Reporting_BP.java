@@ -1,11 +1,15 @@
 package businessProcess;
 
+import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.ArrayList;
+
+//import org.apache.poi.ss.usermodel.*;
+//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
 
@@ -19,8 +23,8 @@ public class Reporting_BP {
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
@@ -85,6 +89,7 @@ public class Reporting_BP {
 	            row += rs.getString(i) + ", ";          
 	        }
 		row.toString();
+		System.out.println("The values are "+row.toString());
 		}
 		con.close();
 	}
@@ -94,4 +99,72 @@ public class Reporting_BP {
 		
 	}
 	}
+	
+	/*private static void sendDataToExcel()
+	{
+		workbook workbook = new XSSFWorkbook(); // new HSSFWorkbook() for generating `.xls` file
+
+         CreationHelper helps us create instances of various things like DataFormat, 
+           Hyperlink, RichTextString etc, in a format (HSSF, XSSF) independent way 
+        CreationHelper createHelper = workbook.getCreationHelper();
+
+        // Create a Sheet
+        Sheet sheet = workbook.createSheet("Employee");
+
+        // Create a Font for styling header cells
+        Font headerFont = workbook.createFont();
+        headerFont.setBold(true);
+        headerFont.setFontHeightInPoints((short) 14);
+        headerFont.setColor(IndexedColors.RED.getIndex());
+
+        // Create a CellStyle with the font
+        CellStyle headerCellStyle = workbook.createCellStyle();
+        headerCellStyle.setFont(headerFont);
+
+        // Create a Row
+        Row headerRow = sheet.createRow(0);
+
+        // Create cells
+        for(int i = 0; i < columns.length; i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(columns[i]);
+            cell.setCellStyle(headerCellStyle);
+        }
+
+        // Create Cell Style for formatting Date
+        CellStyle dateCellStyle = workbook.createCellStyle();
+        dateCellStyle.setDataFormat(createHelper.createDataFormat().getFormat("dd-MM-yyyy"));
+
+        // Create Other rows and cells with employees data
+        int rowNum = 1;
+        for(Employee employee: employees) {
+            Row row = sheet.createRow(rowNum++);
+
+            row.createCell(0)
+                    .setCellValue(employee.getName());
+
+            row.createCell(1)
+                    .setCellValue(employee.getEmail());
+
+            Cell dateOfBirthCell = row.createCell(2);
+            dateOfBirthCell.setCellValue(employee.getDateOfBirth());
+            dateOfBirthCell.setCellStyle(dateCellStyle);
+
+            row.createCell(3)
+                    .setCellValue(employee.getSalary());
+        }
+
+		// Resize all columns to fit the content size
+        for(int i = 0; i < columns.length; i++) {
+            sheet.autoSizeColumn(i);
+        }
+
+        // Write the output to a file
+        FileOutputStream fileOut = new FileOutputStream("poi-generated-file.xlsx");
+        workbook.write(fileOut);
+        fileOut.close();
+
+        // Closing the workbook
+        workbook.close();
+	}*/
 }
