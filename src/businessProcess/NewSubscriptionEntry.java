@@ -7,10 +7,7 @@ import java.sql.Statement;
 import java.util.Date;
 
 public class NewSubscriptionEntry {
-	private static String sub_Start_month;
-	private static String sub_Start_year;
-	private static String sub_End_month;
-	private static String sub_End_year;
+
 
 	
 	private static String sub_id;
@@ -33,6 +30,13 @@ public class NewSubscriptionEntry {
 			
 			
 			//Calculate_subscription(StartD,EndD);
+			
+			//First check if the Customer ID in the Subscription table already exist, if yes, then update the entire data. 
+			//UPDATE table_name
+			//SET column1 = value1, column2 = value2, ...
+			//		WHERE condition;
+			
+			String sq0 = "update NEW_SUBSCRIPTION(Subscription_ID,Payment_Date,Amount_Paid,Sub_Start_Month,Sub_Start_Year,Sub_End_Month,Sub_End_Year,Remarks,isShipped) values('"+sub_id+"','"+date+"','"+amount+"','"+StartMonth+"','"+StartYear+"','"+EndMonth+"','"+EndYear+"','"+Rem+"','"+msg+"') WHERE customer_id ='"+customer_id+"'"; 
 			
 			
 			//@15.12.2018 A few columns have been added and few removed.Do execute the queries in MySql:Check the GDrive for Queries 

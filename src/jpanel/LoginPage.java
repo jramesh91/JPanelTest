@@ -11,8 +11,7 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.*;
 
-import businessProcess.LoginValidation;
-import businessProcess.Search_Customer;  
+import businessProcess.LoginValidation;  
 public class LoginPage extends JFrame{  
 	 private JLabel labelUsername = new JLabel("Enter username: ");
 	    private JLabel labelPassword = new JLabel("Enter password: ");

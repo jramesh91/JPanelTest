@@ -8,8 +8,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 
 
 
@@ -100,12 +99,12 @@ public class Reporting_BP {
 	}
 	}
 	
-	private static void sendDataToExcel()
+	/*private static void sendDataToExcel()
 	{
 		workbook workbook = new XSSFWorkbook(); // new HSSFWorkbook() for generating `.xls` file
 
-        /* CreationHelper helps us create instances of various things like DataFormat, 
-           Hyperlink, RichTextString etc, in a format (HSSF, XSSF) independent way */
+         CreationHelper helps us create instances of various things like DataFormat, 
+           Hyperlink, RichTextString etc, in a format (HSSF, XSSF) independent way 
         CreationHelper createHelper = workbook.getCreationHelper();
 
         // Create a Sheet
@@ -125,11 +124,11 @@ public class Reporting_BP {
         Row headerRow = sheet.createRow(0);
 
         // Create cells
-        /*for(int i = 0; i < columns.length; i++) {
+        for(int i = 0; i < columns.length; i++) {
             Cell cell = headerRow.createCell(i);
             cell.setCellValue(columns[i]);
             cell.setCellStyle(headerCellStyle);
-        }*/
+        }
 
         // Create Cell Style for formatting Date
         CellStyle dateCellStyle = workbook.createCellStyle();
@@ -137,7 +136,7 @@ public class Reporting_BP {
 
         // Create Other rows and cells with employees data
         int rowNum = 1;
-        /*for(Employee employee: employees) {
+        for(Employee employee: employees) {
             Row row = sheet.createRow(rowNum++);
 
             row.createCell(0)
@@ -153,11 +152,11 @@ public class Reporting_BP {
             row.createCell(3)
                     .setCellValue(employee.getSalary());
         }
-*/
+
 		// Resize all columns to fit the content size
-        /*for(int i = 0; i < columns.length; i++) {
+        for(int i = 0; i < columns.length; i++) {
             sheet.autoSizeColumn(i);
-        }*/
+        }
 
         // Write the output to a file
         FileOutputStream fileOut = new FileOutputStream("poi-generated-file.xlsx");
@@ -166,5 +165,5 @@ public class Reporting_BP {
 
         // Closing the workbook
         workbook.close();
-	}
+	}*/
 }
