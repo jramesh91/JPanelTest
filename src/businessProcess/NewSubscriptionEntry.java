@@ -35,13 +35,27 @@ public class NewSubscriptionEntry {
 			//UPDATE table_name
 			//SET column1 = value1, column2 = value2, ...
 			//		WHERE condition;
-			
 			String sq0 = "update NEW_SUBSCRIPTION(Subscription_ID,Payment_Date,Amount_Paid,Sub_Start_Month,Sub_Start_Year,Sub_End_Month,Sub_End_Year,Remarks,isShipped) values('"+sub_id+"','"+date+"','"+amount+"','"+StartMonth+"','"+StartYear+"','"+EndMonth+"','"+EndYear+"','"+Rem+"','"+msg+"') WHERE customer_id ='"+customer_id+"'"; 
 			
 			
 			//@15.12.2018 A few columns have been added and few removed.Do execute the queries in MySql:Check the GDrive for Queries 
 			String sq = "insert into NEW_SUBSCRIPTION(Subscription_ID,Customer_id,Payment_Date,Amount_Paid,Sub_Start_Month,Sub_Start_Year,Sub_End_Month,Sub_End_Year,Remarks,isShipped) values('"+sub_id+"',"+customer_id+",'"+date+"','"+amount+"','"+StartMonth+"','"+StartYear+"','"+EndMonth+"','"+EndYear+"','"+Rem+"','"+msg+"')";
 			stm.execute(sq);
+			
+			
+			String search_customer = "Select * from NEW_SUBSCRIPTION where customer_id ='"+customer_id+"'";
+			ResultSet r = stm.executeQuery(search_customer);
+			
+			if (!r.next() ) {
+				//INSERT A NEW ROW
+				stm.execute(sq);
+			} 
+			else
+			{
+				//UPDATE THE EXISTING ROW
+				stm.execute(sq0);
+			}
+			
 			
 			
 			//Close the database Connection
@@ -58,18 +72,6 @@ public class NewSubscriptionEntry {
 		
 		
 	}
-	
-	
-	
-	private static void Calculate_subscription(String Start, String End)
-	{
-		
-		
-		//take the year, then the month, if it is between JUne and December, add December and June if not, June and December of the same year. 
-		
-		
-	}
-	
 	
 	
 	

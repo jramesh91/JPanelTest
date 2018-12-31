@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
+import javax.swing.table.DefaultTableModel;
 
 import com.toedter.calendar.JCalendar;
 
@@ -31,12 +32,20 @@ import javax.swing.JCheckBox;
 import javax.swing.JDialog;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
+import javax.swing.JTable;
 
 public class GenerateReport extends JFrame{
 	    private static int subs_id = Math.round(999 + (int)(Math.random() * 9999));
 	     //This is the login page
 	    private JTextField textField_6;
 	    private JTextField textField_1;
+	    private static DefaultTableModel tableModel;
+	    private JTable table;
+	    private JTable table1;
+	    private JScrollPane jScroll;
+	    public static String [] column_header= {"Customer ID", "Full Name","Door Number","Street Name","City","State","Pin Code"};
+	    public static String [][] column_hea= {{"Customer ID", "Full Name","Door Number","Street Name","City","State","Pin Code"},{"Customer ID", "Full Name","Door Number","Street Name","City","State","Pin Code"}};
+	    public static String [][] column_value ;
 	    
 	    
 	    public GenerateReport() {
@@ -91,6 +100,19 @@ public class GenerateReport extends JFrame{
 			        btnGatherReport.setBackground(new Color(204, 255, 255));
 			        btnGatherReport.setBounds(443, 245, 124, 36);
 				    getContentPane().add(btnGatherReport);
+				    
+				    
+				    
+				    
+				    JPanel panel = new JPanel();
+				    panel.setBounds(6, 357, 788, 374);
+				    
+				    getContentPane().add(panel);
+				    tableModel = new DefaultTableModel(column_header,100);
+				    table = new JTable(tableModel);
+  					table.setBounds(6, 357, 788, 374);
+				    jScroll = new JScrollPane(table);
+				    panel.add(jScroll);
 			        
 				  //Button to go into New Sub entry page
 				    btnGatherReport.addActionListener(new ActionListener() {
@@ -102,18 +124,27 @@ public class GenerateReport extends JFrame{
 				  				{
 				  					System.out.println("Searching for report");
 				  					Reporting_BP.searchReportDetails(textField_6.getText(), textField_1.getText());
+				  					for(int i = 0; i<=column_value.length; i++)
+				  					tableModel.insertRow(i+1, column_value);
 				  					
+				  					//jScroll = new JScrollPane(table);
+								    //panel.add(jScroll);
+				  					//System.out.println("THe ccolumn_header.toString());
 				  					
 				  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
 				  					
 				  					//new ReportResults().setVisible(true);
 				  				}
-				  			
+				  				
+				  				
+				       
 				  			}
 				  		});
-	       
+				    
+				    
 	    }
 }
+
 
 
 /*System.out.println("Entered Generate Panel");

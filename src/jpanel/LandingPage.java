@@ -72,7 +72,7 @@ public class LandingPage extends JFrame{
 	    btnSearchCustomer.setBounds(565, 151, 146, 53);
 	    getContentPane().add(btnSearchCustomer);
 	    
-	    JButton btnNewSubscription = new JButton("New Subscription");
+	    JButton btnNewSubscription = new JButton("Modify Subscription");
 	    btnNewSubscription.setBackground(new Color(204, 255, 255));
 	    btnNewSubscription.setBounds(115, 336, 146, 53);
 	    getContentPane().add(btnNewSubscription);

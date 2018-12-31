@@ -8,11 +8,17 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import jpanel.GenerateReport;
+
 
 
 
 
 public class Reporting_BP {
+	
+	public static int main_columnCount;
+	private static int array_row = 0;
+	
 	public static void searchReportDetails(String month, String year)
 	{
 		ArrayList<String> Customer_id = new ArrayList<String>();
@@ -32,6 +38,8 @@ public class Reporting_BP {
 			//Select * from NEW_SUBSCRIPTION WHERE (Sub_Start_year = '20' OR sub_end_year ='18')  AND (sub_start_month = '08' OR Sub_end_month ='08');
 			String sq = "Select * from NEW_SUBSCRIPTION WHERE (Sub_Start_year = '"+year+"' OR sub_end_year ='"+year+"')  AND (sub_start_month = '"+month+"' OR Sub_end_month ='"+month+"')";
 			 ResultSet rs = stm.executeQuery(sq);
+ 
+			 
 			 
 			 
 			
@@ -52,6 +60,11 @@ public class Reporting_BP {
 			System.out.println(e);
 			
 		}
+		
+		
+		 //System.out.println("The length of the row is "+rs.);
+		 main_columnCount = Customer_id.size();
+		 
 		for(int i=0;i<Customer_id.size();i++)
 		{
 			System.out.println("\n The customer IDs are "+Customer_id.get(i));
@@ -78,6 +91,8 @@ public class Reporting_BP {
 		 ResultSet rs = stm.executeQuery(sq);
 		 ResultSetMetaData metadata = rs.getMetaData();
 		 int columnCount = metadata.getColumnCount();  
+		GenerateReport.column_value = new String [main_columnCount][columnCount];
+		 //System.out.println("The length of the row is "+rs.);
 		 
 		 
 		
@@ -85,10 +100,11 @@ public class Reporting_BP {
 		while(rs.next()){
 	        String row = "";
 	        for (int i = 1; i <= columnCount; i++) {
-	            row += rs.getString(i) + ", ";          
+	        	System.out.println("The "+i+"th value is "+rs.getString(i)+" and the column value is "+columnCount);
+	            GenerateReport.column_value[array_row][i-1] = rs.getString(i);
+	           
 	        }
-		row.toString();
-		System.out.println("The values are "+row.toString());
+	        array_row++;
 		}
 		con.close();
 	}
