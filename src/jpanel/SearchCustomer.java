@@ -271,7 +271,7 @@ public class SearchCustomer extends JFrame{
 						textField_13.setText(Search_Customer.End_Year);
 						textField_14.setText(Search_Customer.Remarks);
 						textField_15.setText(Search_Customer.isShipped); 
-						//dispose();
+						dispose();
 	  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
 	  					
 	  					//new SearchCustomer().setVisible(true);
@@ -324,7 +324,7 @@ public class SearchCustomer extends JFrame{
 					if(e.getSource()==home_button)
 					{
 						System.out.println("Again to the LANDING PAGE!");
-						//dispose();
+						dispose();
 						new LandingPage().setVisible(true);
 					}
 				

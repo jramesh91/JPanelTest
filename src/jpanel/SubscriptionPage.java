@@ -267,7 +267,7 @@ public class SubscriptionPage extends JFrame{
 					    } else if (response == JOptionPane.YES_OPTION)
 					    {
 					      System.out.println("Confirmation Accepted");
-					      //dispose();
+					      dispose();
 					      LoginPage.entry=false;
 					      new LoginPage().setVisible(true);
 					    } }
@@ -286,7 +286,7 @@ public class SubscriptionPage extends JFrame{
 						if(e.getSource()==btnBack)
 						{
 							System.out.println("Again to the LANDING PAGE!");
-							//dispose();
+							dispose();
 							new LandingPage().setVisible(true);
 						}
 					
@@ -302,7 +302,7 @@ public class SubscriptionPage extends JFrame{
 						if(e.getSource()==btnBackToCustomer)
 						{
 							System.out.println("Again to the LANDING PAGE!");
-							//dispose();
+							dispose();
 							new NewCustomer().setVisible(true);
 						}
 					
