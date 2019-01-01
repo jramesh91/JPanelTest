@@ -56,6 +56,7 @@ public class GenerateReport extends JFrame{
 	        getContentPane().setLayout(null);
 			setSize(800, 800);
 			setLocation(450,150);
+			setDefaultCloseOperation(EXIT_ON_CLOSE);
 			
 			 JTextPane txtpnNewCustomerEntry = new JTextPane();
 		        txtpnNewCustomerEntry.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 32));

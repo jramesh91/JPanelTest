@@ -60,12 +60,18 @@ public class SearchCustomer extends JFrame{
 	        getContentPane().setLayout(null);
 	        setSize(800, 800);
 	        setLocation(450,150);
+	        setDefaultCloseOperation(EXIT_ON_CLOSE);
 	        
 	        JTextPane txtpnNewCustomerEntry = new JTextPane();
 	        txtpnNewCustomerEntry.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 32));
 	        txtpnNewCustomerEntry.setBounds(269, 28, 301, 45);
 	        txtpnNewCustomerEntry.setText("Search Customer");
 	        getContentPane().add(txtpnNewCustomerEntry);
+	        
+	        JButton home_button = new JButton("Back");
+	        home_button.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
+	        home_button.setBounds(391, 726, 130, 26);
+		    getContentPane().add(home_button);
 	        
 	        
 	        JButton btnLogout = new JButton("Logout");
@@ -308,5 +314,22 @@ public class SearchCustomer extends JFrame{
 	        	
 	        });
 	        
+	        
+	        //Back Button's Action Listener
+	        home_button.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					if(e.getSource()==home_button)
+					{
+						System.out.println("Again to the LANDING PAGE!");
+						//dispose();
+						new LandingPage().setVisible(true);
+					}
+				
+				}
+			});
+		
 	    }
 }

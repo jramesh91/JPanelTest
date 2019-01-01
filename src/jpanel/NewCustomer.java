@@ -31,12 +31,12 @@ import java.awt.Color;
 public class NewCustomer extends JFrame{  
 	 
 	    private JTextField textField;
-	    private JTextField textField_1;
-	    private JTextField textField_2;
-	    private JTextField textField_3;
-	    private JTextField textField_4;
-	    private JTextField textField_5;
-	    private JTextField textField_6;
+	    private static JTextField textField_1;
+	    private static JTextField textField_2;
+	    private static JTextField textField_3;
+	    private static JTextField textField_4;
+	    private static JTextField textField_5;
+	    private static JTextField textField_6;
 	    private static int customer_id = Math.round(999 + (int)(Math.random() * 9999));
 	    private static int Sub_id = Math.round(999 + (int)(Math.random() * 9999));
 	    private JTextField txtCustomerId;
@@ -51,6 +51,7 @@ public class NewCustomer extends JFrame{
 	        getContentPane().setLayout(null);
 	        setSize(800, 800);
 	        setLocation(450,150);
+	        setDefaultCloseOperation(EXIT_ON_CLOSE);
 	        
 	        JTextPane txtpnNewCustomerEntry = new JTextPane();
 	        txtpnNewCustomerEntry.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 32));
@@ -163,24 +164,34 @@ public class NewCustomer extends JFrame{
 		    txtCustomerId.setBounds(446, 98, 130, 26);
 		    getContentPane().add(txtCustomerId);
 		    txtCustomerId.setColumns(10);*/
-	        
-	        JLabel lable = new JLabel("",new ImageIcon("back.jpg"),JLabel.CENTER);
-		    lable.setBounds(0, 0, 800, 800);
-		    getContentPane().add(lable);
-		    
+        
+	        JLabel Home = new JLabel("",new ImageIcon("back.jpg"),JLabel.CENTER);
+		    Home.setBounds(0, 0, 800, 800);
+		    getContentPane().add(Home);
+
+		  /*  JButton home_button = new JButton("Home");
+		    home_button.setBounds(21, 19, 130, 26);
+		    getContentPane().add(home_button);
+		    */
 		    
 	        
 	        
 	       
-	        //Update the table with the data
-	        btnAddMoreDetails.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+	      //Back Button's Action Listener
+	        btnCancel.addActionListener(new ActionListener() {
 				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					if(e.getSource()==btnCancel)
+					{
+						System.out.println("Again to the LANDING PAGE!");
+						//dispose();
+						new LandingPage().setVisible(true);
+					}
 				
-
-			}
-
-		});
+				}
+			});
 		
 		
 		//Button to go into New Sub entry page
@@ -201,7 +212,7 @@ public class NewCustomer extends JFrame{
 								textField_2.getText(), textField_3.getText(), textField_4.getText(), textField_5.getText());
 						SubscriptionPage.firstAfterLanding = false;
 						new SubscriptionPage(textField_6.getText()).setVisible(true);
-						dispose();
+						//dispose();
 						}
 					
 					}
@@ -223,7 +234,7 @@ public class NewCustomer extends JFrame{
 			    } else if (response == JOptionPane.YES_OPTION)
 			    {
 			      System.out.println("Confirmation Accepted");
-			      dispose();
+			      //dispose();
 			      LoginPage.entry=false;
 			      new LoginPage().setVisible(true);
 			    } }

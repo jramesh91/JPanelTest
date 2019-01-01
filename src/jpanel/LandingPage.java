@@ -55,7 +55,7 @@ public class LandingPage extends JFrame{
 		getContentPane().setLayout(null);
 		setSize(800, 800);
 		setLocation(450,150);
-		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	   
 	    
 		JButton btnLogout = new JButton("Logout");
@@ -83,7 +83,7 @@ public class LandingPage extends JFrame{
 	    	public void actionPerformed(ActionEvent e) {
 	    	}
 	    });
-	    btnGenerateReport.setBounds(576, 336, 146, 53);
+	    btnGenerateReport.setBounds(565, 336, 146, 53);
 	    getContentPane().add(btnGenerateReport);
 	    
 	    JTextPane txtpnWelcomeToJournal = new JTextPane();
@@ -115,7 +115,7 @@ public class LandingPage extends JFrame{
 	  				if(e.getSource()==btnNewCustomer)
 	  				{
 	  					System.out.println("This is redirected to Subscription Page");
-	  					dispose();
+	  					//dispose();
 	  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
 	  					String a = null;
 	  					new NewCustomer().setVisible(true);
@@ -133,7 +133,7 @@ public class LandingPage extends JFrame{
 	  				if(e.getSource()==btnNewSubscription)
 	  				{
 	  					System.out.println("This is redirected to Subscription Page");
-	  					dispose();
+	  					//dispose();
 	  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
 	  					String a = null;
 	  					new SubscriptionPage(a).setVisible(true);
@@ -151,7 +151,7 @@ public class LandingPage extends JFrame{
 	  				if(e.getSource()==btnGenerateReport)
 	  				{
 	  					System.out.println("This is redirected to Subscription Page");
-	  					dispose();
+	  					//dispose();
 	  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
 	  					String a = null;
 	  					new GenerateReport().setVisible(true);
@@ -169,7 +169,7 @@ public class LandingPage extends JFrame{
 	  				if(e.getSource()==btnSearchCustomer)
 	  				{
 	  					System.out.println("This is redirected to Subscription Page");
-	  					dispose();
+	  					//dispose();
 	  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
 	  					
 	  					new SearchCustomer().setVisible(true);
