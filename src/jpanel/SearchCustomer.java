@@ -163,26 +163,32 @@ public class SearchCustomer extends JFrame{
 		    getContentPane().add(label);
 		    
 		    JLabel lblSubscriptionId = new JLabel("Subscription ID");
+		    lblSubscriptionId.setForeground(new Color(0,255,0));
 		    lblSubscriptionId.setBounds(347, 226, 120, 20);
 		    getContentPane().add(lblSubscriptionId);
 		    
 		    JLabel lblAmountPaid = new JLabel("Amount Paid");
+		    lblAmountPaid.setForeground(new Color(0,255,0));
 		    lblAmountPaid.setBounds(347, 330, 110, 20);
 		    getContentPane().add(lblAmountPaid);
 		    
 		    JLabel lblDateOfPayment = new JLabel("Date of Payment");
+		    lblDateOfPayment.setForeground(new Color(0,255,0));
 		    lblDateOfPayment.setBounds(347, 278, 132, 20);
 		    getContentPane().add(lblDateOfPayment);
 		    
 		    JLabel lblRemarks = new JLabel("Remarks");
+		    lblRemarks.setForeground(new Color(0,255,0));
 		    lblRemarks.setBounds(178, 560, 69, 20);
 		    getContentPane().add(lblRemarks);
 		    
 		    JLabel lblShippedstIssue = new JLabel("Shipped 1st Issue?");
+		    lblShippedstIssue.setForeground(new Color(0,255,0));
 		    lblShippedstIssue.setBounds(178, 639, 146, 20);
 		    getContentPane().add(lblShippedstIssue);
 		    
 		    JLabel lblSubscriptionStart = new JLabel("Subscription Start");
+		    lblSubscriptionStart.setForeground(new Color(0,255,0));
 		    lblSubscriptionStart.setBounds(347, 382, 132, 20);
 		    getContentPane().add(lblSubscriptionStart);
 		    
@@ -230,6 +236,7 @@ public class SearchCustomer extends JFrame{
 		    getContentPane().add(textField_13);
 		    
 		    JLabel label_3 = new JLabel("Subscription Start");
+		    label_3.setForeground(new Color(0,255,0));
 		    label_3.setBounds(347, 434, 132, 20);
 		    getContentPane().add(label_3);
 		    
@@ -255,6 +262,7 @@ public class SearchCustomer extends JFrame{
 					
 					if(e.getSource()==btnSearch)
 					{	 cust_id=textField_6.getText();
+					System.out.println("Searching Customers");
 						Search_Customer.searchCustomerDetails(cust_id);
 						textField.setText(Search_Customer.first_name);
 						textField_1.setText(Search_Customer.Street);
@@ -271,7 +279,7 @@ public class SearchCustomer extends JFrame{
 						textField_13.setText(Search_Customer.End_Year);
 						textField_14.setText(Search_Customer.Remarks);
 						textField_15.setText(Search_Customer.isShipped); 
-						dispose();
+						//dispose();
 	  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
 	  					
 	  					//new SearchCustomer().setVisible(true);

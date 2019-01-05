@@ -1,5 +1,6 @@
 package jpanel;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -80,7 +81,7 @@ public class SubscriptionPage extends JFrame{
 	        getContentPane().add(btnLogout);
 	        
 	        JLabel lblCustomerId = new JLabel("Customer ID");
-	        lblCustomerId.setFont(new Font("Courier", Font.BOLD, 16));
+	        lblCustomerId.setForeground(new Color(255, 204, 0));
 	        lblCustomerId.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
 	        lblCustomerId.setBounds(176, 105, 130, 26);
 	        getContentPane().add(lblCustomerId);
@@ -102,7 +103,7 @@ public class SubscriptionPage extends JFrame{
 	        
 	        JLabel lblSubscriptionId = new JLabel("Subscription ID");
 	        lblSubscriptionId.setBounds(176, 154, 151, 26);
-	        lblSubscriptionId.setFont(new Font("Courier", Font.BOLD, 16));
+	        lblSubscriptionId.setForeground(new Color(255, 204, 0));
 	        lblSubscriptionId.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
 	        getContentPane().add(lblSubscriptionId);
 	        
@@ -113,7 +114,7 @@ public class SubscriptionPage extends JFrame{
 	        getContentPane().add(textField);
 	        
 	        JLabel lblDateOfPayment = new JLabel("Date of Payment");
-	        lblDateOfPayment.setFont(new Font("Courier", Font.BOLD, 16));
+	        lblDateOfPayment.setForeground(new Color(255, 204, 0));
 	        lblDateOfPayment.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
 	        lblDateOfPayment.setBounds(176, 213, 166, 26);
 	        getContentPane().add(lblDateOfPayment);
@@ -123,7 +124,7 @@ public class SubscriptionPage extends JFrame{
 	        getContentPane().add(dateChooser);
 	        
 	        JLabel lblAmountPaid = new JLabel("Amount Paid");
-	        lblAmountPaid.setFont(new Font("Courier", Font.BOLD, 16));
+	        lblAmountPaid.setForeground(new Color(255, 204, 0));
 	        lblAmountPaid.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
 	        lblAmountPaid.setBounds(176, 255, 130, 26);
 	        getContentPane().add(lblAmountPaid);
@@ -134,7 +135,7 @@ public class SubscriptionPage extends JFrame{
 	        textField_2.setColumns(10);
 	        
 	        JLabel lblStartDate = new JLabel("Start Date");
-	        lblStartDate.setFont(new Font("Courier", Font.BOLD, 16));
+	        lblStartDate.setForeground(new Color(255, 204, 0));
 	        lblStartDate.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
 	        lblStartDate.setBounds(176, 297, 130, 26);
 	        getContentPane().add(lblStartDate);
@@ -144,7 +145,7 @@ public class SubscriptionPage extends JFrame{
 	        getContentPane().add(dateChooser_1);
 	        
 	        JLabel lblEndDate = new JLabel("End Date");
-	        lblEndDate.setFont(new Font("Courier", Font.BOLD, 16));
+	        lblEndDate.setForeground(new Color(255, 204, 0));
 	        lblEndDate.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
 	        lblEndDate.setBounds(176, 345, 130, 26);
 	        getContentPane().add(lblEndDate);
@@ -154,7 +155,7 @@ public class SubscriptionPage extends JFrame{
 	        getContentPane().add(dateChooser_2);      
 	        
 	        JLabel lblRemarks = new JLabel("Remarks*");
-	        lblRemarks.setFont(new Font("Courier", Font.BOLD, 16));
+	        lblRemarks.setForeground(new Color(255, 204, 0));
 	        lblRemarks.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
 	        lblRemarks.setBounds(176, 388, 130, 26);
 	        getContentPane().add(lblRemarks);
@@ -186,11 +187,12 @@ public class SubscriptionPage extends JFrame{
 			        DateFormat year = new SimpleDateFormat("YY");
 			        DateFormat month_year = new SimpleDateFormat("dd/MM/YYYY");
 			        
-					NewSubscriptionEntry.saveSubscriptionDetails(cust_id, month_year.format(dateChooser.getDate()),
+					NewSubscriptionEntry.saveSubscriptionDetails(textField.getText(),cust_id, month_year.format(dateChooser.getDate()),
 									textField_2.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()), textField_1.getText(),msg);
 	        		}
 	        		}
 	        });
+	        chckbxNewCheckBox.setForeground(new Color(255, 204, 0));
 	        chckbxNewCheckBox.setBounds(369, 435, 187, 26);
 	        getContentPane().add(chckbxNewCheckBox);
 	       
@@ -243,9 +245,10 @@ public class SubscriptionPage extends JFrame{
 			        	
 			       
 			        
-					NewSubscriptionEntry.saveSubscriptionDetails(textField_6.getText(), dateChooser.getDate().toString(),
+					NewSubscriptionEntry.saveSubscriptionDetails(textField.getText(),textField_6.getText(), dateChooser.getDate().toString(),
 									textField_2.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()), textField_1.getText(),msg);
-
+					dispose();
+					new LandingPage().setVisible(true);
 				}
 
 			});

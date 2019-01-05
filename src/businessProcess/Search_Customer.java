@@ -47,13 +47,15 @@ public class Search_Customer{
 			Statement stm = con.createStatement();
 			
 			//statement to fetch the user ID's entire Row
-			String sq = " SELECT * from Customer inner join new_subscription on Customer.customer_id=new_subscription.customer_id where customer.customer_id='"+customer_id+"' ";
+			//String sq = " SELECT * from Customer inner join new_subscription on Customer.customer_id=new_subscription.customer_id where customer.customer_id='"+customer_id+"' ";
+			String sq = "SELECT * from Customer inner join new_subscription on Customer.customer_id=new_subscription.customer_id where customer.customer_id="+customer_id+" ";
 			ResultSet rss=stm.executeQuery(sq);
 			while(rss.next())
 			{
 				 customer_id1=rss.getString("Customer_id");
-				 //System.out.println("Static Value wo initializing "+first_name);
+				 System.out.println("Static Value wo initializing "+first_name);
 				 first_name = rss.getString("Last_Name");
+				 System.out.println("Static Value wo initializing "+first_name);
 				 Street=rss.getString("Street_Name");
 				 Door=rss.getString("Door_Number");
 				 City=rss.getString("City");
