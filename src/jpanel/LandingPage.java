@@ -64,7 +64,7 @@ public class LandingPage extends JFrame{
 	    
 	    JButton btnNewCustomer = new JButton("New Customer");
 	    btnNewCustomer.setBackground(new Color(204, 255, 255));
-	    btnNewCustomer.setBounds(115, 151, 146, 53);
+	    btnNewCustomer.setBounds(125, 151, 146, 53);
 	    getContentPane().add(btnNewCustomer);
 	    
 	    JButton btnSearchCustomer = new JButton("Search Customer");
@@ -74,8 +74,18 @@ public class LandingPage extends JFrame{
 	    
 	    JButton btnNewSubscription = new JButton("Modify Subscription");
 	    btnNewSubscription.setBackground(new Color(204, 255, 255));
-	    btnNewSubscription.setBounds(115, 336, 146, 53);
+	    btnNewSubscription.setBounds(125, 336, 146, 53);
 	    getContentPane().add(btnNewSubscription);
+	    
+	    JButton btnSearchCustomerID = new JButton("Search Customer ID");
+	    btnSearchCustomerID.setBackground(new Color(204, 255, 255));
+	    btnSearchCustomerID.setBounds(125, 516, 146, 53);
+	    getContentPane().add(btnSearchCustomerID);
+	    
+	    JButton btnRemainingBalance = new JButton("Remaining Balance");
+	    btnRemainingBalance.setBackground(new Color(204, 255, 255));
+	    btnRemainingBalance.setBounds(565, 516, 146, 53);
+	    getContentPane().add(btnRemainingBalance);
 	    
 	    JButton btnGenerateReport = new JButton("Generate Report");
 	    btnGenerateReport.setBackground(new Color(204, 255, 255));
@@ -85,6 +95,9 @@ public class LandingPage extends JFrame{
 	    });
 	    btnGenerateReport.setBounds(565, 336, 146, 53);
 	    getContentPane().add(btnGenerateReport);
+	    
+	  
+	    
 	    
 	    JTextPane txtpnWelcomeToJournal = new JTextPane();
 	    txtpnWelcomeToJournal.setForeground(new Color(255, 0, 51));

@@ -101,7 +101,7 @@ public class Reporting_BP {
 	        String row = "";
 	        for (int i = 1; i <= columnCount; i++) {
 	        	System.out.println("The "+i+"th value is "+rs.getString(i)+" and the column value is "+columnCount);
-	            GenerateReport.column_value[array_row][i-1] = rs.getString(i);
+	            GenerateReport.column_value[array_row][i-1] = rs.getString(i).toString();
 	           
 	        }
 	        array_row++;

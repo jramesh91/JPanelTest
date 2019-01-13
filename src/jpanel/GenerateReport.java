@@ -127,6 +127,8 @@ public class GenerateReport extends JFrame{
 				  					Reporting_BP.searchReportDetails(textField_6.getText(), textField_1.getText());
 				  					for(int i = 0; i<=column_value.length; i++)
 				  					tableModel.insertRow(i+1, column_value);
+				  					System.out.println("The values are "+column_value.toString());
+				  					
 				  					
 				  					//jScroll = new JScrollPane(table);
 								    //panel.add(jScroll);
