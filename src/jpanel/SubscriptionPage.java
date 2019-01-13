@@ -22,6 +22,7 @@ import com.toedter.calendar.JCalendar;
 
 import businessProcess.NewCustomerEntry;
 import businessProcess.NewSubscriptionEntry;
+import businessProcess.Rem_Balance;
 
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JLabel;
@@ -32,6 +33,8 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class SubscriptionPage extends JFrame{
+	DateFormat month = new SimpleDateFormat("MM");
+    DateFormat year = new SimpleDateFormat("YY");
 
 	 private JTextField textField;
 	    private JTextField textField_2;
@@ -71,7 +74,7 @@ public class SubscriptionPage extends JFrame{
 
 	        txtpnNewCustomerEntry.setText("Enter Subscription Details");
 	        txtpnNewCustomerEntry.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 32));
-	        txtpnNewCustomerEntry.setBounds(269, 28, 301, 45);
+	        txtpnNewCustomerEntry.setBounds(141, 28, 476, 45);
 	        getContentPane().add(txtpnNewCustomerEntry);
 	        
 	        //add(txtpnNewCustomerEntry, gbc_txtpnNewCustomerEntry);
@@ -83,7 +86,7 @@ public class SubscriptionPage extends JFrame{
 	        JLabel lblCustomerId = new JLabel("Customer ID");
 	        lblCustomerId.setForeground(new Color(255, 204, 0));
 	        lblCustomerId.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblCustomerId.setBounds(176, 105, 130, 26);
+	        lblCustomerId.setBounds(160, 105, 194, 26);
 	        getContentPane().add(lblCustomerId);
 	        
 	        
@@ -102,7 +105,7 @@ public class SubscriptionPage extends JFrame{
 	        }
 	        
 	        JLabel lblSubscriptionId = new JLabel("Subscription ID");
-	        lblSubscriptionId.setBounds(176, 154, 151, 26);
+	        lblSubscriptionId.setBounds(160, 147, 171, 26);
 	        lblSubscriptionId.setForeground(new Color(255, 204, 0));
 	        lblSubscriptionId.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
 	        getContentPane().add(lblSubscriptionId);
@@ -116,7 +119,7 @@ public class SubscriptionPage extends JFrame{
 	        JLabel lblDateOfPayment = new JLabel("Date of Payment");
 	        lblDateOfPayment.setForeground(new Color(255, 204, 0));
 	        lblDateOfPayment.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblDateOfPayment.setBounds(176, 213, 166, 26);
+	        lblDateOfPayment.setBounds(160, 213, 194, 26);
 	        getContentPane().add(lblDateOfPayment);
 	        
 	        JDateChooser dateChooser = new JDateChooser();
@@ -126,7 +129,7 @@ public class SubscriptionPage extends JFrame{
 	        JLabel lblAmountPaid = new JLabel("Amount Paid");
 	        lblAmountPaid.setForeground(new Color(255, 204, 0));
 	        lblAmountPaid.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblAmountPaid.setBounds(176, 255, 130, 26);
+	        lblAmountPaid.setBounds(160, 255, 161, 26);
 	        getContentPane().add(lblAmountPaid);
 	        
 	        textField_2 = new JTextField();
@@ -137,7 +140,7 @@ public class SubscriptionPage extends JFrame{
 	        JLabel lblStartDate = new JLabel("Start Date");
 	        lblStartDate.setForeground(new Color(255, 204, 0));
 	        lblStartDate.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblStartDate.setBounds(176, 297, 130, 26);
+	        lblStartDate.setBounds(160, 297, 130, 26);
 	        getContentPane().add(lblStartDate);
 	        
 	        JDateChooser dateChooser_1 = new JDateChooser();
@@ -147,7 +150,7 @@ public class SubscriptionPage extends JFrame{
 	        JLabel lblEndDate = new JLabel("End Date");
 	        lblEndDate.setForeground(new Color(255, 204, 0));
 	        lblEndDate.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblEndDate.setBounds(176, 345, 130, 26);
+	        lblEndDate.setBounds(160, 345, 130, 26);
 	        getContentPane().add(lblEndDate);
 	        
 	        JDateChooser dateChooser_2 = new JDateChooser();  
@@ -157,13 +160,25 @@ public class SubscriptionPage extends JFrame{
 	        JLabel lblRemarks = new JLabel("Remarks*");
 	        lblRemarks.setForeground(new Color(255, 204, 0));
 	        lblRemarks.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblRemarks.setBounds(176, 388, 130, 26);
+	        lblRemarks.setBounds(160, 440, 130, 26);
 	        getContentPane().add(lblRemarks);
 	        
+	        
+	        JLabel lblCopies = new JLabel("No. of Copies");
+	        lblCopies.setForeground(new Color(255, 204, 0));
+	        lblCopies.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
+	        lblCopies.setBounds(155, 387, 146, 26);
+	        getContentPane().add(lblCopies);
+	        
 	        textField_1 = new JTextField();
-	        textField_1.setBounds(369, 388, 130, 26);
+	        textField_1.setBounds(369, 443, 146, 26);
 	        getContentPane().add(textField_1);
 	        textField_1.setColumns(10);
+	        
+	        JTextField textField_3 = new JTextField();
+	        textField_3.setBounds(369,387, 146, 26);
+	        getContentPane().add(textField_3);
+	        textField_3.setColumns(10);
 	        
 	       
 	        
@@ -193,7 +208,7 @@ public class SubscriptionPage extends JFrame{
 	        		}
 	        });
 	        chckbxNewCheckBox.setForeground(new Color(255, 204, 0));
-	        chckbxNewCheckBox.setBounds(369, 435, 187, 26);
+	        chckbxNewCheckBox.setBounds(369, 502, 187, 26);
 	        getContentPane().add(chckbxNewCheckBox);
 	       
 	        
@@ -220,9 +235,13 @@ public class SubscriptionPage extends JFrame{
 	        btnAddMoreDetails.setBounds(632, 727, 130, 26);
 	        getContentPane().add(btnAddMoreDetails);
 	        
+	        JButton btnCheckAvailibility = new JButton("Check Availibility");
+	        btnCheckAvailibility.setBounds(541, 387, 161, 29);
+	        getContentPane().add(btnCheckAvailibility);
+	        
 	        JLabel Home = new JLabel("",new ImageIcon("back.jpg"),JLabel.CENTER);
-		    Home.setBounds(0, 0, 800, 800);
-		    getContentPane().add(Home);
+	        Home.setBounds(0, -25, 778, 753);
+	        getContentPane().add(Home);
 	        
 	        //Update the table with the data
 			btnAddMoreDetails.addActionListener(new ActionListener() {
@@ -238,8 +257,7 @@ public class SubscriptionPage extends JFrame{
 						msg="No";
 					}
 					NewSubscriptionEntry.validateSubId(subs_id);
-					DateFormat month = new SimpleDateFormat("MM");
-			        DateFormat year = new SimpleDateFormat("YY");
+					
 			        
 			      // textField_6.getText();
 			        	
@@ -311,11 +329,35 @@ public class SubscriptionPage extends JFrame{
 					
 					}
 				});
+				
+				
+				btnCheckAvailibility.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						if(e.getSource()==btnCheckAvailibility)
+						{
+							DateFormat month = new SimpleDateFormat("MM");
+					        DateFormat year = new SimpleDateFormat("YY");
+							System.out.println("Checking Availability....");
+						
+							NewSubscriptionEntry.checkAvailability(textField_3.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()));
+							if(NewSubscriptionEntry.isAvailable_Start.equals("Yes")&&NewSubscriptionEntry.isAvailable_End.equals("Yes")) {
+								JOptionPane.showMessageDialog(null, "Good to go","Shubam!!!",JOptionPane.ERROR_MESSAGE);}
+							else if(NewSubscriptionEntry.isAvailable_Start.equals("No")&&NewSubscriptionEntry.isAvailable_End.equals("Yes")) {
+									JOptionPane.showMessageDialog(null, "Good to go","Not Shubam!!!",JOptionPane.ERROR_MESSAGE);
+										
+							}
+						}
+					
+					}
+				});
 			
 	        
-/*			
+		
 				
-	        pack();
+	       /* pack();
 	        setLocationRelativeTo(null);*/
-	    }
-}
+	    }  //Braces for the Constructor
+} //Class

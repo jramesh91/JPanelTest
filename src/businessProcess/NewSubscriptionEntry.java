@@ -6,9 +6,13 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Date;
 
+import javax.swing.JOptionPane;
+
 public class NewSubscriptionEntry {
 
 
+	public static String isAvailable_Start="";
+	public static String isAvailable_End="";
 	
 	private static String sub_id;
 	public static void saveSubscriptionDetails(String subs_id, String customer_id, String date, String amount,String StartMonth, String StartYear,String EndMonth, String EndYear,String Rem,String msg) //Added "Boolean Message" as a parameter
@@ -19,8 +23,8 @@ public class NewSubscriptionEntry {
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
@@ -83,8 +87,8 @@ public class NewSubscriptionEntry {
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			System.out.println("Static var is "+subs_id);	
 
@@ -126,6 +130,122 @@ public class NewSubscriptionEntry {
 		}
 		
 		
+	}
+	
+	
+	public static String checkAvailability(String Copies,String Start_Month,String Start_Year,String End_Month,String End_Year) {
+	System.out.println("Value of Copy is"+Copies);
+	try { 
+		//JDBC Driver Setup
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+		
+		
+		Statement stm = con.createStatement();
+		
+		
+		String date_query=Start_Month+Start_Year;
+		String date_query_end=End_Month+End_Year;
+		
+		
+		
+		String sq = "Select * from remaining where date1='"+date_query+"'";
+		ResultSet rs = stm.executeQuery(sq);
+		String rem;
+		while(rs.next())
+		{
+		
+			System.out.println(Start_Month+" is the Start Month");
+			System.out.println(Copies+ "is the number of copies");
+			
+			
+			if(date_query.equals(rs.getString(1)))
+			{   
+				
+				if(Start_Month.equals("06"))
+				{rem=rs.getString(2);}
+				else
+				{rem=rs.getString(3);}
+				if(Integer.parseInt(Copies)<=Integer.parseInt(rem))
+				{
+				isAvailable_Start="Yes";
+				System.out.println(rem);
+				System.out.println(isAvailable_Start);
+				}
+				else
+				{
+				isAvailable_Start="No";
+				System.out.println(isAvailable_Start);
+				}
+			}
+			
+			
+			
+			
+			}
+			
+			
+			
+		
+		String sq1 = "Select * from remaining where date1='"+date_query_end+"'";
+		ResultSet rs1 = stm.executeQuery(sq1);
+		String rem1;
+		while(rs1.next())
+		{
+		
+			System.out.println(End_Month+" is the End Month");
+			System.out.println(Copies+ "is the number of copies");
+			
+			
+			if(date_query_end.equals(rs1.getString(1)))
+			{   
+				
+				if(End_Month.equals("12"))
+				{rem1=rs1.getString(3);}
+				else
+				{rem1=rs1.getString(2);}
+				if(Integer.parseInt(Copies)<=Integer.parseInt(rem1))
+				{
+				isAvailable_Start="Yes";
+				System.out.println(rem1);
+				System.out.println(isAvailable_Start);
+				}
+				else
+				{
+				isAvailable_Start="No";
+				System.out.println(isAvailable_Start);
+				}
+			}
+			
+			
+			
+			
+			
+			
+			
+			}
+		
+		
+			con.close();
+		
+		
+	}
+	
+	catch(Exception e) {
+		
+		System.out.println(e);
+		System.out.println(":(");
+		
+	}
+		
+		
+		
+		
+		
+		
+		
+	return Copies;	
 	}
 	
 
