@@ -45,7 +45,8 @@ public class GenerateReport extends JFrame{
 	    private JScrollPane jScroll;
 	    public static String [] column_header= {"Customer ID", "Full Name","Door Number","Street Name","City","State","Pin Code"};
 	    public static String [][] column_hea= {{"Customer ID", "Full Name","Door Number","Street Name","City","State","Pin Code"},{"Customer ID", "Full Name","Door Number","Street Name","City","State","Pin Code"}};
-	    public static String [][] column_value ;
+	    //public static String [][] column_value ;
+	    public static Object [][] column_value;
 	    
 	    
 	    public GenerateReport() {
@@ -125,18 +126,12 @@ public class GenerateReport extends JFrame{
 				  				{
 				  					System.out.println("Searching for report");
 				  					Reporting_BP.searchReportDetails(textField_6.getText(), textField_1.getText());
-				  					for(int i = 0; i<=column_value.length; i++)
-				  					tableModel.insertRow(i+1, column_value);
-				  					System.out.println("The values are "+column_value.toString());
+				  					for(int i = 0; i<column_value.length; i++)
+				  					{
+				  					tableModel.insertRow(i, column_value[i]);
 				  					
-				  					
-				  					//jScroll = new JScrollPane(table);
-								    //panel.add(jScroll);
-				  					//System.out.println("THe ccolumn_header.toString());
-				  					
-				  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
-				  					
-				  					//new ReportResults().setVisible(true);
+				  					}
+				  						
 				  				}
 				  				
 				  				

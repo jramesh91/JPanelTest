@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import jpanel.GenerateReport;
 
@@ -64,6 +65,7 @@ public class Reporting_BP {
 		
 		 //System.out.println("The length of the row is "+rs.);
 		 main_columnCount = Customer_id.size();
+		 GenerateReport.column_value = new String [main_columnCount][7];
 		 
 		for(int i=0;i<Customer_id.size();i++)
 		{
@@ -91,20 +93,21 @@ public class Reporting_BP {
 		 ResultSet rs = stm.executeQuery(sq);
 		 ResultSetMetaData metadata = rs.getMetaData();
 		 int columnCount = metadata.getColumnCount();  
-		GenerateReport.column_value = new String [main_columnCount][columnCount];
+		
 		 //System.out.println("The length of the row is "+rs.);
 		 
 		 
 		
 		//Try multiple rows to get the values
 		while(rs.next()){
-	        String row = "";
+	        //String row = "";
+			System.out.println("the array count is "+array_row);
 	        for (int i = 1; i <= columnCount; i++) {
-	        	System.out.println("The "+i+"th value is "+rs.getString(i)+" and the column value is "+columnCount);
-	            GenerateReport.column_value[array_row][i-1] = rs.getString(i).toString();
+	        	GenerateReport.column_value[array_row][i-1] = rs.getString(i);
 	           
 	        }
-	        array_row++;
+	        array_row = array_row+1;
+	        System.out.println("The columnd Length is"+Arrays.toString(GenerateReport.column_value));
 		}
 		con.close();
 	}
