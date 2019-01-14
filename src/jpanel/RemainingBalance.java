@@ -93,7 +93,7 @@ public class RemainingBalance extends JFrame{
     textField_1.setColumns(10);
     //Save Button
     JButton btnSave = new JButton("Save");
-    btnSave.setBounds(451, 375, 115, 29);
+    btnSave.setBounds(451, 432, 115, 29);
     getContentPane().add(btnSave);
     
     textField_2 = new JTextField();
@@ -104,6 +104,14 @@ public class RemainingBalance extends JFrame{
     JLabel lblEnterYear = new JLabel("Enter Year");
     lblEnterYear.setBounds(163, 238, 81, 20);
     getContentPane().add(lblEnterYear);
+    
+    JButton btnBack = new JButton("Back");
+    btnBack.setBounds(232, 432, 115, 29);
+    getContentPane().add(btnBack);
+    
+    JButton button = new JButton("Check Balance");
+    button.setBounds(509, 290, 115, 29);
+    getContentPane().add(button);
 	
     
     btnSave.addActionListener(new ActionListener() {
@@ -113,13 +121,82 @@ public class RemainingBalance extends JFrame{
   				// TODO Auto-generated method stub
   				if(e.getSource()==btnSave)
   				{
-  					System.out.println("Details are saved in the Remaining Balance Table");
+  					
+  					if((textField.getText()).equals("")||(textField_2.getText()).equals("")) {
+  						JOptionPane.showMessageDialog(null, "Hmm!Seems You didn't enter MM,YY");
+  					}
+  					else {
+  						System.out.println("Details are saved in the Remaining Balance Table");
   					Rem_Balance.saveRemDetails(textField.getText(),textField_2.getText(),textField_1.getText());
+  					}
   					
   				}
   			
   			}
   		});
+    
+    //Checking Balance Button
+    button.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if(e.getSource()==button)
+				{
+					System.out.println("Checking Balance.....!");
+					Rem_Balance.checkBalance(textField.getText(),textField_2.getText());
+					JOptionPane.showMessageDialog(null, "Your Current Balance is:" +Rem_Balance.CurrentBalance);
+					
+				}
+			
+			}
+		});
+    
+    
+  //Action Listener for the Logout :)  
+	btnLogout.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			if(e.getSource()==btnLogout)
+			{System.out.println("Confirming....");
+			JDialog.setDefaultLookAndFeelDecorated(true);
+		    int response = JOptionPane.showConfirmDialog(null, "You Sure?You want to Logout?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		    if (response == JOptionPane.NO_OPTION)
+		    {
+		      System.out.println("Confirmation Declined");
+		    } else if (response == JOptionPane.YES_OPTION)
+		    {
+		      System.out.println("Confirmation Accepted");
+		      dispose();
+		      LoginPage.entry=false;
+		      new LoginPage().setVisible(true);
+		    } }
+		
+		}
+	});
+	
+	
+	
+	//Back Button's Action Listener
+	btnBack.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			if(e.getSource()==btnBack)
+			{
+				System.out.println("Again to the LANDING PAGE!");
+				dispose();
+				new LandingPage().setVisible(true);
+			}
+		
+		}
+	});
+    
+    
+    
 	
 	
 	

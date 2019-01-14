@@ -203,7 +203,7 @@ public class SubscriptionPage extends JFrame{
 			        DateFormat month_year = new SimpleDateFormat("dd/MM/YYYY");
 			        
 					NewSubscriptionEntry.saveSubscriptionDetails(textField.getText(),cust_id, month_year.format(dateChooser.getDate()),
-									textField_2.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()), textField_1.getText(),msg);
+									textField_2.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()), textField_1.getText(),msg,textField_3.getText());
 	        		}
 	        		}
 	        });
@@ -259,12 +259,9 @@ public class SubscriptionPage extends JFrame{
 					NewSubscriptionEntry.validateSubId(subs_id);
 					
 			        
-			      // textField_6.getText();
-			        	
-			       
-			        
-					NewSubscriptionEntry.saveSubscriptionDetails(textField.getText(),textField_6.getText(), dateChooser.getDate().toString(),
-									textField_2.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()), textField_1.getText(),msg);
+			      NewSubscriptionEntry.saveSubscriptionDetails(textField.getText(),textField_6.getText(), dateChooser.getDate().toString(),
+									textField_2.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()), textField_1.getText(),msg,textField_3.getText());
+			      Rem_Balance.updateRemaining(textField_3.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()));
 					dispose();
 					new LandingPage().setVisible(true);
 				}
@@ -343,21 +340,26 @@ public class SubscriptionPage extends JFrame{
 							System.out.println("Checking Availability....");
 						
 							NewSubscriptionEntry.checkAvailability(textField_3.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()));
-							if(NewSubscriptionEntry.isAvailable_Start.equals("Yes")&&NewSubscriptionEntry.isAvailable_End.equals("Yes")) {
-								JOptionPane.showMessageDialog(null, "Good to go","Shubam!!!",JOptionPane.ERROR_MESSAGE);}
-							else if(NewSubscriptionEntry.isAvailable_Start.equals("No")&&NewSubscriptionEntry.isAvailable_End.equals("Yes")) {
-									JOptionPane.showMessageDialog(null, "Good to go","Not Shubam!!!",JOptionPane.ERROR_MESSAGE);
-										
+							if((NewSubscriptionEntry.isAvailable_Start.equals("Yes")&&NewSubscriptionEntry.isAvailable_End.equals("Yes"))) {
+								JOptionPane.showMessageDialog(null,"Issues are available for both June and December!");}
+							else if((NewSubscriptionEntry.isAvailable_Start.equals("No")&&NewSubscriptionEntry.isAvailable_End.equals("Yes"))) {
+									JOptionPane.showMessageDialog(null, "Issues are only available for the month:' "+month.format(dateChooser_2.getDate()),"Running out of Stock",JOptionPane.ERROR_MESSAGE);}
+							else if((NewSubscriptionEntry.isAvailable_Start.equals("Yes")&&NewSubscriptionEntry.isAvailable_End.equals("No"))) {
+									JOptionPane.showMessageDialog(null, "Issues are only available for"+month.format(dateChooser_1.getDate()),"Running out of Stock",JOptionPane.ERROR_MESSAGE);}
+							else if(NewSubscriptionEntry.isAvailable_Start.equals("No")&&NewSubscriptionEntry.isAvailable_End.equals("No")) {
+								JOptionPane.showMessageDialog(null, "Issues are not available for both June and December","Ran out of Stock",JOptionPane.ERROR_MESSAGE);
+								}
 							}
+										
+							
 						}
 					
-					}
+					
 				});
 			
 	        
 		
 				
-	       /* pack();
-	        setLocationRelativeTo(null);*/
+	     
 	    }  //Braces for the Constructor
 } //Class

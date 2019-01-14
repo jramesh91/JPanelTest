@@ -15,7 +15,7 @@ public class NewSubscriptionEntry {
 	public static String isAvailable_End="";
 	
 	private static String sub_id;
-	public static void saveSubscriptionDetails(String subs_id, String customer_id, String date, String amount,String StartMonth, String StartYear,String EndMonth, String EndYear,String Rem,String msg) //Added "Boolean Message" as a parameter
+	public static void saveSubscriptionDetails(String subs_id, String customer_id, String date, String amount,String StartMonth, String StartYear,String EndMonth, String EndYear,String Rem,String msg,String copies) //Added "Boolean Message" as a parameter
 	{ 
 			
 		try { 
@@ -41,7 +41,7 @@ public class NewSubscriptionEntry {
 			//		WHERE condition;
 			
 			//@15.12.2018 A few columns have been added and few removed.Do execute the queries in MySql:Check the GDrive for Queries 
-			String sq = "insert into NEW_SUBSCRIPTION(Subscription_ID,Customer_id,Payment_Date,Amount_Paid,Sub_Start_Month,Sub_Start_Year,Sub_End_Month,Sub_End_Year,Remarks,isShipped) values('"+subs_id+"',"+customer_id+",'"+date+"','"+amount+"','"+StartMonth+"','"+StartYear+"','"+EndMonth+"','"+EndYear+"','"+Rem+"','"+msg+"')";
+			String sq = "insert into NEW_SUBSCRIPTION(Subscription_ID,Customer_id,Payment_Date,Amount_Paid,Sub_Start_Month,Sub_Start_Year,Sub_End_Month,Sub_End_Year,Remarks,isShipped,copies) values('"+subs_id+"',"+customer_id+",'"+date+"','"+amount+"','"+StartMonth+"','"+StartYear+"','"+EndMonth+"','"+EndYear+"','"+Rem+"','"+msg+"','"+copies+"')";
 			stm.execute(sq);
 			
 			
@@ -149,101 +149,52 @@ public class NewSubscriptionEntry {
 		String date_query_end=End_Month+End_Year;
 		
 		
+		String select_query="select rem_balance from remaining where date1='"+date_query+"' ";
+		ResultSet rs=stm.executeQuery(select_query);
 		
-		String sq = "Select * from remaining where date1='"+date_query+"'";
-		ResultSet rs = stm.executeQuery(sq);
-		String rem;
 		while(rs.next())
 		{
-		
-			System.out.println(Start_Month+" is the Start Month");
-			System.out.println(Copies+ "is the number of copies");
-			
-			
-			if(date_query.equals(rs.getString(1)))
-			{   
-				
-				if(Start_Month.equals("06"))
-				{rem=rs.getString(2);}
-				else
-				{rem=rs.getString(3);}
-				if(Integer.parseInt(Copies)<=Integer.parseInt(rem))
-				{
+			if(Integer.parseInt(Copies)<= Integer.parseInt(rs.getString(1)))
+			{
 				isAvailable_Start="Yes";
-				System.out.println(rem);
-				System.out.println(isAvailable_Start);
-				}
-				else
-				{
+				System.out.println("Copies are available for June!");
+			}
+			else
+			{
 				isAvailable_Start="No";
-				System.out.println(isAvailable_Start);
-				}
+				System.out.println("Copies aren't available for June!");
 			}
-			
-			
-			
-			
-			}
-			
-			
-			
+		}
 		
-		String sq1 = "Select * from remaining where date1='"+date_query_end+"'";
-		ResultSet rs1 = stm.executeQuery(sq1);
-		String rem1;
+		
+		
+		String select_query1="select rem_balance from remaining where date1='"+date_query_end+"' ";
+		ResultSet rs1=stm.executeQuery(select_query1);
+		
 		while(rs1.next())
 		{
-		
-			System.out.println(End_Month+" is the End Month");
-			System.out.println(Copies+ "is the number of copies");
-			
-			
-			if(date_query_end.equals(rs1.getString(1)))
-			{   
-				
-				if(End_Month.equals("12"))
-				{rem1=rs1.getString(3);}
-				else
-				{rem1=rs1.getString(2);}
-				if(Integer.parseInt(Copies)<=Integer.parseInt(rem1))
-				{
-				isAvailable_Start="Yes";
-				System.out.println(rem1);
-				System.out.println(isAvailable_Start);
-				}
-				else
-				{
-				isAvailable_Start="No";
-				System.out.println(isAvailable_Start);
-				}
+			if(Integer.parseInt(Copies)<= Integer.parseInt(rs1.getString(1)))
+			{
+				isAvailable_End="Yes";
+				System.out.println("Copies are available for Dec!");
 			}
-			
-			
-			
-			
-			
-			
-			
+			else
+			{
+				isAvailable_End="No";
+				System.out.println("Copies aren't available for Dec!");
 			}
-		
-		
+		}
+			
 			con.close();
-		
-		
 	}
+		
+		
+	
 	
 	catch(Exception e) {
 		
 		System.out.println(e);
-		System.out.println(":(");
-		
-	}
-		
-		
-		
-		
-		
-		
+		System.out.println(":(");}
 		
 	return Copies;	
 	}

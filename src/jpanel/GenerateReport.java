@@ -61,7 +61,7 @@ public class GenerateReport extends JFrame{
 			
 			 JTextPane txtpnNewCustomerEntry = new JTextPane();
 		        txtpnNewCustomerEntry.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 32));
-		        txtpnNewCustomerEntry.setBounds(145, 29, 516, 45);
+		        txtpnNewCustomerEntry.setBounds(98, 27, 516, 45);
 		        txtpnNewCustomerEntry.setText("Search for Subscription Report");
 		        getContentPane().add(txtpnNewCustomerEntry);
 		        
@@ -115,6 +115,14 @@ public class GenerateReport extends JFrame{
   					table.setBounds(6, 357, 788, 374);
 				    jScroll = new JScrollPane(table);
 				    panel.add(jScroll);
+				    
+				    JButton btnBack = new JButton("Back");
+				    btnBack.setBounds(234, 245, 124, 36);
+				    getContentPane().add(btnBack);
+				    
+				    JButton btnLogout = new JButton("Logout");
+				    btnLogout.setBounds(648, 16, 115, 29);
+				    getContentPane().add(btnLogout);
 			        
 				  //Button to go into New Sub entry page
 				    btnGatherReport.addActionListener(new ActionListener() {
@@ -138,6 +146,51 @@ public class GenerateReport extends JFrame{
 				       
 				  			}
 				  		});
+				    
+				    
+				    
+				    
+				    
+				  //Action Listener for the Logout
+					btnLogout.addActionListener(new ActionListener() {
+						
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							// TODO Auto-generated method stub
+							if(e.getSource()==btnLogout)
+							{System.out.println("Confirming....");
+							JDialog.setDefaultLookAndFeelDecorated(true);
+						    int response = JOptionPane.showConfirmDialog(null, "You Sure?You want to Logout?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+						    if (response == JOptionPane.NO_OPTION)
+						    {
+						      System.out.println("Confirmation Declined");
+						    } else if (response == JOptionPane.YES_OPTION)
+						    {
+						      System.out.println("Confirmation Accepted");
+						      dispose();
+						      LoginPage.entry=false;
+						      new LoginPage().setVisible(true);
+						    } }
+						
+						}
+					});
+					
+					
+					
+					btnBack.addActionListener(new ActionListener() {
+						
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							// TODO Auto-generated method stub
+							if(e.getSource()==btnBack)
+							{
+								System.out.println("Again to the LANDING PAGE!");
+								dispose();
+								new LandingPage().setVisible(true);
+							}
+						
+						}
+					});
 				    
 				    
 	    }
