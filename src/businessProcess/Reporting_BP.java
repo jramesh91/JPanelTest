@@ -73,6 +73,7 @@ public class Reporting_BP {
 			System.out.println("\n The customer IDs are "+Customer_id.get(i));
 			searchCustomerDetails(Customer_id.get(i));
 		}
+		array_row = 0;
 }
 	
 	protected static void searchCustomerDetails(String c_id)
@@ -111,6 +112,7 @@ public class Reporting_BP {
 	        System.out.println("The columnd Length is"+Arrays.toString(GenerateReport.column_value));
 		}
 		con.close();
+		
 	}
 	catch(Exception e) {
 		

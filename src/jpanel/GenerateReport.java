@@ -106,6 +106,7 @@ public class GenerateReport extends JFrame{
 			        
 				  //Button to go into New Sub entry page
 				    btnGatherReport.addActionListener(new ActionListener() {
+				    	
 				  			
 				  			@Override
 				  			public void actionPerformed(ActionEvent e) {
@@ -115,6 +116,8 @@ public class GenerateReport extends JFrame{
 				  					System.out.println("Searching for report");
 				  					int date_of_sub = Integer.parseInt(month_year.format(dateChooser.getDate()));
 				  					Reporting_BP.searchReportDetails(date_of_sub);
+				  					tableModel.getDataVector().removeAllElements();
+				  					tableModel.fireTableDataChanged();
 				  					for(int i = 0; i<column_value.length; i++)
 				  					{
 				  					tableModel.insertRow(i, column_value[i]);
@@ -123,6 +126,7 @@ public class GenerateReport extends JFrame{
 				  						
 				  				}
 				  				
+				  				column_value = null;
 				  				
 				       
 				  			}
