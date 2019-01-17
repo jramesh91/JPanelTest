@@ -8,6 +8,8 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -36,9 +38,6 @@ import javax.swing.JTable;
 
 public class GenerateReport extends JFrame{
 	    private static int subs_id = Math.round(999 + (int)(Math.random() * 9999));
-	     //This is the login page
-	    private JTextField textField_6;
-	    private JTextField textField_1;
 	    private static DefaultTableModel tableModel;
 	    private JTable table;
 	    private JTable table1;
@@ -66,37 +65,12 @@ public class GenerateReport extends JFrame{
 		        getContentPane().add(txtpnNewCustomerEntry);
 		        
 			
-			 JLabel lblMonth = new JLabel("Enter Subscription Month");
+			 JLabel lblMonth = new JLabel("Enter Subscription Date");
 			 lblMonth.setForeground(new Color(255, 204, 0));
 			 lblMonth.setFont(new Font("Courier", Font.BOLD, 16));
 			 lblMonth.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
 			 lblMonth.setBounds(98, 125, 301, 26);
 		        getContentPane().add(lblMonth);
-		        
-		        
-		        
-		        //Customer_ID
-		        textField_6 = new JTextField();
-		        getContentPane().add(textField_6);
-		        textField_6.setBounds(440, 123, 130, 36);
-		        textField_6.setColumns(10);
-		        textField_6.setText("MM");
-		        
-		        
-		        
-		        JLabel lblYear = new JLabel("Enter Subscription Year");
-		        lblYear.setForeground(new Color(255, 204, 0));
-		        lblYear.setFont(new Font("Courier", Font.BOLD, 16));
-		        lblYear.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-		        lblYear.setBounds(98, 181, 301, 26);
-			        getContentPane().add(lblYear);
-			        
-			        //Customer_ID
-			        textField_1 = new JTextField();
-			        getContentPane().add(textField_1);
-			        textField_1.setBounds(440, 171, 130, 36);
-			        textField_1.setColumns(10);
-			        textField_1.setText("YY");
 			        
 			        JButton btnGatherReport = new JButton("Generate Report");
 			        btnGatherReport.setBackground(new Color(204, 255, 255));
@@ -123,6 +97,12 @@ public class GenerateReport extends JFrame{
 				    JButton btnLogout = new JButton("Logout");
 				    btnLogout.setBounds(648, 16, 115, 29);
 				    getContentPane().add(btnLogout);
+				    
+				    JDateChooser dateChooser = new JDateChooser();
+				    dateChooser.setBounds(443, 125, 119, 26);
+				    getContentPane().add(dateChooser);
+				    
+				    DateFormat month_year = new SimpleDateFormat("MMYYYY");
 			        
 				  //Button to go into New Sub entry page
 				    btnGatherReport.addActionListener(new ActionListener() {
@@ -133,7 +113,8 @@ public class GenerateReport extends JFrame{
 				  				if(e.getSource()==btnGatherReport)
 				  				{
 				  					System.out.println("Searching for report");
-				  					Reporting_BP.searchReportDetails(textField_6.getText(), textField_1.getText());
+				  					int date_of_sub = Integer.parseInt(month_year.format(dateChooser.getDate()));
+				  					Reporting_BP.searchReportDetails(date_of_sub);
 				  					for(int i = 0; i<column_value.length; i++)
 				  					{
 				  					tableModel.insertRow(i, column_value[i]);

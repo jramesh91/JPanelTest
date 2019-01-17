@@ -20,7 +20,7 @@ public class Reporting_BP {
 	public static int main_columnCount;
 	private static int array_row = 0;
 	
-	public static void searchReportDetails(String month, String year)
+	public static void searchReportDetails(int subDate)
 	{
 		ArrayList<String> Customer_id = new ArrayList<String>();
 		
@@ -29,16 +29,17 @@ public class Reporting_BP {
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
 			Statement stm = con.createStatement();
 			
 			//Select * from NEW_SUBSCRIPTION WHERE (Sub_Start_year = '20' OR sub_end_year ='18')  AND (sub_start_month = '08' OR Sub_end_month ='08');
-			String sq = "Select * from NEW_SUBSCRIPTION WHERE (Sub_Start_year = '"+year+"' OR sub_end_year ='"+year+"')  AND (sub_start_month = '"+month+"' OR Sub_end_month ='"+month+"')";
-			 ResultSet rs = stm.executeQuery(sq);
+			//String sq = "Select * from NEW_SUBSCRIPTION WHERE (Sub_Start_year = '"+year+"' OR sub_end_year ='"+year+"')  AND (sub_start_month = '"+month+"' OR Sub_end_month ='"+month+"')";
+			String sq = "Select * from NEW_SUBSCRIPTION WHERE sub_Date = '"+subDate+"'";
+			ResultSet rs = stm.executeQuery(sq);
  
 			 
 			 
@@ -81,8 +82,8 @@ public class Reporting_BP {
 		Class.forName("com.mysql.jdbc.Driver");
 		
 		
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-	  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+		//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 		
 		
 		
