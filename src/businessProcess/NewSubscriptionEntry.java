@@ -15,7 +15,7 @@ public class NewSubscriptionEntry {
 	public static String isAvailable_End="";
 	
 	private static String sub_id;
-	public static void saveSubscriptionDetails(String subs_id, String customer_id, String date, String amount,String StartMonth, String StartYear,String EndMonth, String EndYear,String Rem,String msg,String copies) //Added "Boolean Message" as a parameter
+	public static void saveSubscriptionDetails( String customer_id, String date, String amount,int SubMonth, String sub_length,String Rem,String msg,String copies) //Added "Boolean Message" as a parameter
 	{ 
 			
 		try { 
@@ -23,8 +23,8 @@ public class NewSubscriptionEntry {
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
@@ -41,7 +41,7 @@ public class NewSubscriptionEntry {
 			//		WHERE condition;
 			
 			//@15.12.2018 A few columns have been added and few removed.Do execute the queries in MySql:Check the GDrive for Queries 
-			String sq = "insert into NEW_SUBSCRIPTION(Subscription_ID,Customer_id,Payment_Date,Amount_Paid,Sub_Start_Month,Sub_Start_Year,Sub_End_Month,Sub_End_Year,Remarks,isShipped,copies) values('"+subs_id+"',"+customer_id+",'"+date+"','"+amount+"','"+StartMonth+"','"+StartYear+"','"+EndMonth+"','"+EndYear+"','"+Rem+"','"+msg+"','"+copies+"')";
+			String sq = "insert into NEW_SUBSCRIPTION(Customer_id,Payment_Date,Amount_Paid,Sub_Date,sub_length,Remarks,isShipped,copies) values("+customer_id+",'"+date+"','"+amount+"','"+SubMonth+"','"+sub_length+"','"+Rem+"','"+msg+"','"+copies+"')";
 			stm.execute(sq);
 			
 			
@@ -87,8 +87,8 @@ public class NewSubscriptionEntry {
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			System.out.println("Static var is "+subs_id);	
 
