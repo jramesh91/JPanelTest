@@ -31,18 +31,17 @@ import javax.swing.JCheckBox;
 import javax.swing.JDialog;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import javax.swing.JSpinner;
 
 public class SubscriptionPage extends JFrame{
 	DateFormat month = new SimpleDateFormat("MM");
     DateFormat year = new SimpleDateFormat("YY");
+
+	 private JTextField textField;
 	    private JTextField textField_2;
 	    private JTextField textField_6;
 	    private static int subs_id = Math.round(999 + (int)(Math.random() * 9999));
 	    private JTextField textField_1;
 	    public static boolean firstAfterLanding= true;
-	    private static  int[] subDateArray ;
-	    
 	 
 	    
 	    
@@ -87,12 +86,12 @@ public class SubscriptionPage extends JFrame{
 	        JLabel lblCustomerId = new JLabel("Customer ID");
 	        lblCustomerId.setForeground(new Color(255, 204, 0));
 	        lblCustomerId.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblCustomerId.setBounds(160, 168, 194, 26);
+	        lblCustomerId.setBounds(160, 105, 194, 26);
 	        getContentPane().add(lblCustomerId);
 	        
 	        
 	        textField_6 = new JTextField();
-	        textField_6.setBounds(369, 171, 130, 26);
+	        textField_6.setBounds(369, 105, 130, 26);
 	        getContentPane().add(textField_6);
 	        textField_6.setColumns(10);
 	        
@@ -104,6 +103,18 @@ public class SubscriptionPage extends JFrame{
 	        textField_6.setText(cust_id);
 	        textField_6.setEditable(false);
 	        }
+	        
+	        JLabel lblSubscriptionId = new JLabel("Subscription ID");
+	        lblSubscriptionId.setBounds(160, 147, 171, 26);
+	        lblSubscriptionId.setForeground(new Color(255, 204, 0));
+	        lblSubscriptionId.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
+	        getContentPane().add(lblSubscriptionId);
+	        
+	        textField = new JTextField();
+	        textField.setBounds(369, 157, 130, 26);
+	        textField.setColumns(10);
+	        textField.setText(String.valueOf(subs_id));
+	        getContentPane().add(textField);
 	        
 	        JLabel lblDateOfPayment = new JLabel("Date of Payment");
 	        lblDateOfPayment.setForeground(new Color(255, 204, 0));
@@ -136,16 +147,15 @@ public class SubscriptionPage extends JFrame{
 	        dateChooser_1.setBounds(369, 297, 130, 26);
 	        getContentPane().add(dateChooser_1);
 	        
-	        JLabel lblEndDate = new JLabel("Number of Subscription");
+	        JLabel lblEndDate = new JLabel("End Date");
 	        lblEndDate.setForeground(new Color(255, 204, 0));
 	        lblEndDate.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblEndDate.setBounds(160, 345, 207, 26);
+	        lblEndDate.setBounds(160, 345, 130, 26);
 	        getContentPane().add(lblEndDate);
 	        
-	        JSpinner spinner = new JSpinner();
-	        spinner.setBounds(423, 348, 76, 26);
-	        getContentPane().add(spinner);
-	        
+	        JDateChooser dateChooser_2 = new JDateChooser();  
+	        dateChooser_2.setBounds(369, 345, 130, 26);
+	        getContentPane().add(dateChooser_2);      
 	        
 	        JLabel lblRemarks = new JLabel("Remarks*");
 	        lblRemarks.setForeground(new Color(255, 204, 0));
@@ -189,27 +199,11 @@ public class SubscriptionPage extends JFrame{
 					}
 					
 					DateFormat month = new SimpleDateFormat("MM");
+			        DateFormat year = new SimpleDateFormat("YY");
 			        DateFormat month_year = new SimpleDateFormat("dd/MM/YYYY");
-			        DateFormat m_y = new SimpleDateFormat("MMYYYY");
 			        
-			        int date_of_sub = Integer.parseInt(m_y.format(dateChooser_1.getDate()));
-			        int month_of_sub = Integer.parseInt(month.format(dateChooser_1.getDate()));
-			        
-			        int spinnervalue = (Integer) spinner.getValue();
-			        
-			        CalculateDateArray(spinnervalue,date_of_sub, month_of_sub);
-			        
-			        for(int i=0; i<spinnervalue;i++)
-					{
-			      NewSubscriptionEntry.saveSubscriptionDetails(cust_id, month_year.format(dateChooser.getDate()),
-							textField_2.getText(),subDateArray[i], spinner.getValue().toString(),textField_1.getText(),msg,textField_3.getText());
-			      
-			      //Only the first item can be marked as Shipped
-			      msg="No";
-					}
-			        
-					//NewSubscriptionEntry.saveSubscriptionDetails(cust_id, month_year.format(dateChooser.getDate()),
-							//		textField_2.getText(),month.format(dateChooser_1.getDate()), spinner.getValue().toString(),textField_1.getText(),msg,textField_3.getText());
+					NewSubscriptionEntry.saveSubscriptionDetails(textField.getText(),cust_id, month_year.format(dateChooser.getDate()),
+									textField_2.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()), textField_1.getText(),msg,textField_3.getText());
 	        		}
 	        		}
 	        });
@@ -246,10 +240,8 @@ public class SubscriptionPage extends JFrame{
 	        getContentPane().add(btnCheckAvailibility);
 	        
 	        JLabel Home = new JLabel("",new ImageIcon("back.jpg"),JLabel.CENTER);
-	        Home.setBounds(0, 0, 800, 800);
+	        Home.setBounds(0, -25, 778, 753);
 	        getContentPane().add(Home);
-	        
-	       
 	        
 	        //Update the table with the data
 			btnAddMoreDetails.addActionListener(new ActionListener() {
@@ -264,29 +256,12 @@ public class SubscriptionPage extends JFrame{
 					{
 						msg="No";
 					}
-					//NewSubscriptionEntry.validateSubId(subs_id);
+					NewSubscriptionEntry.validateSubId(subs_id);
 					
-					DateFormat d_month_year = new SimpleDateFormat("dd/MM/YYYY");
-					DateFormat month_year = new SimpleDateFormat("MMYYYY");
-					DateFormat month = new SimpleDateFormat("MM");
-
-					
-					int date_of_sub = Integer.parseInt(month_year.format(dateChooser_1.getDate()));
-			        int month_of_sub = Integer.parseInt(month.format(dateChooser_1.getDate()));
 			        
-			        int spinnervalue = (Integer) spinner.getValue();
-			        
-			        CalculateDateArray(spinnervalue,date_of_sub, month_of_sub);
-					
-					for(int i=0; i<spinnervalue;i++)
-					{
-			      NewSubscriptionEntry.saveSubscriptionDetails(cust_id, d_month_year.format(dateChooser.getDate()),
-							textField_2.getText(),subDateArray[i], spinner.getValue().toString(),textField_1.getText(),msg,textField_3.getText());
-			      
-			      //Only the first item can be marked as Shipped
-			      msg="No";
-					}
-			      //Rem_Balance.updateRemaining(textField_3.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()));
+			      NewSubscriptionEntry.saveSubscriptionDetails(textField.getText(),textField_6.getText(), dateChooser.getDate().toString(),
+									textField_2.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()), textField_1.getText(),msg,textField_3.getText());
+			      Rem_Balance.updateRemaining(textField_3.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()));
 					dispose();
 					new LandingPage().setVisible(true);
 				}
@@ -353,7 +328,7 @@ public class SubscriptionPage extends JFrame{
 				});
 				
 				
-				/*btnCheckAvailibility.addActionListener(new ActionListener() {
+				btnCheckAvailibility.addActionListener(new ActionListener() {
 					
 					@Override
 					public void actionPerformed(ActionEvent e) {
@@ -380,43 +355,11 @@ public class SubscriptionPage extends JFrame{
 						}
 					
 					
-				});*/
+				});
 			
 	        
 		
 				
 	     
-	    } 
-	    
-	    
-	    protected static void CalculateDateArray(int spinnervalue, int datevalue, int month)
-	    {
-	    	int evenodd = 0;
-	    	subDateArray = new int[spinnervalue];
-	    	subDateArray[0] = datevalue;
-	    	if(month>7)
-	    	{
-	    		evenodd = 1;
-	    	}
-	    	
-	    	for(int i=1; i<spinnervalue; i++)
-	    	{
-	    		if(evenodd == 0)
-	    		{
-	    			datevalue = datevalue + 60000;
-	    			subDateArray[i] = datevalue;
-	    			evenodd = 1;
-	    		}
-	    		else
-	    		{
-	    			datevalue = datevalue - 59999;
-	    			subDateArray[i] = datevalue;
-	    			evenodd = 0;
-	    		}
-	    	}
-	    	
-	    	for(int i=0; i<spinnervalue; i++)
-	    	System.out.println("The Sub Date Values are"+subDateArray[i]+" And the length is "+subDateArray.length);
-	    }
-	    //Braces for the Constructor
+	    }  //Braces for the Constructor
 } //Class

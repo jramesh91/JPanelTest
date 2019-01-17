@@ -205,7 +205,7 @@ public class NewCustomer extends JFrame{
 							
 							
 							//NewSubscriptionEntry.validateSubId(Sub_id);
-							//NewSubscriptionEntry.validateSubId(Sub_id);
+							NewSubscriptionEntry.validateSubId(Sub_id);
 							System.out.println("This is redirected to Subscription Page");
 						
 						NewCustomerEntry.saveCustomerDetails(textField_6.getText(), textField.getText(), textField_1.getText(),

@@ -147,7 +147,10 @@ public class GenerateReport extends JFrame{
 				  			}
 				  		});
 				    
-   
+				    
+				    
+				    
+				    
 				  //Action Listener for the Logout
 					btnLogout.addActionListener(new ActionListener() {
 						
