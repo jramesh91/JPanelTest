@@ -14,14 +14,13 @@ public class Search_Customer{
 	public static String State="" ;
 	public static String Pin="" ;
 	public static  String Cust_ID="" ;
+	public static  String Sub_ID="" ;
 	public static  String AmtPaid ;
 	public static String DOP ;
-	public static  String Start_Mth ;
-	public static  String Start_Year ;
-	public static  String End_Mth ;
-	public static  String End_Year ;
 	public static  String Remarks ;
 	public static  String Street;
+	public static  String Sub_Start;
+	public static  String Sub_Length;
 	public static String customer_id1;
 	public static String first_name="";
 	public static String isShipped;
@@ -50,7 +49,7 @@ public class Search_Customer{
 			//String sq = " SELECT * from Customer inner join new_subscription on Customer.customer_id=new_subscription.customer_id where customer.customer_id='"+customer_id+"' ";
 			String sq = "SELECT * from Customer inner join new_subscription on Customer.customer_id=new_subscription.customer_id where customer.customer_id="+customer_id+" ";
 			ResultSet rss=stm.executeQuery(sq);
-			while(rss.next())
+			if(rss.next())
 			{
 				 customer_id1=rss.getString("Customer_id");
 				 System.out.println("Static Value wo initializing "+first_name);
@@ -64,17 +63,17 @@ public class Search_Customer{
 				 Cust_ID=rss.getString("Customer_id");
 				 AmtPaid=rss.getString("Amount_Paid");
 				 DOP=rss.getString("Payment_Date");
-				 Start_Mth=rss.getString("Sub_Start_month");
-				 Start_Year=rss.getString("Sub_Start_year");
-				 End_Mth=rss.getString("Sub_End_Month");
-				 End_Year=rss.getString("Sub_End_year");
+				 Sub_Start =rss.getString("Sub_Date");
+				 Sub_Length = rss.getString("sub_length");
 				 Remarks=rss.getString("Remarks");
 				 isShipped=rss.getString("isShipped");
+				 Sub_ID = rss.getString("Subscription_ID");
 			
 				
 				
 			}
 			
+			findMonth(Sub_Start);
 			
 			//Close the database Connection
 			con.close();
@@ -91,5 +90,19 @@ public class Search_Customer{
 		return customer_id1;
 		
 	}
+	
+	protected static void findMonth(String start)
+	{
+		if(start.length()>5)
+		{
+			Sub_Start = "December "+start.substring(2);
+		}
+		else
+		{
+			Sub_Start = "June "+start.substring(1);
+		}
+		
+	}
+	
 
 }

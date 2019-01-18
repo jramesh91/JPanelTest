@@ -48,12 +48,10 @@ public class SearchCustomer extends JFrame{
 	   private JTextField textField_7;
 	   private JTextField textField_8;
 	   private JTextField textField_9;
-	   private JTextField textField_10;
-	   private JTextField textField_11;
-	   private JTextField textField_12;
-	   private JTextField textField_13;
 	   private JTextField textField_14;
 	   private JTextField textField_15;
+	   private JTextField textField_10;
+	   private JTextField textField_11;
 	    
 	    
 	    public SearchCustomer() {
@@ -208,39 +206,6 @@ public class SearchCustomer extends JFrame{
 		    getContentPane().add(textField_9);
 		    textField_9.setColumns(10);
 		    
-		    textField_10 = new JTextField();
-		    textField_10.setBounds(482, 379, 49, 26);
-		    getContentPane().add(textField_10);
-		    textField_10.setColumns(10);
-		    
-		    textField_11 = new JTextField();
-		    textField_11.setBounds(561, 379, 82, 26);
-		    getContentPane().add(textField_11);
-		    textField_11.setColumns(10);
-		    
-		    JLabel label_1 = new JLabel("/");
-		    label_1.setBounds(546, 358, 69, 60);
-		    getContentPane().add(label_1);
-		    
-		    textField_12 = new JTextField();
-		    textField_12.setColumns(10);
-		    textField_12.setBounds(482, 431, 49, 26);
-		    getContentPane().add(textField_12);
-		    
-		    JLabel label_2 = new JLabel("/");
-		    label_2.setBounds(546, 406, 24, 60);
-		    getContentPane().add(label_2);
-		    
-		    textField_13 = new JTextField();
-		    textField_13.setColumns(10);
-		    textField_13.setBounds(561, 431, 82, 26);
-		    getContentPane().add(textField_13);
-		    
-		    JLabel label_3 = new JLabel("Subscription Start");
-		    label_3.setForeground(new Color(0,255,0));
-		    label_3.setBounds(347, 434, 132, 20);
-		    getContentPane().add(label_3);
-		    
 		    textField_14 = new JTextField();
 		    textField_14.setBounds(327, 557, 301, 45);
 		    getContentPane().add(textField_14);
@@ -250,13 +215,27 @@ public class SearchCustomer extends JFrame{
 		    textField_15.setBounds(327, 636, 76, 36);
 		    getContentPane().add(textField_15);
 		    textField_15.setColumns(10);
-		  
 		    
-		    //ImageIcon ii = new ImageIcon("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg");
+		    textField_10 = new JTextField();
+		    textField_10.setColumns(10);
+		    textField_10.setBounds(482, 379, 161, 34);
+		    getContentPane().add(textField_10);
+		    
+		    JLabel label_1 = new JLabel("Subscription Length");
+		    label_1.setForeground(Color.GREEN);
+		    label_1.setBounds(347, 436, 132, 20);
+		    getContentPane().add(label_1);
+		    
+		    textField_11 = new JTextField();
+		    textField_11.setColumns(10);
+		    textField_11.setBounds(482, 431, 161, 34);
+		    getContentPane().add(textField_11);
+	        
+		    
+			//ImageIcon ii = new ImageIcon("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg");
 		    JLabel lable = new JLabel("",new ImageIcon("back.jpg"),JLabel.CENTER);
 		    lable.setBounds(0, 0, 800, 800);
 		    getContentPane().add(lable);
-	        
 	        
 	        btnSearch.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -271,13 +250,11 @@ public class SearchCustomer extends JFrame{
 						textField_5.setText(Search_Customer.City);
 						textField_3.setText(Search_Customer.State);
 						textField_4.setText(Search_Customer.Pin);
-						textField_7.setText(Search_Customer.Cust_ID);
+						textField_7.setText(Search_Customer.Sub_ID);
 						textField_8.setText(Search_Customer.DOP);
 						textField_9.setText(Search_Customer.AmtPaid);
-						textField_10.setText(Search_Customer.Start_Mth);
-						textField_11.setText(Search_Customer.Start_Year);
-						textField_12.setText(Search_Customer.End_Mth);
-						textField_13.setText(Search_Customer.End_Year);
+						textField_10.setText(Search_Customer.Sub_Start);
+						textField_11.setText(Search_Customer.Sub_Length);
 						textField_14.setText(Search_Customer.Remarks);
 						textField_15.setText(Search_Customer.isShipped); 
 						//dispose();
@@ -308,15 +285,13 @@ public class SearchCustomer extends JFrame{
 					textField_5.setText(Search_Customer.City);
 					textField_3.setText(Search_Customer.State);
 					textField_4.setText(Search_Customer.Pin);
-					textField_7.setText(Search_Customer.Cust_ID);
+					textField_7.setText(Search_Customer.Sub_ID);
 					textField_8.setText(Search_Customer.DOP);
 					textField_9.setText(Search_Customer.AmtPaid);
-					textField_10.setText(Search_Customer.Start_Mth);
-					textField_11.setText(Search_Customer.Start_Year);
-					textField_12.setText(Search_Customer.End_Mth);
-					textField_13.setText(Search_Customer.End_Year);
+					textField_10.setText(Search_Customer.Sub_Start);
+					textField_11.setText(Search_Customer.Sub_Length);
 					textField_14.setText(Search_Customer.Remarks);
-					textField_15.setText(Search_Customer.isShipped); 
+					textField_15.setText(Search_Customer.isShipped);
 	        	}
 	        	
 	        	}
