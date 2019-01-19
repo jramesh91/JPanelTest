@@ -208,6 +208,24 @@ public class LandingPage extends JFrame{
 	  			
 	  			}
 	  		});
+	    
+	    //Button to go into Search Customer entry page
+	    btnSearchCustomerID.addActionListener(new ActionListener() {
+	  			
+	  			@Override
+	  			public void actionPerformed(ActionEvent e) {
+	  				// TODO Auto-generated method stub
+	  				if(e.getSource()==btnSearchCustomerID)
+	  				{
+	  					System.out.println("You are in the Remaining_Balance Planet right now!");
+	  					dispose();
+	  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
+	  					
+	  					new SearchCustomerIDPage().setVisible(true);
+	  				}
+	  			
+	  			}
+	  		});
 		
 		/*JLabel label_1 = new JLabel("");
 		panel.add(label_1);

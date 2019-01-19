@@ -40,7 +40,6 @@ public class GenerateReport extends JFrame{
 	    private static int subs_id = Math.round(999 + (int)(Math.random() * 9999));
 	    private static DefaultTableModel tableModel;
 	    private JTable table;
-	    private JTable table1;
 	    private JScrollPane jScroll;
 	    public static String [] column_header= {"Customer ID", "Full Name","Door Number","Street Name","City","State","Pin Code"};
 	    public static String [][] column_hea= {{"Customer ID", "Full Name","Door Number","Street Name","City","State","Pin Code"},{"Customer ID", "Full Name","Door Number","Street Name","City","State","Pin Code"}};
