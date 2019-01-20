@@ -73,7 +73,7 @@ public class GenerateReport extends JFrame{
 			        
 			        JButton btnGatherReport = new JButton("Generate Report");
 			        btnGatherReport.setBackground(new Color(204, 255, 255));
-			        btnGatherReport.setBounds(443, 245, 124, 36);
+			        btnGatherReport.setBounds(355, 245, 166, 36);
 				    getContentPane().add(btnGatherReport);
 				    
 				    
@@ -90,7 +90,7 @@ public class GenerateReport extends JFrame{
 				    panel.add(jScroll);
 				    
 				    JButton btnBack = new JButton("Back");
-				    btnBack.setBounds(234, 245, 124, 36);
+				    btnBack.setBounds(147, 245, 124, 36);
 				    getContentPane().add(btnBack);
 				    
 				    JButton btnLogout = new JButton("Logout");
@@ -100,6 +100,10 @@ public class GenerateReport extends JFrame{
 				    JDateChooser dateChooser = new JDateChooser();
 				    dateChooser.setBounds(443, 125, 119, 26);
 				    getContentPane().add(dateChooser);
+				    
+				    JButton btnExport = new JButton("Export");
+				    btnExport.setBounds(601, 245, 130, 36);
+				    getContentPane().add(btnExport);
 				    
 				    DateFormat month_year = new SimpleDateFormat("MMYYYY");
 			        

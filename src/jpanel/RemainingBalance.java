@@ -5,6 +5,8 @@ import java.awt.Insets;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -17,6 +19,7 @@ import javax.swing.JTextField;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
+import com.toedter.calendar.JDateChooser;
 
 import businessProcess.Rem_Balance;
 import javafx.scene.image.Image;
@@ -50,14 +53,15 @@ import javax.swing.SwingConstants;
 
 public class RemainingBalance extends JFrame{
 	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
  
 	public RemainingBalance()
 	{
 	super();
 	getContentPane().setLayout(null);
 	
+	JDateChooser dateChooser_1 = new JDateChooser();
+    dateChooser_1.setBounds(309, 221, 146, 26);
+    getContentPane().add(dateChooser_1);
 	
 	//Logout Button:
 	JButton btnLogout = new JButton("Logout");
@@ -73,61 +77,48 @@ public class RemainingBalance extends JFrame{
     txtpnNewCustomerEntry.setBounds(198, 72, 315, 45);
     txtpnNewCustomerEntry.setText("Remaining Balance");
     getContentPane().add(txtpnNewCustomerEntry);
-    
-    JLabel lblEnterMonth = new JLabel("Enter Month");
-    lblEnterMonth.setBounds(163, 183, 115, 20);
-    getContentPane().add(lblEnterMonth);
-    
-    JLabel lblRemainingBalance = new JLabel("Remaining Balance");
-    lblRemainingBalance.setBounds(163, 294, 146, 20);
-    getContentPane().add(lblRemainingBalance);
-    //Date Text Field
-    textField = new JTextField();
-    textField.setBounds(309, 180, 146, 26);
-    getContentPane().add(textField);
-    textField.setColumns(10);
-    //Text Field For Remaining Balance
-    textField_1 = new JTextField();
-    textField_1.setBounds(309, 291, 146, 26);
-    getContentPane().add(textField_1);
-    textField_1.setColumns(10);
     //Save Button
     JButton btnSave = new JButton("Save");
     btnSave.setBounds(451, 432, 115, 29);
     getContentPane().add(btnSave);
-    
-    textField_2 = new JTextField();
-    textField_2.setBounds(309, 235, 146, 26);
-    getContentPane().add(textField_2);
-    textField_2.setColumns(10);
-    
-    JLabel lblEnterYear = new JLabel("Enter Year");
-    lblEnterYear.setBounds(163, 238, 81, 20);
-    getContentPane().add(lblEnterYear);
     
     JButton btnBack = new JButton("Back");
     btnBack.setBounds(232, 432, 115, 29);
     getContentPane().add(btnBack);
     
     JButton button = new JButton("Check Balance");
-    button.setBounds(509, 290, 115, 29);
+    button.setBounds(518, 218, 155, 29);
     getContentPane().add(button);
+    
+    JLabel lblEnterDate = new JLabel("Enter Date");
+    lblEnterDate.setBounds(163, 227, 131, 20);
+    getContentPane().add(lblEnterDate);
+    
+    JLabel lblCopiesArrived = new JLabel("Copies Arrived");
+    lblCopiesArrived.setBounds(163, 286, 115, 29);
+    getContentPane().add(lblCopiesArrived);
+    
+    textField = new JTextField();
+    textField.setBounds(309, 287, 146, 26);
+    getContentPane().add(textField);
+    textField.setColumns(10);
 	
     
     btnSave.addActionListener(new ActionListener() {
-  			
+    	DateFormat m_y = new SimpleDateFormat("MMYYYY");
+    		
   			@Override
   			public void actionPerformed(ActionEvent e) {
   				// TODO Auto-generated method stub
   				if(e.getSource()==btnSave)
   				{
   					
-  					if((textField.getText()).equals("")||(textField_2.getText()).equals("")) {
+  					if((m_y.format(dateChooser_1.getDate())).equals("")) {
   						JOptionPane.showMessageDialog(null, "Hmm!Seems You didn't enter MM,YY");
   					}
   					else {
   						System.out.println("Details are saved in the Remaining Balance Table");
-  					Rem_Balance.saveRemDetails(textField.getText(),textField_2.getText(),textField_1.getText());
+  					//Rem_Balance.saveRemDetails(Integer.parseInt(m_y.format(dateChooser_1.getDate())));
   					}
   					
   				}
@@ -140,12 +131,15 @@ public class RemainingBalance extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				DateFormat m_y = new SimpleDateFormat("MMYYYY");
+				
 				// TODO Auto-generated method stub
 				if(e.getSource()==button)
 				{
 					System.out.println("Checking Balance.....!");
-					Rem_Balance.checkBalance(textField.getText(),textField_2.getText());
-					JOptionPane.showMessageDialog(null, "Your Current Balance is:" +Rem_Balance.CurrentBalance);
+					//Rem_Balance.checkBalance(textField.getText(),textField_2.getText());
+					Rem_Balance.checkBalance(Integer.parseInt(m_y.format(dateChooser_1.getDate())));
+					//JOptionPane.showMessageDialog(null, "Your Current Balance is:" +Rem_Balance.CurrentBalance);
 					
 				}
 			
