@@ -207,6 +207,9 @@ public class SubscriptionPage extends JFrame{
 			      NewSubscriptionEntry.saveSubscriptionDetails(cust_id, month_year.format(dateChooser.getDate()),
 							textField_2.getText(),subDateArray[i], spinner.getValue().toString(),textField_1.getText(),msg,textField_3.getText(),msg_status);
 			      
+			      
+			      //Update the remaining Balance
+			      Rem_Balance.updateRemaining(textField_3.getText(), subDateArray[i]);
 			      //Only the first item can be marked as Shipped
 			      msg="No";
 			      msg_status="Active";
@@ -286,6 +289,8 @@ public class SubscriptionPage extends JFrame{
 			      NewSubscriptionEntry.saveSubscriptionDetails(cust_id, d_month_year.format(dateChooser.getDate()),
 							textField_2.getText(),subDateArray[i], spinner.getValue().toString(),textField_1.getText(),msg,textField_3.getText(),msg_status);
 			      System.out.println(subDateArray[i]);
+			      
+			      Rem_Balance.updateRemaining(textField_3.getText(), subDateArray[i]);
 			      //Only the first item can be marked as Shipped
 			      msg="No";
 			      msg_status="Active";

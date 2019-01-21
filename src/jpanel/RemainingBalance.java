@@ -118,7 +118,7 @@ public class RemainingBalance extends JFrame{
   					}
   					else {
   						System.out.println("Details are saved in the Remaining Balance Table");
-  					//Rem_Balance.saveRemDetails(Integer.parseInt(m_y.format(dateChooser_1.getDate())));
+  					Rem_Balance.saveRemDetails(Integer.parseInt(m_y.format(dateChooser_1.getDate())),textField.getText());
   					}
   					
   				}

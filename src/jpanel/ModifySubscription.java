@@ -255,11 +255,20 @@ public class ModifySubscription extends JFrame{
 							msg_status="InActive";
 							JOptionPane.showMessageDialog(null,"Subscription Deactivated!");
 						}
+						else
+						{
+							msg ="No";
+							msg_status ="Active";
+							//Update the remaining Balance accordingly
+						      Rem_Balance.modifyRemaining(textField_6.getText(), textField_3.getText());
+						}
 						if(e.getSource()==btnAddMoreDetails)
 						{
 							System.out.println("Updating...!");
 							
 							NewSubscriptionEntry.modifySubscription(textField_6.getText(),msg,msg_status,textField_3.getText(),textField_1.getText());
+							 
+							
 							//dispose();
 						}
 					
@@ -272,33 +281,5 @@ public class ModifySubscription extends JFrame{
 	    } 
 	    
 	    
-	    /*protected static void CalculateDateArray(int spinnervalue, int datevalue, int month)
-	    {
-	    	int evenodd = 0;
-	    	subDateArray = new int[spinnervalue];
-	    	subDateArray[0] = datevalue;
-	    	if(month>7)
-	    	{
-	    		evenodd = 1;
-	    	}
-	    	
-	    	for(int i=1; i<spinnervalue; i++)
-	    	{
-	    		if(evenodd == 0)
-	    		{
-	    			datevalue = datevalue + 60000;
-	    			subDateArray[i] = datevalue;
-	    			evenodd = 1;
-	    		}
-	    		else
-	    		{
-	    			datevalue = datevalue - 59999;
-	    			subDateArray[i] = datevalue;
-	    			evenodd = 0;
-	    		}
-	    	}
-	    	
-	    	for(int i=0; i<spinnervalue; i++)
-	    	System.out.println("The Sub Date Values are"+subDateArray[i]+" And the length is "+subDateArray.length);
-	    }*/
+	   
 } //Class

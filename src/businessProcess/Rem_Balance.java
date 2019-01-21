@@ -33,14 +33,14 @@ public class Rem_Balance{
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
 			Statement stm = con.createStatement();
-			String sq = "insert into remaining(date1,rem_balance)values('"+Date+"','"+Rem+"')";
-			System.out.println("This insert working");
+			String sq = "UPDATE remaining SET number_of_copies ='"+ Rem +"' where date_sub='"+Date+"'";
+			
 			stm.executeUpdate(sq);
 			
 			
@@ -82,10 +82,10 @@ public class Rem_Balance{
 				Sum+=Integer.parseInt(rs.getString(1));
 			}
 			System.out.println("The Number Of Copies Promised:"+ Sum);
-			
+		/*	
 			Statement Update=con.createStatement();
-			String Update_Query="UPDATE remaining SET Subs_Copies='"+Sum+"' ";
-			Update.executeUpdate(Update_Query);
+			String Update_Query="UPDATE remaining SET number_of_copies='"+Sum+"' ";
+			Update.executeUpdate(Update_Query);*/
 			
 			con.close();
 		}
@@ -102,35 +102,34 @@ public class Rem_Balance{
 	
 	
 	
-	public static void updateRemaining(String Copies,String Start_Month,String Start_Year,String End_Month,String End_Year)
-	{  String date_start=Start_Month+Start_Year;
-		String date_end=End_Month+End_Year;
-		int Updated_Copies,Updated_Copies2; //After Deducting the Balance
+	public static void updateRemaining(String Copies,int sub_date)
+	{  
+		
+		 int Balance = 0;//After Deducting the Balance
 	
 		try { 
 			//JDBC Driver Setup
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+		//	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
 			Statement stm = con.createStatement();
-			String query="select rem_balance from remaining where date1='"+date_start+"'";
+			String query="select number_of_subs from remaining where date_sub='"+sub_date+"'";
 			ResultSet rs=stm.executeQuery(query);
 			
 			if(rs.next())
 			{
-			 String Balance_Start=rs.getString(1);
-			 Updated_Copies=Integer.parseInt(Balance_Start)-Integer.parseInt(Copies);
-				
-			
-			stm.execute("UPDATE remaining SET rem_balance ='"+ String.valueOf(Updated_Copies) +"' where date1='"+date_start+"'");			
+			Balance =Integer.parseInt(rs.getString(1));		
 			}
 			
-			Statement stm1 = con.createStatement();
+			Balance = Balance + Integer.parseInt(Copies);
+			stm.execute("UPDATE remaining SET number_of_subs ='"+ Balance +"' where date_sub='"+sub_date+"'");	
+			
+			/*Statement stm1 = con.createStatement();
 			String query1="select rem_balance from remaining where date1='"+date_end+"'";
 			 rs=stm.executeQuery(query1);
 			
@@ -142,7 +141,7 @@ public class Rem_Balance{
 			
 			stm1.execute("UPDATE remaining SET rem_balance ='"+ String.valueOf(Updated_Copies2) +"' where date1='"+date_end+"'");			
 			} 
-			
+			*/
 			
 			
 			
@@ -153,6 +152,76 @@ public class Rem_Balance{
 		catch(Exception e) {
 			System.out.println(e);
 			}
+		
+		
+	}
+	
+	public static void modifyRemaining(String sub_id, String addBalance)
+	{
+		
+		String sub_date =sub_id;
+		String existing_Balance = "0";
+		int Balance =0;
+		
+		
+		try { 
+			//JDBC Driver Setup
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			
+		//	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			
+			
+			
+			Statement stm = con.createStatement();
+			String query="select * from New_Subscription where Subscription_ID='"+sub_id+"'";
+			ResultSet rs=stm.executeQuery(query);
+			
+			if(rs.next())
+			{
+			sub_date =rs.getString("Sub_Date");	
+			existing_Balance = rs.getString("copies");
+			}
+			
+			
+			String rem_query="select number_of_subs from remaining where date_sub='"+sub_date+"'";
+			ResultSet rs1=stm.executeQuery(rem_query);
+			
+			if(rs1.next())
+			{
+			Balance =Integer.parseInt(rs1.getString(1));		
+			}
+			
+			
+			Balance = Balance + Integer.parseInt(addBalance) - Integer.parseInt(existing_Balance);
+			stm.execute("UPDATE remaining SET number_of_subs ='"+ Balance +"' where date_sub='"+sub_date+"'");	
+			
+			/*Statement stm1 = con.createStatement();
+			String query1="select rem_balance from remaining where date1='"+date_end+"'";
+			 rs=stm.executeQuery(query1);
+			
+			if(rs.next())
+			{
+			 String Balance_Start=rs.getString(1);
+			 Updated_Copies2=Integer.parseInt(Balance_Start)-Integer.parseInt(Copies);
+				
+			
+			stm1.execute("UPDATE remaining SET rem_balance ='"+ String.valueOf(Updated_Copies2) +"' where date1='"+date_end+"'");			
+			} 
+			*/
+			
+			
+			
+			
+			con.close();
+		}
+		
+		catch(Exception e) {
+			System.out.println(e);
+			}
+		
+		
 		
 		
 	}
