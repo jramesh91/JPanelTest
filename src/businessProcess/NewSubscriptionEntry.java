@@ -41,7 +41,7 @@ public class NewSubscriptionEntry {
 			//		WHERE condition;
 			
 			//@15.12.2018 A few columns have been added and few removed.Do execute the queries in MySql:Check the GDrive for Queries 
-			String sq = "insert into NEW_SUBSCRIPTION(Customer_id,Payment_Date,Amount_Paid,Sub_Date,sub_length,Remarks,isShipped,copies) values("+customer_id+",'"+date+"','"+amount+"','"+SubMonth+"','"+sub_length+"','"+Rem+"','"+msg+"','"+copies+"')";
+			String sq = "insert into NEW_SUBSCRIPTION(Customer_id,Payment_Date,Amount_Paid,Sub_Date,sub_length,Remarks,isShipped,copies,Status) values("+customer_id+",'"+date+"','"+amount+"','"+SubMonth+"','"+sub_length+"','"+Rem+"','"+msg+"','"+copies+"','Active')";
 			stm.execute(sq);
 			
 			
