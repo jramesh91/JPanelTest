@@ -16,6 +16,8 @@ public class Rem_Balance{
 	public static String Dec="500";
 	public static String isAvailable=""; 
 	public static String CurrentBalance="";
+	public static int Sum=0;  //To add the subscription copies
+	
 	
 	
 	public Rem_Balance()
@@ -23,7 +25,7 @@ public class Rem_Balance{
 		super();
 	}
 	
-	public static String saveRemDetails(String Month,String Year,String Rem)
+	public static String saveRemDetails(int Date,String Rem)
 	{
 		
 		try { 
@@ -37,27 +39,11 @@ public class Rem_Balance{
 			
 			
 			Statement stm = con.createStatement();
-			
-			if(Month.equals("06")||Month.equals("6"))//||(Month=="6")
-			{ 
-			Date1=Month+Year;	
-			
-			String sq = "insert into remaining(date1,rem_balance)values('"+Date1+"','"+Rem+"')";
+			String sq = "insert into remaining(date1,rem_balance)values('"+Date+"','"+Rem+"')";
 			System.out.println("This insert working");
 			stm.executeUpdate(sq);
-			}
-			else if(Month.equals("12")||Month.equals("Dec"))
-			{
-				Date1=Month+Year;	
-				
-				String sq = "insert into remaining(date1,rem_balance)values('"+Date1+"','"+Rem+"')";
-				System.out.println("This insert  working");
-				stm.executeUpdate(sq);
-			}
-			else
-			{
-				JOptionPane.showMessageDialog(null, "Have you entered anything other than June,December?","Warning!!!",JOptionPane.ERROR_MESSAGE);
-			}
+			
+			
 			con.close();
 		}
 		
@@ -74,26 +60,32 @@ public class Rem_Balance{
 	
 	
 	
-	public static String checkBalance(String Month,String Year)
+	public static String checkBalance(int Date_Check)
 	{
-		 String Date_Check=Month+Year;
+	
 		try { 
 			//JDBC Driver Setup
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
 			Statement stm = con.createStatement();
-			String query="select rem_balance from remaining where date1='"+Date_Check+"'";
+			String query="select copies from new_subscription where sub_date='"+Date_Check+"'";
 			ResultSet rs=stm.executeQuery(query);
 			while(rs.next())
 			{
-				CurrentBalance=rs.getString(1);
+				
+				Sum+=Integer.parseInt(rs.getString(1));
 			}
+			System.out.println("The Number Of Copies Promised:"+ Sum);
+			
+			Statement Update=con.createStatement();
+			String Update_Query="UPDATE remaining SET Subs_Copies='"+Sum+"' ";
+			Update.executeUpdate(Update_Query);
 			
 			con.close();
 		}
@@ -105,7 +97,7 @@ public class Rem_Balance{
 		}
 		
 	
-		return Month;
+		return "Checking Balance";
 	}
 	
 	

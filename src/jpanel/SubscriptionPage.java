@@ -42,7 +42,8 @@ public class SubscriptionPage extends JFrame{
 	    private JTextField textField_1;
 	    public static boolean firstAfterLanding= true;
 	    private static  int[] subDateArray ;
-	    
+	    String msg="";
+	    String msg_status="";
 	 
 	    
 	    
@@ -178,14 +179,16 @@ public class SubscriptionPage extends JFrame{
 	        	public void keyPressed(KeyEvent e) {
 	        		if(e.getKeyCode()==KeyEvent.VK_ENTER)
 	        		{System.out.println("Enter Key is pressed!");
-	        		String msg="";
+	        		
 					if(chckbxNewCheckBox.isSelected())
 					{
 						msg="Yes";
+						msg_status="InActive";
 					}
 					else
 					{
 						msg="No";
+						msg_status="Active";
 					}
 					
 					DateFormat month = new SimpleDateFormat("MM");
@@ -202,10 +205,11 @@ public class SubscriptionPage extends JFrame{
 			        for(int i=0; i<spinnervalue;i++)
 					{
 			      NewSubscriptionEntry.saveSubscriptionDetails(cust_id, month_year.format(dateChooser.getDate()),
-							textField_2.getText(),subDateArray[i], spinner.getValue().toString(),textField_1.getText(),msg,textField_3.getText());
+							textField_2.getText(),subDateArray[i], spinner.getValue().toString(),textField_1.getText(),msg,textField_3.getText(),msg_status);
 			      
 			      //Only the first item can be marked as Shipped
 			      msg="No";
+			      msg_status="Active";
 					}
 			        
 					//NewSubscriptionEntry.saveSubscriptionDetails(cust_id, month_year.format(dateChooser.getDate()),
@@ -241,10 +245,6 @@ public class SubscriptionPage extends JFrame{
 	        btnAddMoreDetails.setBounds(632, 727, 130, 26);
 	        getContentPane().add(btnAddMoreDetails);
 	        
-	        JButton btnCheckAvailibility = new JButton("Check Availibility");
-	        btnCheckAvailibility.setBounds(541, 387, 161, 29);
-	        getContentPane().add(btnCheckAvailibility);
-	        
 	        JLabel Home = new JLabel("",new ImageIcon("back.jpg"),JLabel.CENTER);
 	        Home.setBounds(0, 0, 800, 800);
 	        getContentPane().add(Home);
@@ -255,14 +255,17 @@ public class SubscriptionPage extends JFrame{
 			btnAddMoreDetails.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 				//System.out.println("The date is "+dateChooser.getDate());
-					String msg="";
+					
 					if(chckbxNewCheckBox.isSelected())
 					{
 						msg="Yes";
+						msg_status="InActive";
+						
 					}
 					else
 					{
 						msg="No";
+						msg_status="Active";
 					}
 					//NewSubscriptionEntry.validateSubId(subs_id);
 					
@@ -281,10 +284,11 @@ public class SubscriptionPage extends JFrame{
 					for(int i=0; i<spinnervalue;i++)
 					{
 			      NewSubscriptionEntry.saveSubscriptionDetails(cust_id, d_month_year.format(dateChooser.getDate()),
-							textField_2.getText(),subDateArray[i], spinner.getValue().toString(),textField_1.getText(),msg,textField_3.getText());
-			      
+							textField_2.getText(),subDateArray[i], spinner.getValue().toString(),textField_1.getText(),msg,textField_3.getText(),msg_status);
+			      System.out.println(subDateArray[i]);
 			      //Only the first item can be marked as Shipped
 			      msg="No";
+			      msg_status="Active";
 					}
 			      //Rem_Balance.updateRemaining(textField_3.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()));
 					dispose();

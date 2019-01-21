@@ -15,7 +15,7 @@ public class NewSubscriptionEntry {
 	public static String isAvailable_End="";
 	
 	private static String sub_id;
-	public static void saveSubscriptionDetails( String customer_id, String date, String amount,int SubMonth, String sub_length,String Rem,String msg,String copies) //Added "Boolean Message" as a parameter
+	public static void saveSubscriptionDetails( String customer_id, String date, String amount,int SubMonth, String sub_length,String Rem,String msg,String copies,String Status) //Added "Boolean Message" as a parameter
 	{ 
 			
 		try { 
@@ -41,12 +41,12 @@ public class NewSubscriptionEntry {
 			//		WHERE condition;
 			
 			//@15.12.2018 A few columns have been added and few removed.Do execute the queries in MySql:Check the GDrive for Queries 
-			String sq = "insert into NEW_SUBSCRIPTION(Customer_id,Payment_Date,Amount_Paid,Sub_Date,sub_length,Remarks,isShipped,copies) values("+customer_id+",'"+date+"','"+amount+"','"+SubMonth+"','"+sub_length+"','"+Rem+"','"+msg+"','"+copies+"')";
+			String sq = "insert into NEW_SUBSCRIPTION(Customer_id,Payment_Date,Amount_Paid,Sub_Date,sub_length,Remarks,isShipped,copies,status) values("+customer_id+",'"+date+"','"+amount+"','"+SubMonth+"','"+sub_length+"','"+Rem+"','"+msg+"','"+copies+"','"+ Status +"')";
 			stm.execute(sq);
 			
 			
-			String search_customer = "Select * from NEW_SUBSCRIPTION where customer_id ='"+customer_id+"'";
-			ResultSet r = stm.executeQuery(search_customer);
+			
+			
 			//stm.execute(sq);
 			
 			/*if (!r.next() ) {
@@ -87,8 +87,8 @@ public class NewSubscriptionEntry {
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			System.out.println("Static var is "+subs_id);	
 
@@ -133,13 +133,13 @@ public class NewSubscriptionEntry {
 	}
 	
 	
-	public static String checkAvailability(String Copies,String Start_Month,String Start_Year,String End_Month,String End_Year) {
+	/*public static String checkAvailability(String Copies,String Start_Month,String Start_Year,String End_Month,String End_Year) {
 	System.out.println("Value of Copy is"+Copies);
 	try { 
 		//JDBC Driver Setup
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+		//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 		
 		
 		Statement stm = con.createStatement();
@@ -197,7 +197,37 @@ public class NewSubscriptionEntry {
 		System.out.println(":(");}
 		
 	return Copies;	
+	} */ //Check Availibilty Button is no more
+	
+	
+	//Modify Subscription Method:
+	public static String modifySubscription(String Subscription_ID,String isShipped,String Status,String Copies,String Remarks)
+	{
+		System.out.println("SubsId id:"+Subscription_ID+ "    Issue Status:"+isShipped+"    Active/Inactive:"+Status);
+		try { 
+			//JDBC Driver Setup
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			
+			//Statement Execution Part
+			Statement stm = con.createStatement();
+			String update_query="UPDATE new_subscription SET Remarks='"+Remarks+"',isShipped='"+ isShipped+"',status='"+Status +"', copies='"+Copies +"'  WHERE Subscription_ID='"+Subscription_ID +"' ";
+		    stm.executeUpdate(update_query);
+		    con.close();
+			}
+		catch(Exception e)
+		{
+			System.out.println("Exception in Updation is: "+e);
+		}
+		
+		return "Good";
 	}
+	
+	
+	
+	
 	
 
 }

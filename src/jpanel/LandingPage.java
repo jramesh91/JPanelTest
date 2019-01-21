@@ -149,7 +149,7 @@ public class LandingPage extends JFrame{
 	  					dispose();
 	  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
 	  					String a = null;
-	  					new SubscriptionPage(a).setVisible(true);
+	  					new ModifySubscription(a).setVisible(true);
 	  				}
 	  			
 	  			}

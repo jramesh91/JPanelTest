@@ -145,6 +145,24 @@ public class SearchCustomerIDPage extends JFrame{
 				});
 				
 				
+				
+				//Back Button's Action Listener
+				btnBack.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						if(e.getSource()==btnBack)
+						{
+							System.out.println("Again to the LANDING PAGE!");
+							dispose();
+							new LandingPage().setVisible(true);
+						}
+					
+					}
+				});
+				
+				
 			    
 
 	}
