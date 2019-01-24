@@ -239,6 +239,7 @@ public class ModifySubscription extends JFrame{
 					
 					@Override
 					public void actionPerformed(ActionEvent e) {
+						try {
 						// TODO Auto-generated method stub
 						if((chckbxInactive.isSelected())&&(chckbxShippedTheIssuw.isSelected())) //Shipped-->yes Activity-->Inactive
 						{	msg="Yes";
@@ -272,6 +273,12 @@ public class ModifySubscription extends JFrame{
 							//dispose();
 						}
 					
+					}
+					catch (NullPointerException ex)
+					{
+						JOptionPane.showMessageDialog(null, "Please provide all the values correctly", "Check Details", JOptionPane.WARNING_MESSAGE);
+						
+					}
 					}
 				});
 	        

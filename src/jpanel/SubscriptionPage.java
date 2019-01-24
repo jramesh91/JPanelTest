@@ -256,6 +256,7 @@ public class SubscriptionPage extends JFrame{
 	        
 	        //Update the table with the data
 			btnAddMoreDetails.addActionListener(new ActionListener() {
+				
 				public void actionPerformed(ActionEvent e) {
 				//System.out.println("The date is "+dateChooser.getDate());
 					
@@ -299,6 +300,7 @@ public class SubscriptionPage extends JFrame{
 					dispose();
 					new LandingPage().setVisible(true);
 				}
+				
 
 			});
 				
@@ -361,39 +363,7 @@ public class SubscriptionPage extends JFrame{
 					}
 				});
 				
-				
-				/*btnCheckAvailibility.addActionListener(new ActionListener() {
 					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						// TODO Auto-generated method stub
-						if(e.getSource()==btnCheckAvailibility)
-						{
-							DateFormat month = new SimpleDateFormat("MM");
-					        DateFormat year = new SimpleDateFormat("YY");
-							System.out.println("Checking Availability....");
-						
-							NewSubscriptionEntry.checkAvailability(textField_3.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()));
-							if((NewSubscriptionEntry.isAvailable_Start.equals("Yes")&&NewSubscriptionEntry.isAvailable_End.equals("Yes"))) {
-								JOptionPane.showMessageDialog(null,"Issues are available for both June and December!");}
-							else if((NewSubscriptionEntry.isAvailable_Start.equals("No")&&NewSubscriptionEntry.isAvailable_End.equals("Yes"))) {
-									JOptionPane.showMessageDialog(null, "Issues are only available for the month:' "+month.format(dateChooser_2.getDate()),"Running out of Stock",JOptionPane.ERROR_MESSAGE);}
-							else if((NewSubscriptionEntry.isAvailable_Start.equals("Yes")&&NewSubscriptionEntry.isAvailable_End.equals("No"))) {
-									JOptionPane.showMessageDialog(null, "Issues are only available for"+month.format(dateChooser_1.getDate()),"Running out of Stock",JOptionPane.ERROR_MESSAGE);}
-							else if(NewSubscriptionEntry.isAvailable_Start.equals("No")&&NewSubscriptionEntry.isAvailable_End.equals("No")) {
-								JOptionPane.showMessageDialog(null, "Issues are not available for both June and December","Ran out of Stock",JOptionPane.ERROR_MESSAGE);
-								}
-							}
-										
-							
-						}
-					
-					
-				});*/
-			
-	        
-		
-				
 	     
 	    } 
 	    

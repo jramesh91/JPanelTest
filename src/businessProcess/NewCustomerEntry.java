@@ -3,11 +3,17 @@ package businessProcess;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+
+import javax.swing.JOptionPane;
+
+import com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException;
 
 import jpanel.LoginPage;
 
 public class NewCustomerEntry {
+	public static boolean check = true;
 	
 	public static void saveCustomerDetails(String customer_id, String Full_Name, String door_number, String street, String city, String state, String pincode )
 	{
@@ -30,15 +36,31 @@ public class NewCustomerEntry {
 			
 			//Close the database Connection
 			con.close();
+			check = true;
 			
 			
 		}
 		
-		catch(Exception e) {
+		catch(MySQLSyntaxErrorException e) {
 			
-			System.out.println(e);
+			System.out.println("1");
+			JOptionPane.showMessageDialog(null, "Please enter all the details", "Something wrong", JOptionPane.WARNING_MESSAGE);
+			check = false;
 			
 		}
+		catch(SQLException f)
+		{
+			System.out.println("2");
+			JOptionPane.showMessageDialog(null, "Please enter all the details", "Something wrong", JOptionPane.WARNING_MESSAGE);
+			check = false;
+		}
+		catch(ClassNotFoundException c)
+		{
+			System.out.println("3");
+			JOptionPane.showMessageDialog(null, "Please enter all the details", "Something wrong", JOptionPane.WARNING_MESSAGE);
+			check = false;
+		}
+		
 		
 	}
 

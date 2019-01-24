@@ -60,7 +60,7 @@ public class RemainingBalance extends JFrame{
 	getContentPane().setLayout(null);
 	
 	JDateChooser dateChooser_1 = new JDateChooser();
-    dateChooser_1.setBounds(309, 221, 146, 26);
+    dateChooser_1.setBounds(367, 218, 146, 26);
     getContentPane().add(dateChooser_1);
 	
 	//Logout Button:
@@ -91,17 +91,26 @@ public class RemainingBalance extends JFrame{
     getContentPane().add(button);
     
     JLabel lblEnterDate = new JLabel("Enter Date");
+    lblEnterDate.setForeground(new Color(255, 204, 0));
+    lblEnterDate.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
     lblEnterDate.setBounds(163, 227, 131, 20);
     getContentPane().add(lblEnterDate);
     
     JLabel lblCopiesArrived = new JLabel("Copies Arrived");
-    lblCopiesArrived.setBounds(163, 286, 115, 29);
+    lblCopiesArrived.setForeground(new Color(255, 204, 0));
+    lblCopiesArrived.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
+    lblCopiesArrived.setBounds(163, 286, 169, 29);
     getContentPane().add(lblCopiesArrived);
     
     textField = new JTextField();
-    textField.setBounds(309, 287, 146, 26);
+    textField.setBounds(367, 290, 146, 26);
     getContentPane().add(textField);
     textField.setColumns(10);
+    
+	//ImageIcon ii = new ImageIcon("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg");
+    JLabel lable = new JLabel("",new ImageIcon("back.jpg"),JLabel.CENTER);
+    lable.setBounds(0, 0, 800, 800);
+    getContentPane().add(lable);
 	
     
     btnSave.addActionListener(new ActionListener() {
@@ -134,6 +143,7 @@ public class RemainingBalance extends JFrame{
 				DateFormat m_y = new SimpleDateFormat("MMYYYY");
 				
 				// TODO Auto-generated method stub
+				try {
 				if(e.getSource()==button)
 				{
 					System.out.println("Checking Balance.....!");
@@ -143,6 +153,12 @@ public class RemainingBalance extends JFrame{
 					
 				}
 			
+			}
+			catch (NullPointerException ex)
+			{
+				JOptionPane.showMessageDialog(null, "Please enter the right values", "Check Details", JOptionPane.WARNING_MESSAGE);
+				
+			}
 			}
 		});
     

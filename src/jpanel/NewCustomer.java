@@ -1,27 +1,23 @@
 package jpanel;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BorderFactory;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 /*import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;*/
 
 import businessProcess.NewCustomerEntry;
-import businessProcess.NewSubscriptionEntry;
+
 
 import javax.swing.JTextPane;
 import java.awt.Font;
@@ -38,8 +34,8 @@ public class NewCustomer extends JFrame{
 	    private static JTextField textField_5;
 	    private static JTextField textField_6;
 	    private static int customer_id = Math.round(999 + (int)(Math.random() * 9999));
-	    private static int Sub_id = Math.round(999 + (int)(Math.random() * 9999));
-	    private JTextField txtCustomerId;
+	   
+
 	     //This is the login page
 	    
 	    
@@ -159,23 +155,11 @@ public class NewCustomer extends JFrame{
 	        btnAddMoreDetails.setBounds(533, 726, 247, 26);
 	        getContentPane().add(btnAddMoreDetails);
 	        
-/*	        txtCustomerId = new JTextField();
-		    txtCustomerId.setText("Customer ID");
-		    txtCustomerId.setBounds(446, 98, 130, 26);
-		    getContentPane().add(txtCustomerId);
-		    txtCustomerId.setColumns(10);*/
-        
+
 	        JLabel Home = new JLabel("",new ImageIcon("back.jpg"),JLabel.CENTER);
 		    Home.setBounds(0, 0, 800, 800);
 		    getContentPane().add(Home);
 
-		  /*  JButton home_button = new JButton("Home");
-		    home_button.setBounds(21, 19, 130, 26);
-		    getContentPane().add(home_button);
-		    */
-		    
-	        
-	        
 	       
 	      //Back Button's Action Listener
 	        btnCancel.addActionListener(new ActionListener() {
@@ -200,21 +184,30 @@ public class NewCustomer extends JFrame{
 					@Override 
 					public void actionPerformed(ActionEvent e) {
 						// TODO Auto-generated method stub
+						try {
 						if(e.getSource()==btnAddMoreDetails)
 						{
 							
 							
-							//NewSubscriptionEntry.validateSubId(Sub_id);
-							NewSubscriptionEntry.validateSubId(Sub_id);
+
 							System.out.println("This is redirected to Subscription Page");
 						
 						NewCustomerEntry.saveCustomerDetails(textField_6.getText(), textField.getText(), textField_1.getText(),
 								textField_2.getText(), textField_3.getText(), textField_4.getText(), textField_5.getText());
 						SubscriptionPage.firstAfterLanding = false;
+						if(NewCustomerEntry.check)
+						{
 						new SubscriptionPage(textField_6.getText()).setVisible(true);
 						dispose();
 						}
+						}
 					
+					}
+					catch (NullPointerException ex)
+					{
+						JOptionPane.showMessageDialog(null, "Please enter all the details", "Something wrong", JOptionPane.WARNING_MESSAGE);
+						
+					}
 					}
 				});
 		
@@ -242,8 +235,6 @@ public class NewCustomer extends JFrame{
 			}
 		});
 				
-	       /*  
-	        pack();
-	        setLocationRelativeTo(null);*/
+	    
 	    }
 }

@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -87,6 +88,12 @@ public class SearchCustomerIDPage extends JFrame{
 			    textField.setBounds(426, 128, 130, 26);
 			    getContentPane().add(textField);
 			    textField.setColumns(10);
+			    
+			    
+				//ImageIcon ii = new ImageIcon("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg");
+			    JLabel lable = new JLabel("",new ImageIcon("back.jpg"),JLabel.CENTER);
+			    lable.setBounds(0, 0, 800, 800);
+			    getContentPane().add(lable);
 			    
 			  //Button to go into New Sub entry page
 			    btnGatherReport.addActionListener(new ActionListener() {

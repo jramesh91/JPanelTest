@@ -1,0 +1,5 @@
+Customer ID, Full Name,Door Number,Street Name,City,State,Pin Code
+88733 ,in ,32 ,iji ,ijni ,oii ,232 ,
+7787265 ,Sriram ,8878 ,Govindarajan ,iuhn ,ioj ,234 ,
+676367 ,Srinivasan ,22 ,juhuh ,inun ,iunuin ,323 ,
+3384783 ,Palani ,22 ,inu ,in ,in ,23 ,
