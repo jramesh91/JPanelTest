@@ -51,8 +51,9 @@ public class ModifySubscription extends JFrame{
 	        
 	     // add the panel to this frame
 	        getContentPane().setLayout(null);
-	        setSize(800, 800);
+	        setSize(900, 900);
 	        setLocation(450,150);
+	        setResizable(false);
 	        setDefaultCloseOperation(EXIT_ON_CLOSE);
 	        
 	      
@@ -150,8 +151,8 @@ public class ModifySubscription extends JFrame{
 	        chckbxShippedTheIssuw.setBounds(369, 397, 186, 29);
 	        getContentPane().add(chckbxShippedTheIssuw);
 	        
-	        JLabel Home = new JLabel("",new ImageIcon("back.jpg"),JLabel.CENTER);
-	        Home.setBounds(0, -17, 800, 800);
+	        JLabel Home = new JLabel("",new ImageIcon("Landing_Page3.jpg"),JLabel.CENTER);
+	        Home.setBounds(0, -17, 1000, 1000);
 	        getContentPane().add(Home);
 	        
 	       

@@ -57,8 +57,9 @@ public class SearchCustomer extends JFrame{
 	    public SearchCustomer() {
 	        super();
 	        getContentPane().setLayout(null);
-	        setSize(800, 800);
+	        setSize(900, 900);
 	        setLocation(450,150);
+	        setResizable(false);
 	        setDefaultCloseOperation(EXIT_ON_CLOSE);
 	        
 	        JTextPane txtpnNewCustomerEntry = new JTextPane();
@@ -233,8 +234,8 @@ public class SearchCustomer extends JFrame{
 	        
 		    
 			//ImageIcon ii = new ImageIcon("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg");
-		    JLabel lable = new JLabel("",new ImageIcon("back.jpg"),JLabel.CENTER);
-		    lable.setBounds(0, 0, 800, 800);
+		    JLabel lable = new JLabel("",new ImageIcon("Landing_Page3.jpg"),JLabel.CENTER);
+		    lable.setBounds(0, 0, 1000, 1000);
 		    getContentPane().add(lable);
 	        
 	        btnSearch.addActionListener(new ActionListener() {

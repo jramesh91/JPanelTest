@@ -45,9 +45,10 @@ public class NewCustomer extends JFrame{
 	    	
 			// add the panel to this frame
 	        getContentPane().setLayout(null);
-	        setSize(800, 800);
+	        setSize(900, 900);
 	        setLocation(450,150);
 	        setDefaultCloseOperation(EXIT_ON_CLOSE);
+	        setResizable(false);
 	        
 	        JTextPane txtpnNewCustomerEntry = new JTextPane();
 	        txtpnNewCustomerEntry.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 32));
@@ -156,8 +157,8 @@ public class NewCustomer extends JFrame{
 	        getContentPane().add(btnAddMoreDetails);
 	        
 
-	        JLabel Home = new JLabel("",new ImageIcon("back.jpg"),JLabel.CENTER);
-		    Home.setBounds(0, 0, 800, 800);
+	        JLabel Home = new JLabel("",new ImageIcon("Landing_Page3.jpg"),JLabel.CENTER);
+		    Home.setBounds(0, 0, 1000, 1000);
 		    getContentPane().add(Home);
 
 	       

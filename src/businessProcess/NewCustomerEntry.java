@@ -31,7 +31,7 @@ public class NewCustomerEntry {
 			Statement stm = con.createStatement();
 			
 			//statement to fetch the user ID's entire Row
-			String sq = "insert into CUSTOMER(Customer_id,Last_Name,Door_Number,Street_Name,City,State,PinCode) values("+customer_id+",'"+Full_Name+"',"+door_number+",'"+street+"','"+city+"','"+state+"',"+pincode+")";
+			String sq = "insert into CUSTOMER(Customer_id,Last_Name,Door_Number,Street_Name,City,State,PinCode) values("+customer_id+",'"+Full_Name+"','"+door_number+"','"+street+"','"+city+"','"+state+"',"+pincode+")";
 			stm.execute(sq);
 			
 			//Close the database Connection

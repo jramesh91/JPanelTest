@@ -53,8 +53,9 @@ public class SubscriptionPage extends JFrame{
 	        
 	     // add the panel to this frame
 	        getContentPane().setLayout(null);
-	        setSize(800, 800);
+	        setSize(900, 900);
 	        setLocation(450,150);
+	        setResizable(false);
 	        setDefaultCloseOperation(EXIT_ON_CLOSE);
 	        
 	        /*JPanel newPanel = new JPanel();
@@ -248,7 +249,7 @@ public class SubscriptionPage extends JFrame{
 	        btnAddMoreDetails.setBounds(632, 727, 130, 26);
 	        getContentPane().add(btnAddMoreDetails);
 	        
-	        JLabel Home = new JLabel("",new ImageIcon("back.jpg"),JLabel.CENTER);
+	        JLabel Home = new JLabel("",new ImageIcon("Landing_Page3.jpg"),JLabel.CENTER);
 	        Home.setBounds(0, 0, 800, 800);
 	        getContentPane().add(Home);
 	        
