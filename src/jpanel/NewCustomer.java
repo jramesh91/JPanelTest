@@ -26,13 +26,23 @@ import java.awt.Color;
 //THis is for Getting Customer Details
 public class NewCustomer extends JFrame{  
 	 
-	    private JTextField textField;
+	    private static JTextField textField;
 	    private static JTextField textField_1;
 	    private static JTextField textField_2;
 	    private static JTextField textField_3;
 	    private static JTextField textField_4;
 	    private static JTextField textField_5;
 	    private static JTextField textField_6;
+	    
+	    public static String customer;
+	    public static String fullName = " ";
+	    public static String door = "";
+	    public static String street = "";
+	    public static String city = "";
+	    public static String state = "";
+	    public static String pincode = "";
+	    
+	    
 	    private static int customer_id = Math.round(999 + (int)(Math.random() * 9999));
 	   
 
@@ -42,6 +52,8 @@ public class NewCustomer extends JFrame{
 	    
 	    public NewCustomer() {
 	    	super();
+	    	
+	    	
 	    	
 			// add the panel to this frame
 	        getContentPane().setLayout(null);
@@ -81,7 +93,7 @@ public class NewCustomer extends JFrame{
 	        getContentPane().add(lblFullName);
 
 	        //Full_name
-	        textField = new JTextField();
+	        textField = new JTextField(fullName);
 	        textField.setBounds(440, 151, 130, 36);
 	        getContentPane().add(textField);
 	        textField.setColumns(10);
@@ -93,7 +105,7 @@ public class NewCustomer extends JFrame{
 	        getContentPane().add(lblDoor);
 
 	        //Door Number
-	        textField_1 = new JTextField();
+	        textField_1 = new JTextField(door);
 	        textField_1.setBounds(440, 202, 130, 36);
 	        getContentPane().add(textField_1);
 	        textField_1.setColumns(10);
@@ -105,7 +117,7 @@ public class NewCustomer extends JFrame{
 	        getContentPane().add(lblStreetNumber);
 	        
 	        //Street
-	        textField_2 = new JTextField();
+	        textField_2 = new JTextField(street);
 	        textField_2.setBounds(440, 250, 130, 36);
 	        getContentPane().add(textField_2);
 	        textField_2.setColumns(10);
@@ -117,7 +129,7 @@ public class NewCustomer extends JFrame{
 	        getContentPane().add(lblCity);
 	        
 	        //City
-	        textField_3 = new JTextField();
+	        textField_3 = new JTextField(city);
 	        textField_3.setBounds(440, 298, 130, 36);
 	        getContentPane().add(textField_3);
 	        textField_3.setColumns(10);
@@ -129,7 +141,7 @@ public class NewCustomer extends JFrame{
 	        getContentPane().add(lblState);
 	        
 	        //State
-	        textField_4 = new JTextField();
+	        textField_4 = new JTextField(state);
 	        textField_4.setBounds(440, 341, 130, 36);
 	        getContentPane().add(textField_4);
 	        textField_4.setColumns(10);
@@ -141,7 +153,7 @@ public class NewCustomer extends JFrame{
 	        getContentPane().add(lblPincode);
 	        
 	        //Pincode
-	        textField_5 = new JTextField();
+	        textField_5 = new JTextField(pincode);
 	        getContentPane().add(textField_5);
 	        textField_5.setBounds(440, 385, 130, 36);
 	        textField_5.setColumns(10);
@@ -188,17 +200,22 @@ public class NewCustomer extends JFrame{
 						try {
 						if(e.getSource()==btnAddMoreDetails)
 						{
-							
+							setTextField(textField.getText());
+							setTextField_1(textField_1.getText());
+							setTextField_2(textField_2.getText());
+							setTextField_3(textField_3.getText());
+							setTextField_4(textField_4.getText());
+							setTextField_5(textField_5.getText());
+							setTextField_6(textField_6.getText());
 							
 
 							System.out.println("This is redirected to Subscription Page");
 						
-						NewCustomerEntry.saveCustomerDetails(textField_6.getText(), textField.getText(), textField_1.getText(),
-								textField_2.getText(), textField_3.getText(), textField_4.getText(), textField_5.getText());
+						
 						SubscriptionPage.firstAfterLanding = false;
 						if(NewCustomerEntry.check)
 						{
-						new SubscriptionPage(textField_6.getText()).setVisible(true);
+						new SubscriptionPage(getTextField_6()).setVisible(true);
 						dispose();
 						}
 						}
@@ -238,4 +255,84 @@ public class NewCustomer extends JFrame{
 				
 	    
 	    }
+
+
+		public static String getTextField() {
+			return textField.getText();
+		}
+
+
+		public static void setTextField(String textField) {
+			fullName = textField;
+		}
+
+
+		public static String getTextField_1() {
+			return textField_1.getText();
+		}
+
+
+		public static void setTextField_1(String textField_1) {
+			door = textField_1;
+		}
+
+
+		public static String getTextField_2() {
+			return textField_2.getText();
+		}
+
+
+		public static void setTextField_2(String textField_2) {
+			street = textField_2;
+		}
+
+
+		public static String getTextField_3() {
+			return textField_3.getText();
+		}
+
+
+		public static void setTextField_3(String textField_3) {
+			city = textField_3;
+		}
+
+
+		public static String getTextField_4() {
+			return textField_4.getText();
+		}
+
+
+		public static void setTextField_4(String textField_4) {
+			state = textField_4;
+		}
+
+
+		public static String getTextField_5() {
+			return textField_5.getText();
+		}
+
+
+		public static void setTextField_5(String textField_5) {
+			pincode  = textField_5;
+		}
+
+
+		public static String getTextField_6() {
+			return textField_6.getText();
+		}
+
+
+		public static void setTextField_6(String textField_6) {
+			customer = textField_6;
+		}
+
+
+		public static int getCustomer_id() {
+			return customer_id;
+		}
+
+
+		public static void setCustomer_id(int customer_id) {
+			NewCustomer.customer_id = customer_id;
+		}
 }

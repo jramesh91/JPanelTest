@@ -176,10 +176,17 @@ public class SubscriptionPage extends JFrame{
 	        
 	        JCheckBox chckbxNewCheckBox = new JCheckBox("Shipped 1st Issue");
 	        chckbxNewCheckBox.addKeyListener(new KeyAdapter() {
+	        	
+	        	
 	        	@Override
 	        	public void keyPressed(KeyEvent e) {
+	  
 	        		if(e.getKeyCode()==KeyEvent.VK_ENTER)
 	        		{System.out.println("Enter Key is pressed!");
+	        		
+	        		NewCustomerEntry.saveCustomerDetails(NewCustomer.getTextField_6(), NewCustomer.getTextField(), NewCustomer.getTextField_1(),
+							NewCustomer.getTextField_2(), NewCustomer.getTextField_3(), NewCustomer.getTextField_4(), NewCustomer.getTextField_5());
+					
 	        		
 					if(chckbxNewCheckBox.isSelected())
 					{
@@ -235,7 +242,7 @@ public class SubscriptionPage extends JFrame{
 	        getContentPane().add(btnBackToCustomer);
 	        }
 	        
-	        JButton btnBack = new JButton("Back");
+	        JButton btnBack = new JButton("Cancel & Exit");
 	        btnBack.setBounds(465, 727, 130, 26);
 	        getContentPane().add(btnBack);
 	        
@@ -245,7 +252,7 @@ public class SubscriptionPage extends JFrame{
 	        btnCancel.setBounds(394, 177, 130, 26);
 	        getContentPane().add(btnCancel);*/
 	        
-	        JButton btnAddMoreDetails = new JButton("Save and Exit");
+	        JButton btnAddMoreDetails = new JButton("Save & Exit");
 	        btnAddMoreDetails.setBounds(632, 727, 130, 26);
 	        getContentPane().add(btnAddMoreDetails);
 	        
@@ -260,6 +267,9 @@ public class SubscriptionPage extends JFrame{
 				
 				public void actionPerformed(ActionEvent e) {
 				//System.out.println("The date is "+dateChooser.getDate());
+					
+					NewCustomerEntry.saveCustomerDetails(NewCustomer.getTextField_6(), NewCustomer.getTextField(), NewCustomer.getTextField_1(),
+							NewCustomer.getTextField_2(), NewCustomer.getTextField_3(), NewCustomer.getTextField_4(), NewCustomer.getTextField_5());
 					
 					if(chckbxNewCheckBox.isSelected())
 					{
@@ -356,7 +366,14 @@ public class SubscriptionPage extends JFrame{
 						// TODO Auto-generated method stub
 						if(e.getSource()==btnBackToCustomer)
 						{
-							System.out.println("Again to the LANDING PAGE!");
+							System.out.println("Again to the New Customer PAGE!");
+							NewCustomer.setTextField(NewCustomer.getTextField());
+							NewCustomer.setTextField_1(NewCustomer.getTextField_1());
+							NewCustomer.setTextField_2(NewCustomer.getTextField_2());
+							NewCustomer.setTextField_3(NewCustomer.getTextField_3());
+							NewCustomer.setTextField_4(NewCustomer.getTextField_4());
+							NewCustomer.setTextField_5(NewCustomer.getTextField_5());
+							NewCustomer.setTextField_6(NewCustomer.getTextField_6());
 							dispose();
 							new NewCustomer().setVisible(true);
 						}
