@@ -45,10 +45,14 @@ public class SearchCustomerIDPage extends JFrame{
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
+		ImageIcon img = new ImageIcon("RIESI_Logo.png");
+	    setIconImage(img.getImage());
+		
 		 JTextPane txtpnNewCustomerEntry = new JTextPane();
 	        txtpnNewCustomerEntry.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 32));
-	        txtpnNewCustomerEntry.setBounds(98, 28, 516, 45);
+	        txtpnNewCustomerEntry.setBounds(98, 30, 384, 45);
 	        txtpnNewCustomerEntry.setText("Search for Customer ID");
+	        txtpnNewCustomerEntry.setEditable(false);
 	        getContentPane().add(txtpnNewCustomerEntry);
 	        
 		
@@ -68,7 +72,7 @@ public class SearchCustomerIDPage extends JFrame{
 			    
 			    
 			    JPanel panel = new JPanel();
-			    panel.setBounds(6, 357, 788, 374);
+			    panel.setBounds(47, 355, 788, 374);
 			    
 			    getContentPane().add(panel);
 			    tableModel = new DefaultTableModel(column_header,100);
@@ -105,6 +109,11 @@ public class SearchCustomerIDPage extends JFrame{
 			  				// TODO Auto-generated method stub
 			  				if(e.getSource()==btnGatherReport)
 			  				{
+			  					if(textField.getText().equals(false))
+			  					{
+			  						
+			  					}
+			  					
 			  					System.out.println("Searching for report");
 			  					
 			  					SearchforID.searchCustomer(textField.getText());

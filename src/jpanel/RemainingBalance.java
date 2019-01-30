@@ -72,11 +72,15 @@ public class RemainingBalance extends JFrame{
 	setResizable(false);
 	setDefaultCloseOperation(EXIT_ON_CLOSE);
 	
+	ImageIcon img = new ImageIcon("RIESI_Logo.png");
+    setIconImage(img.getImage());
+	
 	//Text Pane for Remaining Balance
 	JTextPane txtpnNewCustomerEntry = new JTextPane();
     txtpnNewCustomerEntry.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 32));
-    txtpnNewCustomerEntry.setBounds(198, 72, 315, 45);
+    txtpnNewCustomerEntry.setBounds(279, 71, 315, 45);
     txtpnNewCustomerEntry.setText("Remaining Balance");
+    txtpnNewCustomerEntry.setEditable(false);
     getContentPane().add(txtpnNewCustomerEntry);
     //Save Button
     JButton btnSave = new JButton("Save");
@@ -92,7 +96,7 @@ public class RemainingBalance extends JFrame{
     getContentPane().add(button);
     
     JLabel lblEnterDate = new JLabel("Enter Date");
-    lblEnterDate.setForeground(new Color(255, 204, 0));
+    lblEnterDate.setForeground(new Color(0, 255,246));
     lblEnterDate.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
     lblEnterDate.setBounds(163, 227, 131, 20);
     getContentPane().add(lblEnterDate);
@@ -110,7 +114,7 @@ public class RemainingBalance extends JFrame{
     
 	//ImageIcon ii = new ImageIcon("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg");
     JLabel lable = new JLabel("",new ImageIcon("Landing_Page3.jpg"),JLabel.CENTER);
-    lable.setBounds(0, 0, 1000, 1000);
+    lable.setBounds(0, 0, 905, 1000);
     getContentPane().add(lable);
 	
     
@@ -148,9 +152,8 @@ public class RemainingBalance extends JFrame{
 				if(e.getSource()==button)
 				{
 					System.out.println("Checking Balance.....!");
-					//Rem_Balance.checkBalance(textField.getText(),textField_2.getText());
 					Rem_Balance.checkBalance(Integer.parseInt(m_y.format(dateChooser_1.getDate())));
-					//JOptionPane.showMessageDialog(null, "Your Current Balance is:" +Rem_Balance.CurrentBalance);
+					
 					
 				}
 			

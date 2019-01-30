@@ -36,7 +36,7 @@ import java.text.SimpleDateFormat;
 
 public class SearchCustomer extends JFrame{
 	    private static int subs_id = Math.round(999 + (int)(Math.random() * 9999));
-	     //This is the login page
+	     
 	   Search_Customer s=new Search_Customer();
 	   private JTextField textField;
 	   private JTextField textField_1;
@@ -62,10 +62,14 @@ public class SearchCustomer extends JFrame{
 	        setResizable(false);
 	        setDefaultCloseOperation(EXIT_ON_CLOSE);
 	        
+	        ImageIcon img = new ImageIcon("RIESI_Logo.png");
+		    setIconImage(img.getImage());
+	        
 	        JTextPane txtpnNewCustomerEntry = new JTextPane();
 	        txtpnNewCustomerEntry.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 32));
 	        txtpnNewCustomerEntry.setBounds(269, 28, 301, 45);
 	        txtpnNewCustomerEntry.setText("Search Customer");
+	        txtpnNewCustomerEntry.setEditable(false);
 	        getContentPane().add(txtpnNewCustomerEntry);
 	        
 	        JButton home_button = new JButton("Back");
@@ -233,7 +237,7 @@ public class SearchCustomer extends JFrame{
 		    getContentPane().add(textField_11);
 	        
 		    
-			//ImageIcon ii = new ImageIcon("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg");
+			
 		    JLabel lable = new JLabel("",new ImageIcon("Landing_Page3.jpg"),JLabel.CENTER);
 		    lable.setBounds(0, 0, 1000, 1000);
 		    getContentPane().add(lable);
@@ -243,6 +247,11 @@ public class SearchCustomer extends JFrame{
 					
 					if(e.getSource()==btnSearch)
 					{	 cust_id=textField_6.getText();
+						if(cust_id.equals(""))
+						{
+						//Pop Up for Empty Box
+						JOptionPane.showMessageDialog(null, "Enter the Customer ID", "Invalid Details", JOptionPane.WARNING_MESSAGE);
+						}
 					System.out.println("Searching Customers");
 						Search_Customer.searchCustomerDetails(cust_id);
 						textField.setText(Search_Customer.first_name);

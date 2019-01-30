@@ -62,10 +62,14 @@ public class NewCustomer extends JFrame{
 	        setDefaultCloseOperation(EXIT_ON_CLOSE);
 	        setResizable(false);
 	        
+	        ImageIcon img = new ImageIcon("RIESI_Logo.png");
+	        setIconImage(img.getImage());
+	        
 	        JTextPane txtpnNewCustomerEntry = new JTextPane();
 	        txtpnNewCustomerEntry.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 32));
 	        txtpnNewCustomerEntry.setBounds(269, 28, 301, 45);
 	        txtpnNewCustomerEntry.setText("New Customer Entry");
+	        txtpnNewCustomerEntry.setEditable(false);
 	        getContentPane().add(txtpnNewCustomerEntry);
 	        
 	        JButton btnLogout = new JButton("Logout");

@@ -62,9 +62,16 @@ public class ModifySubscription extends JFrame{
 	        txtpnNewCustomerEntry.setText("Modify Subscription Details");
 	        txtpnNewCustomerEntry.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 32));
 	        txtpnNewCustomerEntry.setBounds(141, 28, 476, 45);
+	        txtpnNewCustomerEntry.setEditable(false);
 	        getContentPane().add(txtpnNewCustomerEntry);
 	        
-	        //add(txtpnNewCustomerEntry, gbc_txtpnNewCustomerEntry);
+	        
+	        
+	        ImageIcon img = new ImageIcon("RIESI_Logo.png");
+	        setIconImage(img.getImage());
+	       
+	        
+	     
 	        
 	        JButton btnLogout = new JButton("Logout");
 	        btnLogout.setBounds(632, 20, 130, 26);
@@ -271,7 +278,7 @@ public class ModifySubscription extends JFrame{
 							NewSubscriptionEntry.modifySubscription(textField_6.getText(),msg,msg_status,textField_3.getText(),textField_1.getText());
 							 
 							
-							//dispose();
+						
 						}
 					
 					}

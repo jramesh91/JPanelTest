@@ -61,7 +61,8 @@ public class LandingPage extends JFrame{
 		setLocation(450,150);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
-	   
+		ImageIcon img = new ImageIcon("RIESI_Logo.png");
+	    setIconImage(img.getImage());
 	    
 		JButton btnLogout = new JButton("Logout");
 	    btnLogout.setBounds(746, 16, 117, 29);
@@ -164,9 +165,9 @@ public class LandingPage extends JFrame{
 	    txtpnWelcomeToJournal.setForeground(new Color(255, 255, 255));
 	    txtpnWelcomeToJournal.setBackground(new Color(0, 0, 0));
 	    //txtpnWelcomeToJournal.setBackground(0,0,0,0);
-	    txtpnWelcomeToJournal.setText("   Welcome to Journal Management System");
-	    txtpnWelcomeToJournal.setFont(new Font("Lucida Grande", Font.BOLD, 28));
-	    txtpnWelcomeToJournal.setBounds(91, 99, 687, 57);
+	    txtpnWelcomeToJournal.setText("Welcome to Journal Management System");
+	    txtpnWelcomeToJournal.setFont(new Font("Lucida Grande", Font.BOLD, 30));
+	    txtpnWelcomeToJournal.setBounds(151, 99, 600, 57);
 	    getContentPane().add(txtpnWelcomeToJournal);
 	   
 	   
@@ -186,16 +187,11 @@ public class LandingPage extends JFrame{
 	   getContentPane().add(btnHelp);
 	   
 	      	    
-	   //ImageIcon ii = new ImageIcon("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg");
+	  
 	   JLabel lable = new JLabel("",new ImageIcon("Landing_Page3.jpg"),JLabel.CENTER);
 	   lable.setBounds(0, 0, 1000,1000);
 	   getContentPane().add(lable);
-	    
-	    
-	    
-	
-		/*panel.add(lable);*/
-	    setVisible(true);
+	   setVisible(true);
 	    
 	  //Button to go into New Customer entry page
 	    btnNewCustomer.addActionListener(new ActionListener() {
@@ -339,224 +335,14 @@ public class LandingPage extends JFrame{
   			public void actionPerformed(ActionEvent e) {
   				// TODO Auto-generated method stub
   				if(e.getSource()==btnHelp)
-  				{
-  					
+  				{							
+  					dispose();
+  					new Help_Page().setVisible(true);
   				}
   			
   			}
   		});
-		/*JLabel label_1 = new JLabel("");
-		panel.add(label_1);
 		
-		JLabel label_2 = new JLabel("");
-		panel.add(label_2);*/
-		
-		/*JLabel lblLibministrator = new JLabel("LibMinistrator");
-		lblLibministrator.setFont(new Font("Serif", Font.PLAIN, 32));
-		panel.add(lblLibministrator);
-		
-		
-		
-		JLabel label = new JLabel("");
-		panel.add(label);
-		
-		JButton btnLogout = new JButton("Logout");
-		panel.add(btnLogout);
-		//Action Listener for the Logout :)  U'ted @17.12.2018
-		btnLogout.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				if(e.getSource()==btnLogout)
-				{System.out.println("Confirming....");
-				JDialog.setDefaultLookAndFeelDecorated(true);
-			    int response = JOptionPane.showConfirmDialog(null, "You Sure?You want to Logout?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-			    if (response == JOptionPane.NO_OPTION)
-			    {
-			      System.out.println("Confirmation Declined");
-			    } else if (response == JOptionPane.YES_OPTION)
-			    {
-			      System.out.println("Confirmation Accepted");
-			      dispose();
-			      LoginPage.entry=false;
-			      new LoginPage().setVisible(true);
-			    } }
-			
-			}
-		});
-		
-		JLabel label_3 = new JLabel("");
-		panel.add(label_3);
-		
-		JLabel label_4 = new JLabel("");
-		panel.add(label_4);
-		
-		JLabel label_5 = new JLabel("");
-		panel.add(label_5);
-		
-		JLabel label_6 = new JLabel("");
-		panel.add(label_6);
-		
-		JLabel label_7 = new JLabel("");
-		panel.add(label_7);
-		
-		JLabel label_8 = new JLabel("");
-		panel.add(label_8);
-		
-		JLabel label_9 = new JLabel("");
-		panel.add(label_9);
-		
-		JLabel label_10 = new JLabel("");
-		panel.add(label_10);
-		
-		JLabel label_11 = new JLabel("");
-		panel.add(label_11);
-		
-		JLabel label_12 = new JLabel("");
-		panel.add(label_12);
-		
-		JLabel label_13 = new JLabel("");
-		panel.add(label_13);
-		
-		JLabel label_14 = new JLabel("");
-		panel.add(label_14);
-		
-		JLabel label_15 = new JLabel("");
-		panel.add(label_15);
-		
-		
-
-		
-		
-		
-		JButton btnNewButton = new JButton("FirstForm");
-		btnNewButton.setBackground(Color.CYAN);
-		btnNewButton.setPreferredSize(new Dimension(80, 40));
-		panel.add(btnNewButton);
-		
-		
-		
-		
-		//BUtto to get into New Customer page
-		 btnNewButton.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					// TODO Auto-generated method stub
-					if(e.getSource()==btnNewButton)
-					{
-						System.out.println("This is redirected to the First Form");
-						dispose();
-						new NewCustomer().setVisible(true);
-					}
-				
-				
-				}
-			});
-		
-		JLabel label_16 = new JLabel("");
-		panel.add(label_16);
-		
-		JLabel label_17 = new JLabel("");
-		panel.add(label_17);
-		
-		
-		//This is for the first form
- 
-		
-		JButton btnNewButton_1 = new JButton("Search Customer");
-		btnNewButton_1.setBackground(Color.CYAN);
-		btnNewButton_1.setPreferredSize(new Dimension(80, 40));
-		panel.add(btnNewButton_1);
-		
-		//Button to go to Search customer Page
-		btnNewButton_1.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				if(e.getSource()==btnNewButton_1)
-				{System.out.println("This is redirected to Search Customer");
-				dispose();
-				new SearchCustomer().setVisible(true);
-				}
-			
-			}
-		});
-		*/
-	/*	JLabel label_18 = new JLabel("");
-		panel.add(label_18);
-		
-		JLabel label_19 = new JLabel("");
-		panel.add(label_19);
-		
-		JLabel label_20 = new JLabel("");
-		panel.add(label_20);
-		
-		JLabel label_21 = new JLabel("");
-		panel.add(label_21);
-		
-		JLabel label_22 = new JLabel("");
-		panel.add(label_22);
-		
-		JLabel label_23 = new JLabel("");
-		panel.add(label_23);
-		
-		JLabel label_24 = new JLabel("");
-		panel.add(label_24);
-		
-		JLabel label_25 = new JLabel("");
-		panel.add(label_25);
-		
-		
-		*/
-	/*	
-		JButton btnNewButton_2 = new JButton("Generate Report");
-		btnNewButton_2.setBackground(Color.ORANGE);
-		btnNewButton_2.setForeground(SystemColor.activeCaptionText);
-		panel.add(btnNewButton_2);
-		
-		//Button to go into New Sub entry page
-				btnNewButton_2.addActionListener(new ActionListener() {
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						// TODO Auto-generated method stub
-						if(e.getSource()==btnNewButton_2)
-						{
-							System.out.println("This is redirected to Subscription Page");
-							dispose();
-							//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
-							new GenerateReport().setVisible(true);
-						}
-					
-					}
-				});
-		
-		JLabel label_26 = new JLabel("");
-		panel.add(label_26);
-		
-		JLabel label_27 = new JLabel("");
-		panel.add(label_27);*/
-		
-		
-		/*JButton btnNewButton_3 = new JButton("Add new subscription");
-		btnNewButton_3.setBackground(Color.GREEN);
-		panel.add(btnNewButton_3);
-		
-		
-		
-		
-		JLabel label_28 = new JLabel("");
-		panel.add(label_28);
-		
-		JLabel label_29 = new JLabel("");
-		panel.add(label_29);
-		
-		*/
-	/*	pack();
-		setLocationRelativeTo(null);*/
 	    
 
 

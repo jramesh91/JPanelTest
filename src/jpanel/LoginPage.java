@@ -32,6 +32,9 @@ public class LoginPage extends JFrame{
 	         
 	        // create a new panel with GridBagLayout manager
 	        JPanel newPanel = new JPanel(new GridBagLayout());
+	        
+	        ImageIcon img = new ImageIcon("RIESI_Logo.png");
+	        setIconImage(img.getImage());
 	         
 	        GridBagConstraints constraints = new GridBagConstraints();
 	        constraints.anchor = GridBagConstraints.WEST;

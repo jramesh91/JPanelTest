@@ -58,28 +58,18 @@ public class SubscriptionPage extends JFrame{
 	        setResizable(false);
 	        setDefaultCloseOperation(EXIT_ON_CLOSE);
 	        
-	        /*JPanel newPanel = new JPanel();
-	        GridBagLayout gbl_newPanel = new GridBagLayout();
-	        gbl_newPanel.columnWidths = new int[]{111, 139, 123, 0, 211, 0};
-	        gbl_newPanel.rowHeights = new int[]{47, 38, 37, 37, 39, 37, 34, 36, 0, 0, 0};
-	        gbl_newPanel.columnWeights = new double[]{0.0, 1.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
-	        gbl_newPanel.rowWeights = new double[]{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-	        newPanel.setLayout(gbl_newPanel);*/
-	         
-	     /*   // set border for the panel
-	        newPanel.setBorder(BorderFactory.createTitledBorder(
-	                BorderFactory.createEtchedBorder(), "Login Panel"));
-	         
-	        // add the panel to this frame
-	        getContentPane().add(newPanel);
-	        */
+	        
 	        JTextPane txtpnNewCustomerEntry = new JTextPane();
 
 	        txtpnNewCustomerEntry.setText("Enter Subscription Details");
 	        txtpnNewCustomerEntry.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 32));
 	        txtpnNewCustomerEntry.setBounds(141, 28, 476, 45);
+	        txtpnNewCustomerEntry.setEditable(false);
 	        getContentPane().add(txtpnNewCustomerEntry);
 	        
+	        
+	        ImageIcon img = new ImageIcon("RIESI_Logo.png");
+	        setIconImage(img.getImage());
 	        //add(txtpnNewCustomerEntry, gbc_txtpnNewCustomerEntry);
 	        
 	        JButton btnLogout = new JButton("Logout");
@@ -257,7 +247,7 @@ public class SubscriptionPage extends JFrame{
 	        getContentPane().add(btnAddMoreDetails);
 	        
 	        JLabel Home = new JLabel("",new ImageIcon("Landing_Page3.jpg"),JLabel.CENTER);
-	        Home.setBounds(0, 0, 800, 800);
+	        Home.setBounds(0, 0, 913, 899);
 	        getContentPane().add(Home);
 	        
 	       
@@ -307,7 +297,6 @@ public class SubscriptionPage extends JFrame{
 			      msg="No";
 			      msg_status="Active";
 					}
-			      //Rem_Balance.updateRemaining(textField_3.getText(),month.format(dateChooser_1.getDate()),year.format(dateChooser_1.getDate()),month.format(dateChooser_2.getDate()),year.format(dateChooser_2.getDate()));
 					dispose();
 					new LandingPage().setVisible(true);
 				}

@@ -32,7 +32,6 @@ public class GenerateReport extends JFrame{
 	    public static String [] column_header= {"Customer ID", "Full Name","Door Number","Street Name","City","State","Pin Code"};
 	    public static String column_ToPrint= "Customer ID, Full Name,Door Number,Street Name,City,State,Pin Code";
 	    public static String [][] column_hea= {{"Customer ID", "Full Name","Door Number","Street Name","City","State","Pin Code"},{"Customer ID", "Full Name","Door Number","Street Name","City","State","Pin Code"}};
-	    //public static String [][] column_value ;
 	    public static Object [][] column_value;
 	    public static Object [][] column_toPrint;
 	    
@@ -50,64 +49,68 @@ public class GenerateReport extends JFrame{
 			
 			 JTextPane txtpnNewCustomerEntry = new JTextPane();
 		        txtpnNewCustomerEntry.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 32));
-		        txtpnNewCustomerEntry.setBounds(98, 27, 516, 45);
+		        txtpnNewCustomerEntry.setBounds(98, 27, 503, 45);
 		        txtpnNewCustomerEntry.setText("Search for Subscription Report");
+		        txtpnNewCustomerEntry.setEditable(false);
 		        getContentPane().add(txtpnNewCustomerEntry);
 		        
+		        
+		        ImageIcon img = new ImageIcon("RIESI_Logo.png");
+		        setIconImage(img.getImage());
 			
-			 JLabel lblMonth = new JLabel("Enter Subscription Date");
-			 lblMonth.setForeground(new Color(255, 204, 0));
-			 lblMonth.setFont(new Font("Courier", Font.BOLD, 16));
-			 lblMonth.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-			 lblMonth.setBounds(98, 125, 301, 26);
+		        JLabel lblMonth = new JLabel("Enter Subscription Date");
+		        lblMonth.setForeground(new Color(255, 204, 0));
+		        lblMonth.setFont(new Font("Courier", Font.BOLD, 16));
+		        lblMonth.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
+		        lblMonth.setBounds(98, 125, 301, 26);
 		        getContentPane().add(lblMonth);
 			        
-			        JButton btnGatherReport = new JButton("Generate Report");
-			        btnGatherReport.setBackground(new Color(204, 255, 255));
-			        btnGatherReport.setBounds(355, 245, 166, 36);
-				    getContentPane().add(btnGatherReport);
+			    JButton btnGatherReport = new JButton("Generate Report");
+			    btnGatherReport.setBackground(new Color(204, 255, 255));
+			    btnGatherReport.setBounds(618, 123, 166, 36);
+				getContentPane().add(btnGatherReport);
 				    
 				    
 				    
 				    
-				    JPanel panel = new JPanel();
-				    panel.setBounds(6, 357, 788, 374);
+				JPanel panel = new JPanel();
+				panel.setBounds(47, 227, 788, 374);
+				getContentPane().add(panel);
 				    
-				    getContentPane().add(panel);
-				    tableModel = new DefaultTableModel(column_header,100);
-				    table = new JTable(tableModel);
-  					table.setBounds(6, 357, 788, 374);
-				    jScroll = new JScrollPane(table);
-				    panel.add(jScroll);
+				tableModel = new DefaultTableModel(column_header,100);
+				table = new JTable(tableModel);
+				table.setBounds(6, 357, 788, 374);
+				jScroll = new JScrollPane(table);
+				panel.add(jScroll);
 				    
-				    JButton btnBack = new JButton("Back");
-				    btnBack.setBounds(147, 245, 124, 36);
-				    getContentPane().add(btnBack);
+				JButton btnBack = new JButton("Back");
+				btnBack.setBounds(214, 698, 124, 36);
+				getContentPane().add(btnBack);
 				    
-				    JButton btnLogout = new JButton("Logout");
-				    btnLogout.setBounds(648, 16, 115, 29);
-				    getContentPane().add(btnLogout);
+				JButton btnLogout = new JButton("Logout");
+				btnLogout.setBounds(648, 16, 115, 29);
+				getContentPane().add(btnLogout);
 				    
-				    JDateChooser dateChooser = new JDateChooser();
-				    dateChooser.setBounds(443, 125, 119, 26);
-				    getContentPane().add(dateChooser);
+				JDateChooser dateChooser = new JDateChooser();
+				dateChooser.setBounds(443, 125, 119, 26);
+				getContentPane().add(dateChooser);
 				    
-				    JButton btnExport = new JButton("Export");
-				    btnExport.setBounds(601, 245, 130, 36);
-				    getContentPane().add(btnExport);
+				JButton btnExport = new JButton("Export");
+			    btnExport.setBounds(631, 698, 130, 36);
+			    getContentPane().add(btnExport);
 				    
-				    DateFormat month_year = new SimpleDateFormat("MMYYYY");
+			    DateFormat month_year = new SimpleDateFormat("MMYYYY");
 				    
 				    
 					//ImageIcon ii = new ImageIcon("/Users/jramesh/Documents/Scooby Related/JPanelTest/bin/abstract-art-artistic-1020315.jpg");
-				    JLabel lable = new JLabel("",new ImageIcon("Landing_Page3.jpg"),JLabel.CENTER);
-				    lable.setBounds(0, 0, 1000, 1000);
-				    getContentPane().add(lable);
+			    JLabel lable = new JLabel("",new ImageIcon("Landing_Page3.jpg"),JLabel.CENTER);
+			    lable.setBounds(0, 0, 894, 1000);
+			    getContentPane().add(lable);
 				    
 				    
 			        
 				    //Button to go into New Sub entry page
-				    btnGatherReport.addActionListener(new ActionListener() {
+			    btnGatherReport.addActionListener(new ActionListener() {
 				    	
 				  			
 				  			@Override
@@ -115,7 +118,7 @@ public class GenerateReport extends JFrame{
 				  				try {
 				  					
 				  				// TODO Auto-generated method stub
-				  				if(e.getSource()==btnGatherReport)
+				  					if(e.getSource()==btnGatherReport)
 				  				{
 				  					System.out.println("Searching for report");
 				  					int date_of_sub = Integer.parseInt(month_year.format(dateChooser.getDate()));
@@ -197,7 +200,7 @@ public class GenerateReport extends JFrame{
 							try {
 							if(e.getSource()==btnExport)
 							{
-								System.out.println("Craeting a file and putting the data in");
+								System.out.println("Creating a file and putting the data in");
 								String filename = Integer.parseInt(month_year.format(dateChooser.getDate()))+".txt";
 								try {
 									PrintWriter outputStream = new PrintWriter(filename);
