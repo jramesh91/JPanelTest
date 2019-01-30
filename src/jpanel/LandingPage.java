@@ -67,7 +67,7 @@ public class LandingPage extends JFrame{
 	    btnLogout.setBounds(746, 16, 117, 29);
 	    getContentPane().add(btnLogout);
 	    
-	    JButton btnNewCustomer = new JButton("New Customer");
+	    JButton btnNewCustomer = new JButton();
 	    btnNewCustomer.addMouseMotionListener(new MouseMotionAdapter() {
 	    	@Override
 	    	public void mouseMoved(java.awt.event.MouseEvent e) {
@@ -83,7 +83,7 @@ public class LandingPage extends JFrame{
 	    btnNewCustomer.setBounds(158, 203, 129, 149);
 	    getContentPane().add(btnNewCustomer);
 	    
-	    JButton btnSearchCustomer = new JButton("Search Customer");
+	    JButton btnSearchCustomer = new JButton();
 	    btnSearchCustomer.addMouseMotionListener(new MouseMotionAdapter() {
 	    	@Override
 	    	public void mouseMoved(java.awt.event.MouseEvent e) {
@@ -97,7 +97,7 @@ public class LandingPage extends JFrame{
 	    btnSearchCustomer.setBounds(630, 203, 123, 149);
 	    getContentPane().add(btnSearchCustomer);
 	    
-	    JButton btnNewSubscription = new JButton("Modify Subscription");
+	    JButton btnNewSubscription = new JButton();
 	    btnNewSubscription.addMouseMotionListener(new MouseMotionAdapter() {
 	    	@Override
 	    	public void mouseMoved(java.awt.event.MouseEvent e) {
@@ -111,7 +111,7 @@ public class LandingPage extends JFrame{
 	    btnNewSubscription.setBounds(158, 584, 129, 149);
 	    getContentPane().add(btnNewSubscription);
 	    
-	    JButton btnSearchCustomerID = new JButton("Search Customer ID");
+	    JButton btnSearchCustomerID = new JButton();
 	    btnSearchCustomerID.addMouseMotionListener(new MouseMotionAdapter() {
 	    	@Override
 	    	public void mouseMoved(java.awt.event.MouseEvent e) {
@@ -125,7 +125,7 @@ public class LandingPage extends JFrame{
 	    btnSearchCustomerID.setBounds(158, 393, 129, 149);
 	    getContentPane().add(btnSearchCustomerID);
 	    
-	    JButton btnRemainingBalance = new JButton("Remaining Balance");
+	    JButton btnRemainingBalance = new JButton();
 	    Icon iconRemainingBalance=new ImageIcon("Remaining_Balance2.png"); 
 	    btnRemainingBalance.setIcon(iconRemainingBalance);
 	    btnRemainingBalance.addMouseMotionListener(new MouseMotionAdapter() {
@@ -139,7 +139,7 @@ public class LandingPage extends JFrame{
 	    btnRemainingBalance.setBounds(630, 584, 123, 149);
 	    getContentPane().add(btnRemainingBalance);
 	    
-	    JButton btnGenerateReport = new JButton("Generate Report");
+	    JButton btnGenerateReport = new JButton();
 	    btnGenerateReport.addMouseMotionListener(new MouseMotionAdapter() {
 	    	@Override
 	    	public void mouseMoved(java.awt.event.MouseEvent e) {
