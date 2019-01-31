@@ -29,15 +29,14 @@ public class Reporting_BP {
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
 			Statement stm = con.createStatement();
 			
-			//Select * from NEW_SUBSCRIPTION WHERE (Sub_Start_year = '20' OR sub_end_year ='18')  AND (sub_start_month = '08' OR Sub_end_month ='08');
-			//String sq = "Select * from NEW_SUBSCRIPTION WHERE (Sub_Start_year = '"+year+"' OR sub_end_year ='"+year+"')  AND (sub_start_month = '"+month+"' OR Sub_end_month ='"+month+"')";
+			
 			String sq = "Select * from NEW_SUBSCRIPTION WHERE sub_Date = '"+subDate+"' AND isShipped ='No' AND Status = 'Active'";
 			ResultSet rs = stm.executeQuery(sq);
  

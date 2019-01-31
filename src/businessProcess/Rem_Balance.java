@@ -33,8 +33,8 @@ public class Rem_Balance{
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
@@ -68,8 +68,8 @@ public class Rem_Balance{
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
@@ -112,8 +112,8 @@ public class Rem_Balance{
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-		//	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
@@ -129,19 +129,7 @@ public class Rem_Balance{
 			Balance = Balance + Integer.parseInt(Copies);
 			stm.execute("UPDATE remaining SET number_of_subs ='"+ Balance +"' where date_sub='"+sub_date+"'");	
 			
-			/*Statement stm1 = con.createStatement();
-			String query1="select rem_balance from remaining where date1='"+date_end+"'";
-			 rs=stm.executeQuery(query1);
 			
-			if(rs.next())
-			{
-			 String Balance_Start=rs.getString(1);
-			 Updated_Copies2=Integer.parseInt(Balance_Start)-Integer.parseInt(Copies);
-				
-			
-			stm1.execute("UPDATE remaining SET rem_balance ='"+ String.valueOf(Updated_Copies2) +"' where date1='"+date_end+"'");			
-			} 
-			*/
 			
 			
 			
@@ -169,8 +157,8 @@ public class Rem_Balance{
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-		//	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		 // Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
@@ -196,24 +184,7 @@ public class Rem_Balance{
 			
 			Balance = Balance + Integer.parseInt(addBalance) - Integer.parseInt(existing_Balance);
 			stm.execute("UPDATE remaining SET number_of_subs ='"+ Balance +"' where date_sub='"+sub_date+"'");	
-			
-			/*Statement stm1 = con.createStatement();
-			String query1="select rem_balance from remaining where date1='"+date_end+"'";
-			 rs=stm.executeQuery(query1);
-			
-			if(rs.next())
-			{
-			 String Balance_Start=rs.getString(1);
-			 Updated_Copies2=Integer.parseInt(Balance_Start)-Integer.parseInt(Copies);
-				
-			
-			stm1.execute("UPDATE remaining SET rem_balance ='"+ String.valueOf(Updated_Copies2) +"' where date1='"+date_end+"'");			
-			} 
-			*/
-			
-			
-			
-			
+
 			con.close();
 		}
 		

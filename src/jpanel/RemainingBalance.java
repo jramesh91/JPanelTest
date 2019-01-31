@@ -96,15 +96,15 @@ public class RemainingBalance extends JFrame{
     getContentPane().add(button);
     
     JLabel lblEnterDate = new JLabel("Enter Date");
-    lblEnterDate.setForeground(new Color(0, 255,246));
+    lblEnterDate.setForeground(new Color(0, 255,30));
     lblEnterDate.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-    lblEnterDate.setBounds(163, 227, 131, 20);
+    lblEnterDate.setBounds(216, 208, 169, 43);
     getContentPane().add(lblEnterDate);
     
     JLabel lblCopiesArrived = new JLabel("Copies Arrived");
-    lblCopiesArrived.setForeground(new Color(255, 204, 0));
+    lblCopiesArrived.setForeground(new Color(0, 255, 30));
     lblCopiesArrived.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-    lblCopiesArrived.setBounds(163, 286, 169, 29);
+    lblCopiesArrived.setBounds(177, 274, 170, 52);
     getContentPane().add(lblCopiesArrived);
     
     textField = new JTextField();
@@ -153,6 +153,7 @@ public class RemainingBalance extends JFrame{
 				{
 					System.out.println("Checking Balance.....!");
 					Rem_Balance.checkBalance(Integer.parseInt(m_y.format(dateChooser_1.getDate())));
+					JOptionPane.showMessageDialog(null, "The Balance is:", "Balance Details", JOptionPane.INFORMATION_MESSAGE);
 					
 					
 				}
