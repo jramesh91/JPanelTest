@@ -1,54 +1,26 @@
 package jpanel;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.Window;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
-import com.sun.glass.events.MouseEvent;
 
-import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
+
+
 
 import javax.swing.JTextPane;
 import java.awt.Font;
-import java.awt.Frame;
-import javax.imageio.ImageIO;
 
-import javax.swing.JSplitPane;
-import java.awt.BorderLayout;
-import javax.swing.JRadioButton;
-import javax.swing.JScrollPane;
-import javax.swing.JToggleButton;
-import java.awt.GridLayout;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 
-import javax.swing.Box;
-import javax.swing.JComboBox;
 import javax.swing.JDialog;
-import javax.swing.BoxLayout;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import java.awt.Color;
-import java.awt.SystemColor;
-import java.awt.Toolkit;
-import javax.swing.SwingConstants;
-import javax.swing.border.Border;
+
 import java.awt.event.MouseMotionAdapter;
 
 public class LandingPage extends JFrame{
@@ -204,7 +176,7 @@ public class LandingPage extends JFrame{
 	  					System.out.println("This is redirected to Subscription Page");
 	  					dispose();
 	  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
-	  					String a = null;
+	  				
 	  					new NewCustomer().setVisible(true);
 	  				}
 	  			
@@ -239,8 +211,7 @@ public class LandingPage extends JFrame{
 	  				{
 	  					System.out.println("This is redirected to Subscription Page");
 	  					dispose();
-	  					//This is created to show no customer ID when the navigation is jumped from Landing to Subscription
-	  					String a = null;
+	  					
 	  					new GenerateReport().setVisible(true);
 	  				}
 	  			
