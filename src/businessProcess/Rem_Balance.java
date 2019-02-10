@@ -33,8 +33,8 @@ public class Rem_Balance{
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			
+		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "root@123");
 			
 			
 			
@@ -68,9 +68,9 @@ public class Rem_Balance{
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "root@123");
+	
 			
 			
 			Statement stm = con.createStatement();
@@ -109,9 +109,9 @@ public class Rem_Balance{
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-		//	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
-			
+		
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "root@123");
+
 			
 			
 			Statement stm = con.createStatement();
@@ -154,9 +154,9 @@ public class Rem_Balance{
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-		//	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
-			
+		
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "root@123");
+
 			
 			
 			Statement stm = con.createStatement();

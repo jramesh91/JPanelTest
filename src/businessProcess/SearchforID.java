@@ -23,9 +23,11 @@ public class SearchforID {
 			Class.forName("com.mysql.jdbc.Driver");
 
 			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-			Connection con =
+			/*Connection con =
 			DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root",
-			"Genesys@01");
+			"Genesys@01");*/
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "root@123");
+
 
 			Statement stm = con.createStatement();
 			String sq = "Select * from Customer WHERE Last_name LIKE '" + cus + "%'";
@@ -58,7 +60,8 @@ public class SearchforID {
 			Class.forName("com.mysql.jdbc.Driver");
 
 			 //Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root","root");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "root@123");
 
 			Statement stm = con.createStatement();
 			System.out.println("Accessing the db..");

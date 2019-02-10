@@ -25,8 +25,9 @@ public class NewSubscriptionEntry {
 			
 			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
 		    
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
-			
+			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "root@123");
+
 			
 			
 			Statement stm = con.createStatement();
@@ -75,8 +76,9 @@ public class NewSubscriptionEntry {
 			
 			
 			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
-			
+			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "root@123");
+
 			System.out.println("Static var is "+subs_id);	
 
 			
@@ -130,8 +132,9 @@ public class NewSubscriptionEntry {
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
-			
+			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "root@123");
+
 			//Statement Execution Part
 			Statement stm = con.createStatement();
 			String update_query="UPDATE new_subscription SET Remarks='"+Remarks+"',isShipped='"+ isShipped+"',status='"+Status +"', copies='"+Copies +"'  WHERE Subscription_ID='"+Subscription_ID +"' ";
