@@ -276,7 +276,9 @@ public class ModifySubscription extends JFrame{
 							System.out.println("Updating...!");
 							
 							NewSubscriptionEntry.modifySubscription(textField_6.getText(),msg,msg_status,textField_3.getText(),textField_1.getText());
-							 
+							dispose();
+							new LandingPage().setVisible(true);
+							
 							
 						
 						}
