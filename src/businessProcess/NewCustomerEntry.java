@@ -34,6 +34,8 @@ public class NewCustomerEntry {
 			String sq = "insert into CUSTOMER(Customer_id,Last_Name,Door_Number,Street_Name,City,State,PinCode) values("+customer_id+",'"+Full_Name+"','"+door_number+"','"+street+"','"+city+"','"+state+"',"+pincode+")";
 			stm.execute(sq);
 			
+			String sqD = "DELETE FROM Customer WHERE Customer_id='"+customer_id+"'";
+			
 			//Close the database Connection
 			con.close();
 			check = true;
@@ -44,7 +46,7 @@ public class NewCustomerEntry {
 		catch(MySQLSyntaxErrorException e) {
 			
 			System.out.println("1");
-			JOptionPane.showMessageDialog(null, "Please enter all the details", "Something wrong", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Something is wrong", "Something wrong", JOptionPane.WARNING_MESSAGE);
 			check = false;
 			
 		}
@@ -57,7 +59,7 @@ public class NewCustomerEntry {
 		catch(ClassNotFoundException c)
 		{
 			System.out.println("3");
-			JOptionPane.showMessageDialog(null, "Please enter all the details", "Something wrong", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Something is wrong", "Something wrong", JOptionPane.WARNING_MESSAGE);
 			check = false;
 		}
 		

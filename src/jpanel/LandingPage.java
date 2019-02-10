@@ -138,7 +138,7 @@ public class LandingPage extends JFrame{
 	    txtpnWelcomeToJournal.setBackground(new Color(0, 0, 0));
 	    //txtpnWelcomeToJournal.setBackground(0,0,0,0);
 	    txtpnWelcomeToJournal.setText("Welcome to Journal Management System");
-	    txtpnWelcomeToJournal.setFont(new Font("Lucida Grande", Font.BOLD, 30));
+	    txtpnWelcomeToJournal.setFont(new Font("Lucida Grande", Font.BOLD, 26));
 	    txtpnWelcomeToJournal.setBounds(151, 99, 600, 57);
 	    getContentPane().add(txtpnWelcomeToJournal);
 	   

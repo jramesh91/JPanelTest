@@ -35,7 +35,7 @@ public class NewCustomer extends JFrame{
 	    private static JTextField textField_6;
 	    
 	    public static String customer;
-	    public static String fullName = " ";
+	    public static String fullName = "";
 	    public static String door = "";
 	    public static String street = "";
 	    public static String city = "";

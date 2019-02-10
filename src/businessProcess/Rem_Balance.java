@@ -15,7 +15,7 @@ public class Rem_Balance{
 	public static String June="500";
 	public static String Dec="500";
 	public static String isAvailable=""; 
-	public static String CurrentBalance="";
+	public static String CurrentPromised="";
 	public static int Sum=0;  //To add the subscription copies
 	
 	
@@ -68,25 +68,22 @@ public class Rem_Balance{
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+			//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
 			Statement stm = con.createStatement();
-			String query="select copies from new_subscription where sub_date='"+Date_Check+"'";
+			String query="select * from remaining where date_sub='"+Date_Check+"'";
 			ResultSet rs=stm.executeQuery(query);
 			while(rs.next())
 			{
 				
-				Sum+=Integer.parseInt(rs.getString(1));
+				CurrentPromised=rs.getString("number_of_subs");
+				isAvailable = rs.getString("number_of_copies");
 			}
-			System.out.println("The Number Of Copies Promised:"+ Sum);
-		/*	
-			Statement Update=con.createStatement();
-			String Update_Query="UPDATE remaining SET number_of_copies='"+Sum+"' ";
-			Update.executeUpdate(Update_Query);*/
 			
+	
 			con.close();
 		}
 		
@@ -112,8 +109,8 @@ public class Rem_Balance{
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+		//	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
@@ -157,8 +154,8 @@ public class Rem_Balance{
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		 // Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+		//	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
+		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			

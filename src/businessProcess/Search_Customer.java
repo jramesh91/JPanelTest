@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import javax.swing.JOptionPane;
+
 import jpanel.LoginPage;
 import jpanel.SearchCustomer;
 
@@ -80,7 +82,10 @@ public class Search_Customer{
 			
 			
 		}
-		
+		catch(NullPointerException n)
+		{
+			JOptionPane.showMessageDialog(null, "No Records Found", "Invalid Details", JOptionPane.WARNING_MESSAGE);
+		}
 		catch(Exception e) {
 			
 			System.out.println(e);
