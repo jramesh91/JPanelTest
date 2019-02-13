@@ -35,6 +35,7 @@ public class Rem_Balance{
 			
 			
 		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "root@123");
+		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 			
 			
 			
@@ -70,7 +71,7 @@ public class Rem_Balance{
 			
 			
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "root@123");
-	
+			
 			
 			
 			Statement stm = con.createStatement();
@@ -78,11 +79,17 @@ public class Rem_Balance{
 			ResultSet rs=stm.executeQuery(query);
 			while(rs.next())
 			{
-				
-				CurrentPromised=rs.getString("number_of_subs");
 				isAvailable = rs.getString("number_of_copies");
 			}
 			
+			Statement stm1 = con.createStatement();
+			String queryPromised="select copies from new_subscription where Sub_Date='"+Date_Check+"'AND isShipped ='No' AND status = 'Active'";
+			ResultSet rs1=stm1.executeQuery(queryPromised);
+			while(rs1.next())
+			{
+				Sum = Sum + Integer.parseInt(rs1.getString("copies"));
+			}
+			CurrentPromised = String.valueOf(Sum);
 	
 			con.close();
 		}
@@ -111,7 +118,6 @@ public class Rem_Balance{
 			
 		
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "root@123");
-
 			
 			
 			Statement stm = con.createStatement();

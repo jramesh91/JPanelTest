@@ -153,7 +153,7 @@ public class RemainingBalance extends JFrame{
 				{
 					System.out.println("Checking Balance.....!");
 					Rem_Balance.checkBalance(Integer.parseInt(m_y.format(dateChooser_1.getDate())));
-					JOptionPane.showMessageDialog(null, "The Promised is: "+Rem_Balance.isAvailable+" and the current balance is "+Rem_Balance.CurrentPromised+"", "Balance Details", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "The Promised is: "+Rem_Balance.CurrentPromised+" and the current balance is "+Rem_Balance.isAvailable+"", "Balance Details", JOptionPane.INFORMATION_MESSAGE);
 					
 					
 				}
