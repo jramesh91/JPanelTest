@@ -78,20 +78,20 @@ public class ModifySubscription extends JFrame{
 	        getContentPane().add(btnLogout);
 	        
 	        JLabel lblCustomerId = new JLabel("Subscription ID");
-	        lblCustomerId.setForeground(new Color(255, 204, 0));
-	        lblCustomerId.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblCustomerId.setBounds(160, 168, 194, 26);
+	        lblCustomerId.setForeground(new Color(2,255,234));
+	        lblCustomerId.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblCustomerId.setBounds(160, 183, 194, 26);
 	        getContentPane().add(lblCustomerId);
 	        
 	        
 	        textField_6 = new JTextField();
-	        textField_6.setBounds(369, 171, 146, 26);
+	        textField_6.setBounds(369, 171, 171, 38);
 	        getContentPane().add(textField_6);
 	        textField_6.setColumns(10);
 	        
 	        
 	        if(cust_id == null)
-	        textField_6.setText("Enter Subscription ID");
+	        textField_6.setText("");
 	        else
 	        {
 	        textField_6.setText(cust_id);
@@ -100,25 +100,25 @@ public class ModifySubscription extends JFrame{
 	        
 	        
 	        JLabel lblRemarks = new JLabel("Remarks*");
-	        lblRemarks.setForeground(new Color(255, 204, 0));
-	        lblRemarks.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblRemarks.setBounds(160, 314, 130, 26);
+	        lblRemarks.setForeground(new Color(2,255,234));
+	        lblRemarks.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblRemarks.setBounds(160, 317, 146, 38);
 	        getContentPane().add(lblRemarks);
 	        
 	        
 	        JLabel lblCopies = new JLabel("No. of Copies");
-	        lblCopies.setForeground(new Color(255, 204, 0));
-	        lblCopies.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblCopies.setBounds(160, 246, 146, 26);
+	        lblCopies.setForeground(new Color(2,255,234));
+	        lblCopies.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblCopies.setBounds(160, 259, 171, 26);
 	        getContentPane().add(lblCopies);
 	        
 	        textField_1 = new JTextField();
-	        textField_1.setBounds(369, 317, 146, 26);
+	        textField_1.setBounds(369, 317, 171, 38);
 	        getContentPane().add(textField_1);
 	        textField_1.setColumns(10);
 	        
 	        JTextField textField_3 = new JTextField();
-	        textField_3.setBounds(369,249, 146, 26);
+	        textField_3.setBounds(369,249, 171, 38);
 	        getContentPane().add(textField_3);
 	        textField_3.setColumns(10);
 	        

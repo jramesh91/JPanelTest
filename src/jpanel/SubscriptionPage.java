@@ -77,14 +77,14 @@ public class SubscriptionPage extends JFrame{
 	        getContentPane().add(btnLogout);
 	        
 	        JLabel lblCustomerId = new JLabel("Customer ID");
-	        lblCustomerId.setForeground(new Color(255, 204, 0));
-	        lblCustomerId.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblCustomerId.setBounds(160, 168, 194, 26);
+	        lblCustomerId.setForeground(new Color(2,255,234));
+	        lblCustomerId.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblCustomerId.setBounds(141, 173, 194, 26);
 	        getContentPane().add(lblCustomerId);
 	        
 	        
 	        textField_6 = new JTextField();
-	        textField_6.setBounds(369, 171, 130, 26);
+	        textField_6.setBounds(369, 171, 161, 36);
 	        getContentPane().add(textField_6);
 	        textField_6.setColumns(10);
 	        
@@ -98,67 +98,67 @@ public class SubscriptionPage extends JFrame{
 	        }
 	        
 	        JLabel lblDateOfPayment = new JLabel("Date of Payment");
-	        lblDateOfPayment.setForeground(new Color(255, 204, 0));
-	        lblDateOfPayment.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblDateOfPayment.setBounds(160, 213, 194, 26);
+	        lblDateOfPayment.setForeground(new Color(2,255,234));
+	        lblDateOfPayment.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblDateOfPayment.setBounds(141, 223, 194, 26);
 	        getContentPane().add(lblDateOfPayment);
 	        
 	        JDateChooser dateChooser = new JDateChooser();
-	        dateChooser.setBounds(369, 213, 130, 26);
+	        dateChooser.setBounds(369, 223, 161, 35);
 	        getContentPane().add(dateChooser);
 	        
 	        JLabel lblAmountPaid = new JLabel("Amount Paid");
-	        lblAmountPaid.setForeground(new Color(255, 204, 0));
-	        lblAmountPaid.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblAmountPaid.setBounds(160, 255, 161, 26);
+	        lblAmountPaid.setForeground(new Color(2,255,234));
+	        lblAmountPaid.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblAmountPaid.setBounds(141, 277, 161, 26);
 	        getContentPane().add(lblAmountPaid);
 	        
 	        textField_2 = new JTextField();
-	        textField_2.setBounds(369, 255, 130, 26);
+	        textField_2.setBounds(369, 274, 161, 39);
 	        getContentPane().add(textField_2);
 	        textField_2.setColumns(10);
 	        
 	        JLabel lblStartDate = new JLabel("Start Date");
-	        lblStartDate.setForeground(new Color(255, 204, 0));
-	        lblStartDate.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblStartDate.setBounds(160, 297, 130, 26);
+	        lblStartDate.setForeground(new Color(2,255,234));
+	        lblStartDate.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblStartDate.setBounds(141, 336, 130, 26);
 	        getContentPane().add(lblStartDate);
 	        
 	        JDateChooser dateChooser_1 = new JDateChooser();
-	        dateChooser_1.setBounds(369, 297, 130, 26);
+	        dateChooser_1.setBounds(369, 326, 161, 45);
 	        getContentPane().add(dateChooser_1);
 	        
 	        JLabel lblEndDate = new JLabel("Number of Subscription");
-	        lblEndDate.setForeground(new Color(255, 204, 0));
-	        lblEndDate.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblEndDate.setBounds(160, 345, 207, 26);
+	        lblEndDate.setForeground(new Color(2,255,234));
+	        lblEndDate.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblEndDate.setBounds(141, 387, 271, 26);
 	        getContentPane().add(lblEndDate);
 	        
 	        JSpinner spinner = new JSpinner();
-	        spinner.setBounds(423, 348, 76, 26);
+	        spinner.setBounds(426, 384, 115, 26);
 	        getContentPane().add(spinner);
 	        
 	        
 	        JLabel lblRemarks = new JLabel("Remarks*");
-	        lblRemarks.setForeground(new Color(255, 204, 0));
-	        lblRemarks.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblRemarks.setBounds(160, 440, 130, 26);
+	        lblRemarks.setForeground(new Color(2,255,234));
+	        lblRemarks.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblRemarks.setBounds(141, 488, 130, 26);
 	        getContentPane().add(lblRemarks);
 	        
 	        
 	        JLabel lblCopies = new JLabel("No. of Copies");
-	        lblCopies.setForeground(new Color(255, 204, 0));
-	        lblCopies.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblCopies.setBounds(155, 387, 146, 26);
+	        lblCopies.setForeground(new Color(2,255,234));
+	        lblCopies.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblCopies.setBounds(141, 446, 181, 26);
 	        getContentPane().add(lblCopies);
 	        
 	        textField_1 = new JTextField();
-	        textField_1.setBounds(369, 443, 146, 26);
+	        textField_1.setBounds(369, 482, 172, 45);
 	        getContentPane().add(textField_1);
 	        textField_1.setColumns(10);
 	        
 	        JTextField textField_3 = new JTextField();
-	        textField_3.setBounds(369,387, 146, 26);
+	        textField_3.setBounds(369,426, 172, 40);
 	        getContentPane().add(textField_3);
 	        textField_3.setColumns(10);
 	        
@@ -218,8 +218,8 @@ public class SubscriptionPage extends JFrame{
 	        		}
 	        		}
 	        });
-	        chckbxNewCheckBox.setForeground(new Color(255, 204, 0));
-	        chckbxNewCheckBox.setBounds(369, 502, 187, 26);
+	        chckbxNewCheckBox.setForeground(new Color(2,255,234));
+	        chckbxNewCheckBox.setBounds(369, 559, 220, 66);
 	        getContentPane().add(chckbxNewCheckBox);
 	       
 	        

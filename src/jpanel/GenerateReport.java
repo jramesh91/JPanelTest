@@ -59,10 +59,10 @@ public class GenerateReport extends JFrame{
 		        setIconImage(img.getImage());
 			
 		        JLabel lblMonth = new JLabel("Enter Subscription Date");
-		        lblMonth.setForeground(new Color(255, 204, 0));
+		        lblMonth.setForeground(new Color(2,255,234));
 		        lblMonth.setFont(new Font("Courier", Font.BOLD, 16));
-		        lblMonth.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-		        lblMonth.setBounds(98, 125, 301, 26);
+		        lblMonth.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+		        lblMonth.setBounds(98, 125, 311, 34);
 		        getContentPane().add(lblMonth);
 			        
 			    JButton btnGatherReport = new JButton("Generate Report");
@@ -92,7 +92,7 @@ public class GenerateReport extends JFrame{
 				getContentPane().add(btnLogout);
 				    
 				JDateChooser dateChooser = new JDateChooser();
-				dateChooser.setBounds(443, 125, 119, 26);
+				dateChooser.setBounds(443, 125, 147, 34);
 				getContentPane().add(dateChooser);
 				    
 				JButton btnExport = new JButton("Export");

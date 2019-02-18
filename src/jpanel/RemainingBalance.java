@@ -60,7 +60,7 @@ public class RemainingBalance extends JFrame{
 	getContentPane().setLayout(null);
 	
 	JDateChooser dateChooser_1 = new JDateChooser();
-    dateChooser_1.setBounds(367, 218, 146, 26);
+    dateChooser_1.setBounds(361, 201, 146, 45);
     getContentPane().add(dateChooser_1);
 	
 	//Logout Button:
@@ -84,31 +84,31 @@ public class RemainingBalance extends JFrame{
     getContentPane().add(txtpnNewCustomerEntry);
     //Save Button
     JButton btnSave = new JButton("Save");
-    btnSave.setBounds(451, 432, 115, 29);
+    btnSave.setBounds(451, 416, 115, 45);
     getContentPane().add(btnSave);
     
     JButton btnBack = new JButton("Back");
-    btnBack.setBounds(232, 432, 115, 29);
+    btnBack.setBounds(232, 416, 115, 45);
     getContentPane().add(btnBack);
     
     JButton button = new JButton("Check Balance");
-    button.setBounds(518, 218, 155, 29);
+    button.setBounds(518, 218, 169, 45);
     getContentPane().add(button);
     
     JLabel lblEnterDate = new JLabel("Enter Date");
-    lblEnterDate.setForeground(new Color(0, 255,30));
-    lblEnterDate.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-    lblEnterDate.setBounds(216, 208, 169, 43);
+    lblEnterDate.setForeground(new Color(2,255,234));
+    lblEnterDate.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+    lblEnterDate.setBounds(177, 201, 169, 43);
     getContentPane().add(lblEnterDate);
     
     JLabel lblCopiesArrived = new JLabel("Copies Arrived");
-    lblCopiesArrived.setForeground(new Color(0, 255, 30));
-    lblCopiesArrived.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
+    lblCopiesArrived.setForeground(new Color(2,255,234));
+    lblCopiesArrived.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
     lblCopiesArrived.setBounds(177, 274, 170, 52);
     getContentPane().add(lblCopiesArrived);
     
     textField = new JTextField();
-    textField.setBounds(367, 290, 146, 26);
+    textField.setBounds(361, 285, 146, 36);
     getContentPane().add(textField);
     textField.setColumns(10);
     

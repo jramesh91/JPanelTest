@@ -74,19 +74,19 @@ public class SearchCustomer extends JFrame{
 	        
 	        JButton home_button = new JButton("Back");
 	        home_button.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        home_button.setBounds(391, 726, 130, 26);
+	        home_button.setBounds(391, 753, 148, 45);
 		    getContentPane().add(home_button);
 	        
 	        
 	        JButton btnLogout = new JButton("Logout");
-	        btnLogout.setBounds(632, 20, 130, 26);
+	        btnLogout.setBounds(632, 20, 148, 45);
 	        getContentPane().add(btnLogout);
 	        
 	        JLabel lblCustomerId = new JLabel("Customer ID");
-	        lblCustomerId.setForeground(new Color(0,255,0));
+	        lblCustomerId.setForeground(new Color(2,255,234));
 	        lblCustomerId.setFont(new Font("Courier", Font.BOLD,26));
-	        lblCustomerId.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 20));
-	        lblCustomerId.setBounds(194, 107, 130,26);
+	        lblCustomerId.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblCustomerId.setBounds(167, 105, 168,26);
 	        getContentPane().add(lblCustomerId);
 	        
 	        //Getting Customer_ID inorder to search
@@ -98,73 +98,73 @@ public class SearchCustomer extends JFrame{
 	        textField_6.setText(cust_id);
 	        
 	        JButton btnSearch = new JButton("Search");
-	        btnSearch.setBounds(528, 107, 115, 29);
+	        btnSearch.setBounds(518, 103, 148, 36);
 	        getContentPane().add(btnSearch);
 	        
 	        JLabel lblFullName = new JLabel("Full Name");
-	        lblFullName.setForeground(new Color(0,255,0));
+	        lblFullName.setForeground(new Color(2,255,234));
 	        lblFullName.setBounds(41, 226, 115, 20);
-	        lblFullName.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 20));
+	        lblFullName.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
 	        getContentPane().add(lblFullName);
 	        
 	        textField = new JTextField();
-	        textField.setBounds(178, 219, 146, 36);
+	        textField.setBounds(204, 221, 158, 36);
 	        getContentPane().add(textField);
 	        textField.setColumns(10);
 	        //textField.setText(Search.first_name);
 	        
 	        JLabel lblStreetName = new JLabel("Street Name");
-	        lblStreetName.setForeground(new Color(0,255,0));
-	        lblStreetName.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 20));
-	        lblStreetName.setBounds(41, 278, 122, 20);
+	        lblStreetName.setForeground(new Color(2,255,234));
+	        lblStreetName.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblStreetName.setBounds(41, 278, 148, 20);
 	        getContentPane().add(lblStreetName);
 	        
 	        textField_1 = new JTextField();
-	        textField_1.setBounds(178, 271, 146, 36);
+	        textField_1.setBounds(204, 271, 158, 36);
 	        getContentPane().add(textField_1);
 	        textField_1.setColumns(10);
 	        
 	        JLabel lblDoorNumber = new JLabel("Door Number");
-	        lblDoorNumber.setForeground(new Color(0,255,0));
-	        lblDoorNumber.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 20));
-	        lblDoorNumber.setBounds(41, 330, 130, 20);
+	        lblDoorNumber.setForeground(new Color(2,255,234));
+	        lblDoorNumber.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblDoorNumber.setBounds(41, 330, 158, 20);
 	        getContentPane().add(lblDoorNumber);
 	        
 	        textField_2 = new JTextField();
-	        textField_2.setBounds(178, 323, 146, 36);
+	        textField_2.setBounds(204, 323, 158, 36);
 	        getContentPane().add(textField_2);
 	        textField_2.setColumns(10);
 	        
 	        JLabel lblCity = new JLabel("City");
-	        lblCity.setForeground(new Color(0,255,0));
-	        lblCity.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 20));
-	        lblCity.setBounds(41, 382, 69, 20);
+	        lblCity.setForeground(new Color(2,255,234));
+	        lblCity.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblCity.setBounds(41, 372, 94, 36);
 	        getContentPane().add(lblCity);
 	        
 	        JLabel lblState = new JLabel("State");
-	        lblState.setForeground(new Color(0,255,0));
-	        lblState.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 20));
-	        lblState.setBounds(41, 434, 69, 20);
+	        lblState.setForeground(new Color(2,255,234));
+	        lblState.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblState.setBounds(41, 434, 94, 20);
 	        getContentPane().add(lblState);
 	        
 	        JLabel lblPincode = new JLabel("Pincode");
-	        lblPincode.setForeground(new Color(0,255,0));
-	        lblPincode.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 20));
-	        lblPincode.setBounds(41, 486, 89, 20);
+	        lblPincode.setForeground(new Color(2,255,234));
+	        lblPincode.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblPincode.setBounds(41, 486, 115, 20);
 	        getContentPane().add(lblPincode);
 	        
 	        textField_3 = new JTextField();
-	        textField_3.setBounds(178, 427, 146, 36);
+	        textField_3.setBounds(204, 429, 158, 36);
 	        getContentPane().add(textField_3);
 	        textField_3.setColumns(10);
 	        
 	        textField_4 = new JTextField();
-	        textField_4.setBounds(178, 479, 146, 36);
+	        textField_4.setBounds(204, 481, 158, 36);
 	        getContentPane().add(textField_4);
 	        textField_4.setColumns(10);
 	        
 	        textField_5 = new JTextField();
-	        textField_5.setBounds(178, 375, 146, 36);
+	        textField_5.setBounds(204, 375, 158, 36);
 	        getContentPane().add(textField_5);
 	        textField_5.setColumns(10);
 		    
@@ -173,80 +173,80 @@ public class SearchCustomer extends JFrame{
 		    getContentPane().add(label);
 		    
 		    JLabel lblSubscriptionId = new JLabel("Subscription ID");
-		    lblSubscriptionId.setForeground(new Color(0,255,0));
-		    lblSubscriptionId.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 20));
-		    lblSubscriptionId.setBounds(375, 226, 174, 20);
+		    lblSubscriptionId.setForeground(new Color(2,255,234));
+		    lblSubscriptionId.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+		    lblSubscriptionId.setBounds(391, 227, 212, 20);
 		    getContentPane().add(lblSubscriptionId);
 		    
 		    JLabel lblAmountPaid = new JLabel("Amount Paid");
-		    lblAmountPaid.setForeground(new Color(0,255,0));
-		    lblAmountPaid.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 20));
-		    lblAmountPaid.setBounds(375, 330, 146, 20);
+		    lblAmountPaid.setForeground(new Color(2,255,234));
+		    lblAmountPaid.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+		    lblAmountPaid.setBounds(391, 331, 212, 20);
 		    getContentPane().add(lblAmountPaid);
 		    
 		    JLabel lblDateOfPayment = new JLabel("Date of Payment");
-		    lblDateOfPayment.setForeground(new Color(0,255,0));
-		    lblDateOfPayment.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 20));
-		    lblDateOfPayment.setBounds(375, 278, 146, 20);
+		    lblDateOfPayment.setForeground(new Color(2,255,234));
+		    lblDateOfPayment.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+		    lblDateOfPayment.setBounds(391, 279, 212, 20);
 		    getContentPane().add(lblDateOfPayment);
 		    
 		    JLabel lblRemarks = new JLabel("Remarks");
-		    lblRemarks.setForeground(new Color(0,255,0));
-		    lblRemarks.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 20));
-		    lblRemarks.setBounds(178, 560, 102, 20);
+		    lblRemarks.setForeground(new Color(2,255,234));
+		    lblRemarks.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+		    lblRemarks.setBounds(178, 609, 122, 20);
 		    getContentPane().add(lblRemarks);
 		    
 		    JLabel lblShippedstIssue = new JLabel("Shipped 1st Issue?");
-		    lblShippedstIssue.setForeground(new Color(0,255,0));
-		    lblShippedstIssue.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 20));
-		    lblShippedstIssue.setBounds(127, 642, 197, 20);
+		    lblShippedstIssue.setForeground(new Color(2,255,234));
+		    lblShippedstIssue.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+		    lblShippedstIssue.setBounds(90, 679, 227, 20);
 		    getContentPane().add(lblShippedstIssue);
 		    
 		    JLabel lblSubscriptionStart = new JLabel("Subscription Start");
-		    lblSubscriptionStart.setForeground(new Color(0,255,0));
-		    lblSubscriptionStart.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 20));
-		    lblSubscriptionStart.setBounds(375, 382, 174, 20);
+		    lblSubscriptionStart.setForeground(new Color(2,255,234));
+		    lblSubscriptionStart.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+		    lblSubscriptionStart.setBounds(391, 380, 212, 20);
 		    getContentPane().add(lblSubscriptionStart);
 		    
 		    textField_7 = new JTextField();
-		    textField_7.setBounds(601, 219, 161, 36);
+		    textField_7.setBounds(648, 221, 174, 36);
 		    getContentPane().add(textField_7);
 		    textField_7.setColumns(10);
 		    
 		    textField_8 = new JTextField();
-		    textField_8.setBounds(601, 273, 161, 33);
+		    textField_8.setBounds(648, 273, 174, 37);
 		    getContentPane().add(textField_8);
 		    textField_8.setColumns(10);
 		    
 		    textField_9 = new JTextField();
-		    textField_9.setBounds(601, 324, 161, 34);
+		    textField_9.setBounds(648, 325, 174, 37);
 		    getContentPane().add(textField_9);
 		    textField_9.setColumns(10);
 		    
 		    textField_14 = new JTextField();
-		    textField_14.setBounds(327, 557, 301, 45);
+		    textField_14.setBounds(328, 599, 301, 45);
 		    getContentPane().add(textField_14);
 		    textField_14.setColumns(10);
 		    
 		    textField_15 = new JTextField();
-		    textField_15.setBounds(327, 636, 76, 36);
+		    textField_15.setBounds(332, 673, 76, 36);
 		    getContentPane().add(textField_15);
 		    textField_15.setColumns(10);
 		    
 		    textField_10 = new JTextField();
 		    textField_10.setColumns(10);
-		    textField_10.setBounds(601, 376, 161, 34);
+		    textField_10.setBounds(648, 375, 179, 36);
 		    getContentPane().add(textField_10);
 		    
 		    JLabel label_1 = new JLabel("Subscription Length");
-		    label_1.setForeground(Color.GREEN);
-		    label_1.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 20));
-		    label_1.setBounds(375, 433, 194, 20);
+		    label_1.setForeground(new Color(2,255,234));
+		    label_1.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+		    label_1.setBounds(391, 434, 252, 39);
 		    getContentPane().add(label_1);
 		    
 		    textField_11 = new JTextField();
 		    textField_11.setColumns(10);
-		    textField_11.setBounds(601, 428, 161, 34);
+		    textField_11.setBounds(648, 434, 174, 36);
 		    getContentPane().add(textField_11);
 	        
 		    

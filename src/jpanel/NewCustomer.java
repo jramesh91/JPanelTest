@@ -77,99 +77,99 @@ public class NewCustomer extends JFrame{
 	        getContentPane().add(btnLogout);
 	        
 	        JLabel lblCustomerId = new JLabel("Customer ID");
-	        lblCustomerId.setForeground(new Color(255, 204, 0));
+	        lblCustomerId.setForeground(new Color(2, 255, 234));
 	        lblCustomerId.setFont(new Font("Courier", Font.BOLD, 16));
 	        lblCustomerId.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblCustomerId.setBounds(282, 105, 130, 26);
+	        lblCustomerId.setBounds(269, 133, 156, 42);
 	        getContentPane().add(lblCustomerId);
 	        
 	        //Customer_ID
 	        textField_6 = new JTextField();
 	        getContentPane().add(textField_6);
-	        textField_6.setBounds(440, 103, 130, 36);
+	        textField_6.setBounds(440, 133, 199, 45);
 	        textField_6.setColumns(10);
 	        textField_6.setText(String.valueOf(customer_id));
 	        
 	        JLabel lblFullName = new JLabel("Full Name");
-	        lblFullName.setForeground(new Color(255, 204, 0));
-	        lblFullName.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblFullName.setBounds(282, 158, 130, 26);
+	        lblFullName.setForeground(new Color(2, 255,234));
+	        lblFullName.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblFullName.setBounds(269, 205, 130, 26);
 	        getContentPane().add(lblFullName);
 
 	        //Full_name
 	        textField = new JTextField(fullName);
-	        textField.setBounds(440, 151, 130, 36);
+	        textField.setBounds(440, 194, 199, 45);
 	        getContentPane().add(textField);
 	        textField.setColumns(10);
 	        
 	        JLabel lblDoor = new JLabel("Door Number");
-	        lblDoor.setForeground(new Color(255, 204, 0));
-	        lblDoor.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblDoor.setBounds(282, 204, 130, 26);
+	        lblDoor.setForeground(new Color(2, 255, 234));
+	        lblDoor.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblDoor.setBounds(269, 270, 156, 26);
 	        getContentPane().add(lblDoor);
 
 	        //Door Number
 	        textField_1 = new JTextField(door);
-	        textField_1.setBounds(440, 202, 130, 36);
+	        textField_1.setBounds(440, 251, 199, 45);
 	        getContentPane().add(textField_1);
 	        textField_1.setColumns(10);
 	        
 	        JLabel lblStreetNumber = new JLabel("Street Name");
-	        lblStreetNumber.setForeground(new Color(255, 204, 0));
-	        lblStreetNumber.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblStreetNumber.setBounds(282, 256, 130, 26);
+	        lblStreetNumber.setForeground(new Color(2, 255, 234));
+	        lblStreetNumber.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblStreetNumber.setBounds(269, 321, 143, 36);
 	        getContentPane().add(lblStreetNumber);
 	        
 	        //Street
 	        textField_2 = new JTextField(street);
-	        textField_2.setBounds(440, 250, 130, 36);
+	        textField_2.setBounds(440, 312, 199, 45);
 	        getContentPane().add(textField_2);
 	        textField_2.setColumns(10);
 	        
 	        JLabel lblCity = new JLabel("City");
-	        lblCity.setForeground(new Color(255, 204, 0));
-	        lblCity.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblCity.setBounds(282, 302, 130, 26);
+	        lblCity.setForeground(new Color(2, 255, 234));
+	        lblCity.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblCity.setBounds(269, 373, 130, 45);
 	        getContentPane().add(lblCity);
 	        
 	        //City
 	        textField_3 = new JTextField(city);
-	        textField_3.setBounds(440, 298, 130, 36);
+	        textField_3.setBounds(440, 373, 199, 45);
 	        getContentPane().add(textField_3);
 	        textField_3.setColumns(10);
 	        
 	        JLabel lblState = new JLabel("State");
-	        lblState.setForeground(new Color(255, 204, 0));
-	        lblState.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblState.setBounds(282, 343, 130, 26);
+	        lblState.setForeground(new Color(2, 255, 234));
+	        lblState.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblState.setBounds(269, 431, 130, 45);
 	        getContentPane().add(lblState);
 	        
 	        //State
 	        textField_4 = new JTextField(state);
-	        textField_4.setBounds(440, 341, 130, 36);
+	        textField_4.setBounds(440, 434, 199, 45);
 	        getContentPane().add(textField_4);
 	        textField_4.setColumns(10);
 	        
 	        JLabel lblPincode = new JLabel("Pincode");
-	        lblPincode.setForeground(new Color(255, 204, 0));
-	        lblPincode.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        lblPincode.setBounds(282, 387, 130, 26);
+	        lblPincode.setForeground(new Color(2, 255, 234));
+	        lblPincode.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        lblPincode.setBounds(269, 492, 143, 48);
 	        getContentPane().add(lblPincode);
 	        
 	        //Pincode
 	        textField_5 = new JTextField(pincode);
 	        getContentPane().add(textField_5);
-	        textField_5.setBounds(440, 385, 130, 36);
+	        textField_5.setBounds(440, 495, 199, 45);
 	        textField_5.setColumns(10);
 	        
 	        JButton btnCancel = new JButton("Cancel");
-	        btnCancel.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        btnCancel.setBounds(391, 726, 130, 26);
+	        btnCancel.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        btnCancel.setBounds(342, 726, 179, 45);
 	        getContentPane().add(btnCancel);
 	        
 	        JButton btnAddMoreDetails = new JButton("Add more details...");
-	        btnAddMoreDetails.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-	        btnAddMoreDetails.setBounds(533, 726, 247, 26);
+	        btnAddMoreDetails.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+	        btnAddMoreDetails.setBounds(533, 726, 247, 45);
 	        getContentPane().add(btnAddMoreDetails);
 	        
 

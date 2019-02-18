@@ -57,15 +57,15 @@ public class SearchCustomerIDPage extends JFrame{
 	        
 		
 		 JLabel lblMonth = new JLabel("Enter Customer Name");
-		 lblMonth.setForeground(new Color(255, 204, 0));
+		 lblMonth.setForeground(new Color(2,255,234));
 		 lblMonth.setFont(new Font("Courier", Font.BOLD, 16));
-		 lblMonth.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 22));
-		 lblMonth.setBounds(98, 125, 301, 26);
+		 lblMonth.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+		 lblMonth.setBounds(98, 125, 312, 39);
 	        getContentPane().add(lblMonth);
 		        
 		        JButton btnGatherReport = new JButton("Search");
 		        btnGatherReport.setBackground(new Color(204, 255, 255));
-		        btnGatherReport.setBounds(443, 245, 124, 36);
+		        btnGatherReport.setBounds(443, 245, 139, 45);
 			    getContentPane().add(btnGatherReport);
 			    
 			    
@@ -82,7 +82,7 @@ public class SearchCustomerIDPage extends JFrame{
 			    panel.add(jScroll);
 			    
 			    JButton btnBack = new JButton("Back");
-			    btnBack.setBounds(234, 245, 124, 36);
+			    btnBack.setBounds(234, 245, 148, 45);
 			    getContentPane().add(btnBack);
 			    
 			    JButton btnLogout = new JButton("Logout");
@@ -90,7 +90,7 @@ public class SearchCustomerIDPage extends JFrame{
 			    getContentPane().add(btnLogout);
 			    
 			    textField = new JTextField();
-			    textField.setBounds(426, 128, 130, 26);
+			    textField.setBounds(377, 125, 211, 45);
 			    getContentPane().add(textField);
 			    textField.setColumns(10);
 			    
