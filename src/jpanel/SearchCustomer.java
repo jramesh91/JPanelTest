@@ -52,6 +52,7 @@ public class SearchCustomer extends JFrame{
 	   private JTextField textField_15;
 	   private JTextField textField_10;
 	   private JTextField textField_11;
+	   private JTextField textField_12;
 	    
 	    
 	    public SearchCustomer() {
@@ -249,12 +250,24 @@ public class SearchCustomer extends JFrame{
 		    textField_11.setBounds(648, 434, 174, 36);
 		    getContentPane().add(textField_11);
 	        
+		    JLabel label_2 = new JLabel("No. of Copies");
+		    label_2.setForeground(new Color(2, 255, 234));
+		    label_2.setFont(new Font("Iowan Old Style", Font.BOLD | Font.ITALIC, 24));
+		    label_2.setBounds(391, 481, 252, 39);
+		    getContentPane().add(label_2);
+		    
+		    textField_12 = new JTextField();
+		    textField_12.setColumns(10);
+		    textField_12.setBounds(648, 487, 174, 36);
+		    getContentPane().add(textField_12);
+	        
 		    
 			
 		    JLabel lable = new JLabel("",new ImageIcon("Landing_Page3.jpg"),JLabel.CENTER);
 		    lable.setBounds(0, 0, 1000, 1000);
 		    getContentPane().add(lable);
-	        
+		    
+		    
 	        btnSearch.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					
@@ -278,6 +291,7 @@ public class SearchCustomer extends JFrame{
 						textField_9.setText(Search_Customer.AmtPaid);
 						textField_10.setText(Search_Customer.Sub_Start);
 						textField_11.setText(Search_Customer.Sub_Length);
+						textField_12.setText(Search_Customer.copies);
 						textField_14.setText(Search_Customer.Remarks);
 						textField_15.setText(Search_Customer.isShipped); 
 						//dispose();

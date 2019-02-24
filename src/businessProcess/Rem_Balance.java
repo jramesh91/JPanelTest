@@ -16,7 +16,7 @@ public class Rem_Balance{
 	public static String Dec="500";
 	public static String isAvailable=""; 
 	public static String CurrentPromised="";
-	public int Sum=0;  //To add the subscription copies
+	//public int Sum=0;  //To add the subscription copies
 	
 	
 	
@@ -61,8 +61,9 @@ public class Rem_Balance{
 	
 	
 	
-	public String checkBalance(int Date_Check)
+	public static String checkBalance(int Date_Check)
 	{
+		int Sum=0;
 	
 		try { 
 			//JDBC Driver Setup

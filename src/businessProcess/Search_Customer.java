@@ -23,6 +23,7 @@ public class Search_Customer{
 	public static  String Street;
 	public static  String Sub_Start;
 	public static  String Sub_Length;
+	public static  String copies;
 	public static String customer_id1;
 	public static String first_name="";
 	public static String isShipped;
@@ -41,8 +42,8 @@ public class Search_Customer{
 			
 			
 		//Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qwerty", "root", "root");
-		  //Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "root@123");
+		  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+		//	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "root@123");
 
 			
 			
@@ -68,12 +69,17 @@ public class Search_Customer{
 				 DOP=rss.getString("Payment_Date");
 				 Sub_Start =rss.getString("Sub_Date");
 				 Sub_Length = rss.getString("sub_length");
+				 copies = rss.getString("copies");
 				 Remarks=rss.getString("Remarks");
 				 isShipped=rss.getString("isShipped");
 				 Sub_ID = rss.getString("Subscription_ID");
 			
 				
 				
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "No Records Found", "Invalid Details", JOptionPane.WARNING_MESSAGE);
 			}
 			
 			findMonth(Sub_Start);
