@@ -82,7 +82,7 @@ public class LoginPage extends JFrame{
 	            	textFieldUser = textUsername.getText();
 	         	    textFieldPass = String.valueOf(fieldPassword.getPassword());
 	         	    textFieldPass.toString();
-	         	   new LandingPage().setVisible(true); 
+	         	   //new LandingPage().setVisible(true); 
 	            	LoginValidation.connectDatabase(textFieldUser, textFieldPass.toString());
 	            	if(entry)
 	            	{

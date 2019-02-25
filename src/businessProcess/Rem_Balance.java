@@ -72,7 +72,8 @@ public class Rem_Balance{
 			
 			
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "root@123");
-			
+			//  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+
 			
 			
 			Statement stm = con.createStatement();
@@ -119,7 +120,8 @@ public class Rem_Balance{
 			
 		
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "root@123");
-			
+			//  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
+
 			
 			Statement stm = con.createStatement();
 			String query="select number_of_subs from remaining where date_sub='"+sub_date+"'";
@@ -163,6 +165,7 @@ public class Rem_Balance{
 			
 		
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "root@123");
+			//  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Test", "root", "Genesys@01");
 
 			
 			
